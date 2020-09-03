@@ -2,11 +2,10 @@
   "name": "react-by-example",
   "version": "1.0.0",
   "description": "-",
-  "scripts": {
-  },
+  "scripts": {},
   "keywords": [],
   "author": "",
-  "license": "ISC",
+  "license": "MIT",
   "devDependencies": {
     "@types/eslint": "7.2.1",
     "@typescript-eslint/eslint-plugin": "3.10.1",

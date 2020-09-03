@@ -1,0 +1,25 @@
+{
+  "name": "@app/gatsby",
+  "private": true,
+  "scripts": {
+    "start": "gatsby develop",
+    "build": "gatsby build",
+    "serve": "gatsby serve",
+    "clean": "gatsby clean"
+  },
+  "dependencies": {
+    "@mdx-js/mdx": "1.6.16",
+    "@mdx-js/react": "1.6.16",
+    "gatsby": "2.24.53",
+    "gatsby-plugin-mdx": "1.2.37",
+    "gatsby-plugin-pnpm": "1.2.5",
+    "gatsby-source-filesystem": "2.3.27",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
+  "devDependencies": {
+    "@types/node": "14.6.3",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8"
+  }
+}
