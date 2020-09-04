@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`inheritFiles no extends should render project 1`] = `
+Object {
+  "foo.txt": "foo",
+}
+`;
+
+exports[`inheritFiles one extends should render project 1`] = `
+Object {
+  "bar.txt": "bar",
+  "foo.txt": "foo",
+}
+`;
+
+exports[`inheritFiles recursive extends should render project 1`] = `
+Object {
+  "bar.txt": "bar",
+  "baz.txt": "baz",
+  "foo.txt": "foo",
+}
+`;

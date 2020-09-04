@@ -11,6 +11,12 @@ module.exports = {
       },
     },
     {
+      resolve: '@app/gatsby-transformer-file-content',
+      options: {
+        name: 'content',
+      },
+    },
+    {
       resolve: 'gatsby-plugin-page-creator',
       options: {
         path: `${__dirname}/src/content`,

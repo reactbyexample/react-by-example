@@ -1,10 +1,13 @@
 {
   "name": "react-by-example",
   "version": "1.0.0",
-  "description": "-",
-  "scripts": {},
-  "keywords": [],
-  "author": "",
+  "engines": {
+    "node": ">=12",
+    "pnpm": ">=5"
+  },
+  "scripts": {
+    "start": "pnpm -r start"
+  },
   "license": "MIT",
   "devDependencies": {
     "@types/eslint": "7.2.1",
