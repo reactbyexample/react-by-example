@@ -18,7 +18,7 @@ export const inheritFiles = async (
   const extendsFileContent = project[extendsFile]
   if (!extendsFileContent) return project
 
-  const parentProject = await inheritFiles(extendsFileContent, args)
+  const parentProject = await inheritFiles(extendsFileContent.trim(), args)
 
   const extendedProject = {
     ...parentProject,

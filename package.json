@@ -6,7 +6,8 @@
     "pnpm": ">=5"
   },
   "scripts": {
-    "start": "pnpm -r start"
+    "start": "pnpm -r start",
+    "test": "pnpm -r test"
   },
   "license": "MIT",
   "devDependencies": {

@@ -1,19 +1,69 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`inheritFiles no extends should render project 1`] = `
+exports[`inheritFiles fs should render project hello-world 1`] = `
+Object {
+  "src/index.tsx": "import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
+",
+}
+`;
+
+exports[`inheritFiles fs should render project react 1`] = `
+Object {
+  "src/example.tsx": "import React, { FC, ReactElement } from 'react'
+
+export const Simple: FC = () => <h1>Hello world!</h1>
+
+export default (): ReactElement => <Simple />
+",
+  "src/index.tsx": "import React from 'react'
+import ReactDOM from 'react-dom'
+import Example from './example'
+
+ReactDOM.render(<Example />, document.getElementById('root'))
+",
+}
+`;
+
+exports[`inheritFiles fs should render project simple-clock 1`] = `
+Object {
+  "src/index.tsx": "import React from 'react'
+import ReactDOM from 'react-dom'
+
+const app = () => <div>the time is {new Date().toLocaleTimeString()}</div>
+setInterval(() => {
+  ReactDOM.render(app(), document.getElementById('root'))
+}, 1000)
+",
+}
+`;
+
+exports[`inheritFiles fs should render project simple-react 1`] = `
+Object {
+  "src/index.tsx": "import React from 'react'
+import ReactDOM from 'react-dom'
+
+ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
+",
+}
+`;
+
+exports[`inheritFiles mock no extends should render project 1`] = `
 Object {
   "foo.txt": "foo",
 }
 `;
 
-exports[`inheritFiles one extends should render project 1`] = `
+exports[`inheritFiles mock one extends should render project 1`] = `
 Object {
   "bar.txt": "bar",
   "foo.txt": "foo",
 }
 `;
 
-exports[`inheritFiles recursive extends should render project 1`] = `
+exports[`inheritFiles mock recursive extends should render project 1`] = `
 Object {
   "bar.txt": "bar",
   "baz.txt": "baz",
