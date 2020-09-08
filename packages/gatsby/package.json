@@ -1,5 +1,6 @@
 {
   "name": "@app/gatsby",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon -x \"npm run develop\"",

@@ -1,5 +1,6 @@
 {
   "name": "@app/inherit-files",
+  "version": "1.0.0",
   "private": true,
   "scripts": {
     "start": "nodemon -x \"run-s build\"",

@@ -6,7 +6,7 @@
     "pnpm": ">=5"
   },
   "scripts": {
-    "start": "pnpm -r start",
+    "start": "pnpm -r --no-sort start",
     "test": "pnpm -r test"
   },
   "license": "MIT",
