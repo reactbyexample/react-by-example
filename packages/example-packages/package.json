@@ -1,25 +1,22 @@
 {
-  "name": "@app/inherit-files",
+  "name": "@app/example-packages",
   "version": "1.0.0",
   "private": true,
-  "types": "dist",
   "scripts": {
     "start": "nodemon -x \"run-s build\"",
     "build": "run-s build:*",
-    "build:clean": "rimraf dist",
+    "build:clean": "rimraf dist example-packages",
     "build:tsc": "tsc -p ./tsconfig.json",
-    "test": "jest",
-    "test:watch": "jest --watch"
+    "build:build": "node cli node_modules/@app/templates node_modules/@app/examples example-packages"
   },
   "devDependencies": {
     "@app/examples": "workspace:*",
+    "@app/inherit-files": "workspace:*",
     "@app/templates": "workspace:*",
-    "@types/jest": "26.0.13",
-    "jest": "26.4.2",
+    "@types/node": "14.6.4",
     "nodemon": "2.0.4",
     "npm-run-all": "4.1.5",
     "rimraf": "3.0.2",
-    "ts-jest": "26.3.0",
     "typescript": "4.0.2"
   }
 }
