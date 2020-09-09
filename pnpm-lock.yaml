@@ -5,6 +5,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 3.10.1_213747432599a1a570f25551cc803315
       '@typescript-eslint/parser': 3.10.1_eslint@7.8.1+typescript@4.0.2
       eslint: 7.8.1
+      eslint-config-airbnb: 18.2.0_5d6cd7c7abd51e7852689d379deb48fe
       eslint-config-airbnb-typescript: 9.0.0_63a4801dbb5a0786081ad469a9647f3a
       eslint-config-prettier: 6.11.0_eslint@7.8.1
       eslint-plugin-import: 2.22.0_eslint@7.8.1
@@ -18,6 +19,7 @@ importers:
       '@typescript-eslint/eslint-plugin': 3.10.1
       '@typescript-eslint/parser': 3.10.1
       eslint: 7.8.1
+      eslint-config-airbnb: 18.2.0
       eslint-config-airbnb-typescript: 9.0.0
       eslint-config-prettier: 6.11.0
       eslint-plugin-import: 2.22.0
@@ -50,6 +52,7 @@ importers:
   packages/gatsby:
     dependencies:
       '@app/example-packages': 'link:../example-packages'
+      '@app/gatsby-plugin-codesandbox': 'link:../gatsby-plugin-codesandbox'
       '@app/gatsby-transformer-file-content': 'link:../gatsby-transformer-file-content'
       '@mdx-js/mdx': 1.6.16
       '@mdx-js/react': 1.6.16_react@16.13.1
@@ -61,6 +64,10 @@ importers:
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
     devDependencies:
+      '@babel/core': 7.11.6
+      '@babel/preset-env': 7.11.5_@babel+core@7.11.6
+      '@babel/preset-typescript': 7.10.4_@babel+core@7.11.6
+      '@babel/register': 7.11.5_@babel+core@7.11.6
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
@@ -68,7 +75,12 @@ importers:
       typescript: 4.0.2
     specifiers:
       '@app/example-packages': 'workspace:*'
+      '@app/gatsby-plugin-codesandbox': 'workspace:*'
       '@app/gatsby-transformer-file-content': 'workspace:*'
+      '@babel/core': 7.11.6
+      '@babel/preset-env': 7.11.5
+      '@babel/preset-typescript': 7.10.4
+      '@babel/register': 7.11.5
       '@mdx-js/mdx': 1.6.16
       '@mdx-js/react': 1.6.16
       '@types/node': 14.6.3
@@ -82,6 +94,24 @@ importers:
       nodemon: 2.0.4
       react: 16.13.1
       react-dom: 16.13.1
+      typescript: 4.0.2
+  packages/gatsby-plugin-codesandbox:
+    dependencies:
+      node-fetch: 2.6.1
+    devDependencies:
+      '@types/node-fetch': 2.5.7
+      gatsby: 2.24.53_gatsby@2.24.53+typescript@4.0.2
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 4.0.2
+    specifiers:
+      '@types/node-fetch': 2.5.7
+      gatsby: 2.24.53
+      node-fetch: 2.6.1
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
       typescript: 4.0.2
   packages/gatsby-transformer-file-content:
     devDependencies:
@@ -1131,6 +1161,19 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-SdYnvGPv+bLlwkF2VkJnaX/ni1sMNetcGI1+nThF1gyv6Ph8Qucc4ZZAjM5yZcE/AKRXIOTZz7eSRDWOEjPyRQ==
+  /@babel/register/7.11.5_@babel+core@7.11.6:
+    dependencies:
+      '@babel/core': 7.11.6
+      find-cache-dir: 2.1.0
+      lodash: 4.17.20
+      make-dir: 2.1.0
+      pirates: 4.0.1
+      source-map-support: 0.5.19
+    dev: true
+    peerDependencies:
+      '@babel/core': ^7.0.0-0
+    resolution:
+      integrity: sha512-CAml0ioKX+kOAvBQDHa/+t1fgOt3qkTIz0TrRtRAT6XY0m5qYZXR85k6/sLCNPMGhYDlCFHCYuU0ybTJbvlC6w==
   /@babel/runtime-corejs3/7.11.2:
     dependencies:
       core-js-pure: 3.6.5
@@ -2196,7 +2239,7 @@ packages:
     dependencies:
       '@types/events': 3.0.0
       '@types/minimatch': 3.0.3
-      '@types/node': 14.6.3
+      '@types/node': 14.6.4
     resolution:
       integrity: sha512-KEzSKuP2+3oOjYYjujue6Z3Yqis5HKA1BsIC+jZ1v3lrRNdsqyNNtX0rQf6LSuI4DJJ2z5UV//zBZCcvM0xikg==
   /@types/glob/7.1.3:
@@ -2221,7 +2264,7 @@ packages:
       integrity: sha512-2xtoL22/3Mv6a70i4+4RB7VgbDDORoWwjcqeNysojZA0R7NK17RbY5Gof/2QiFfJgX+KkWghbwJ+d/2SB8Ndzg==
   /@types/http-proxy/1.17.4:
     dependencies:
-      '@types/node': 14.6.3
+      '@types/node': 14.6.4
     resolution:
       integrity: sha512-IrSHl2u6AWXduUaDLqYpt45tLVCtYv7o4Z0s1KghBCDgIIS9oW5K1H8mZG/A2CfeLdEa7rTd1ACOiHBc1EMT2Q==
   /@types/istanbul-lib-coverage/2.0.3:
@@ -2275,12 +2318,12 @@ packages:
       integrity: sha512-tHq6qdbT9U1IRSGf14CL0pUlULksvY9OZ+5eEgl1N7t+OA3tGvNpxJCzuKQlsNgCVwbAs670L1vcVQi8j9HjnA==
   /@types/mkdirp/0.5.2:
     dependencies:
-      '@types/node': 14.6.3
+      '@types/node': 14.6.4
     resolution:
       integrity: sha512-U5icWpv7YnZYGsN4/cmh3WD2onMY0aJIiTE6+51TwJCttdHvtCYmkBNOobHlXwrJRL0nkH9jH4kD+1FAdMN4Tg==
   /@types/node-fetch/2.5.7:
     dependencies:
-      '@types/node': 14.6.3
+      '@types/node': 14.6.4
       form-data: 3.0.0
     resolution:
       integrity: sha512-o2WVNf5UhWRkxlf6eq+jMZDu7kjgpgJfl4xVNlvryc95O/6F2ld8ztKX+qu+Rjyet93WAWm5LjeX9H5FGkODvw==
@@ -2333,8 +2376,8 @@ packages:
       integrity: sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
   /@types/rimraf/2.0.4:
     dependencies:
-      '@types/glob': 5.0.36
-      '@types/node': 14.6.3
+      '@types/glob': 7.1.3
+      '@types/node': 14.6.4
     resolution:
       integrity: sha512-8gBudvllD2A/c0CcEX/BivIDorHFt5UI5m46TsNj8DjWCCTTZT74kEe4g+QsY7P/B9WdO98d82zZgXO/RQzu2Q==
   /@types/stack-utils/1.0.1:
@@ -5063,13 +5106,6 @@ packages:
     dev: false
     resolution:
       integrity: sha1-NNzzf1Co6TwrO8qLt/uRVcfaO+4=
-  /dot-prop/5.2.0:
-    dependencies:
-      is-obj: 2.0.0
-    engines:
-      node: '>=8'
-    resolution:
-      integrity: sha512-uEUyaDKoSQ1M4Oq8l45hSE26SnTxL6snNnqvK/VWx5wJhmff5z0FUVJDKDanor/6w3kzE3i7XZOk+7wC0EXr1A==
   /dot-prop/5.3.0:
     dependencies:
       is-obj: 2.0.0
@@ -10230,6 +10266,12 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
+  /node-fetch/2.6.1:
+    dev: false
+    engines:
+      node: 4.x || >=6.0.0
+    resolution:
+      integrity: sha512-V4aYg89jEoVRxRb2fJdAg8FHvI7cEyYdVAh94HH0UIK8oJxUfkjlDQN9RbMx+bEjP7+ggMiFRprSti032Oipxw==
   /node-forge/0.9.0:
     engines:
       node: '>= 4.5.0'
@@ -11397,7 +11439,7 @@ packages:
       integrity: sha512-EEVig1Q2QJ4ELpJXMZR8Vt5DQx8/mo+dGWSR7vWXqcob2gQLyQGsionYcGKATXvQzMPn6DSN1vTN7yFximdIAg==
   /postcss-selector-parser/3.1.2:
     dependencies:
-      dot-prop: 5.2.0
+      dot-prop: 5.3.0
       indexes-of: 1.0.1
       uniq: 1.0.1
     engines:

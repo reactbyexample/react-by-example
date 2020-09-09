@@ -31,5 +31,7 @@ module.exports = {
       },
     },
     { resolve: 'gatsby-transformer-json' },
+    { resolve: '@app/gatsby-plugin-codesandbox' },
+    { resolve: 'example-packages-to-codesandbox' },
   ],
 }
