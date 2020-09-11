@@ -1,0 +1,9 @@
+{
+  "watch": ["node_modules/@app"],
+  "ext": "*",
+  "ignoreRoot": [],
+  "ignore": [],
+  "watchOptions": {
+    "ignored": ["**/@app/*/node_modules/**"]
+  }
+}

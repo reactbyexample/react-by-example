@@ -3,11 +3,16 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon -x \"run-s build\"",
+    "start": "run-s watch",
     "build": "run-s build:*",
-    "build:clean": "rimraf dist example-packages",
+    "build:clean": "rimraf dist",
     "build:tsc": "tsc -p ./tsconfig.json",
-    "build:build": "node cli node_modules/@app/templates node_modules/@app/examples example-packages"
+    "build:example-packages": "run-s build:example-packages:*",
+    "build:example-packages:clean": "rimraf example-packages",
+    "build:example-packages:cli": "node cli node_modules/@app/templates node_modules/@app/examples example-packages",
+    "watch": "run-p watch:*",
+    "watch:build": "nodemon --config nodemon.build.json -x \"run-s build\"",
+    "watch:example-packages": "nodemon --config nodemon.example-packages.json -x \"run-s build:example-packages\""
   },
   "devDependencies": {
     "@app/examples": "workspace:*",

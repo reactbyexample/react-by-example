@@ -1,6 +1,0 @@
-{
-  "watch": ["src", "node_modules/@app"],
-  "ext": "*",
-  "ignoreRoot": [],
-  "ignore": ["**/node_modules/!(@app)/**"]
-}
