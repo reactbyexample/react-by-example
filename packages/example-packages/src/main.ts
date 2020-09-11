@@ -1,6 +1,6 @@
 import { inheritFiles, Project } from '@app/inherit-files'
 import { promises } from 'fs'
-import { resolve } from 'path'
+import { dirname, resolve } from 'path'
 import { readFilesRecursively } from './read-files-recursively'
 import { subDirectories } from './sub-directories'
 
@@ -36,6 +36,16 @@ export const main = async (
       resolve(outputDirectory, `${example}.json`),
       JSON.stringify(output, null, '  '),
     )
+
+    const exampleOutputDirectory = resolve(outputDirectory, example)
+    await mkdir(exampleOutputDirectory, { recursive: true })
+    const writeEachFile = async ([name, value]: [string, string]) => {
+      await mkdir(resolve(exampleOutputDirectory, dirname(name)), {
+        recursive: true,
+      })
+      await writeFile(resolve(exampleOutputDirectory, name), value)
+    }
+    await Promise.all(Object.entries(project).map(writeEachFile))
   }
   await Promise.all(examples.map(forEachExample))
 }
