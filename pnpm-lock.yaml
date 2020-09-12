@@ -149,6 +149,32 @@ importers:
       typescript: 4.0.2
   packages/templates:
     specifiers: {}
+  packages/unified-filter:
+    dependencies:
+      unist-util-filter: 2.0.2
+    devDependencies:
+      '@types/jest': 26.0.13
+      '@types/unist': 2.0.3
+      jest: 26.4.2
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      remark: 12.0.1
+      rimraf: 3.0.2
+      ts-jest: 26.3.0_jest@26.4.2+typescript@4.0.2
+      typescript: 4.0.2
+      unified: 9.2.0
+    specifiers:
+      '@types/jest': 26.0.13
+      '@types/unist': 2.0.3
+      jest: 26.4.2
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      remark: 12.0.1
+      rimraf: 3.0.2
+      ts-jest: 26.3.0
+      typescript: 4.0.2
+      unified: 9.2.0
+      unist-util-filter: 2.0.2
   packages/unified-parse-yaml:
     dependencies:
       '@app/unist-util-visit-async': 'link:../unist-util-visit-async'
@@ -6336,6 +6362,10 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-LoQe6yDuUMDzQAEH8sgmh4Md6oZnc/7PjtwjNFSzveXqSHt6ka9fPBuso7IGf9Rz4uqnSnWiFH2B/zj24a5ReA==
+  /flatmap/0.0.3:
+    dev: false
+    resolution:
+      integrity: sha1-Hxik2TgVLUlZZfnJWNkjqy3WabQ=
   /flatted/2.0.2:
     resolution:
       integrity: sha512-r5wGx7YeOwNWNlCA0wQ86zKyDLMQr+/RB8xy74M4hTphfmjlijTSSXGuH8rnvKZnfT9i+75zmd8jcKdMR4O6jA==
@@ -12509,6 +12539,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-E6lMuoLIy2TyiokHprMjcWNJ5UxfGQjaMSMhV+f4idM625UjjK4j798+gPs5mfjzDE6vL0oFKVeZM6gZVSVrzQ==
+  /remark/12.0.1:
+    dependencies:
+      remark-parse: 8.0.3
+      remark-stringify: 8.1.1
+      unified: 9.2.0
+    dev: true
+    resolution:
+      integrity: sha512-gS7HDonkdIaHmmP/+shCPejCEEW+liMp/t/QwmF0Xt47Rpuhl32lLtDV1uKWvGoq+kxr5jSgg5oAIpGuyULjUw==
   /remove-trailing-separator/1.1.0:
     resolution:
       integrity: sha1-wkvOKig62tW8P1jg1IJJuSN52O8=
@@ -14253,6 +14291,13 @@ packages:
   /unist-builder/2.0.3:
     resolution:
       integrity: sha512-f98yt5pnlMWlzP539tPc4grGMsFaQQlP/vM396b00jngsiINumNmsY8rkXjfoi1c6QaM8nQ3vaGDuoKWbe/1Uw==
+  /unist-util-filter/2.0.2:
+    dependencies:
+      flatmap: 0.0.3
+      unist-util-is: 4.0.2
+    dev: false
+    resolution:
+      integrity: sha512-yHcR4YpvFzKx8EN9i2HhTORIR3zYC6YwsW6b2nuk8EI/3gps2YC008S+KJRyNuPViqScYQdrI67ceOryNL9EUQ==
   /unist-util-generated/1.1.5:
     resolution:
       integrity: sha512-1TC+NxQa4N9pNdayCYA1EGUOCAO0Le3fVp7Jzns6lnua/mYgwHo0tz5WUAfrdpNch1RZLHc61VZ1SDgrtNXLSw==

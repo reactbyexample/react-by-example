@@ -1,0 +1,10 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unifiedFilter should filter nodes "simple" 1`] = `
+"# Hello world!
+
+## Heading level 2
+
+> blockquote
+"
+`;
