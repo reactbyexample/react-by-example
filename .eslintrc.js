@@ -7,6 +7,7 @@ module.exports = {
       files: ['*.js'],
       extends: ['airbnb', 'prettier', 'prettier/react'],
       rules: {
+        'import/no-extraneous-dependencies': 'off',
         'no-restricted-syntax': 'off',
       },
     },
@@ -27,6 +28,7 @@ module.exports = {
       },
       rules: {
         'no-restricted-syntax': 'off',
+        'import/no-extraneous-dependencies': 'off',
         'import/prefer-default-export': 'off',
         'react/prop-types': 'off',
       },

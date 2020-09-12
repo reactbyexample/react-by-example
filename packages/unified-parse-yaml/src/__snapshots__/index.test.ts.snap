@@ -1,0 +1,47 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`unifiedParseYaml no filter should parse all values "simple" 1`] = `
+Array [
+  Array [
+    "\`\`\`yaml {parse}
+is: parsed
+\`\`\`",
+    Object {
+      "yaml": Object {
+        "is": "parsed",
+      },
+    },
+  ],
+  Array [
+    "\`\`\`yaml
+is-not: parsed
+\`\`\`",
+    Object {
+      "yaml": Object {
+        "is-not": "parsed",
+      },
+    },
+  ],
+  Array [
+    "Hello world!",
+    Object {
+      "yaml": "Hello world!",
+    },
+  ],
+]
+`;
+
+exports[`unifiedParseYaml with filter should parse filtered values "simple" 1`] = `
+Array [
+  Array [
+    "\`\`\`yaml {parse}
+is: parsed
+\`\`\`",
+    Object {
+      "yaml": Object {
+        "is": "parsed",
+      },
+    },
+  ],
+]
+`;
