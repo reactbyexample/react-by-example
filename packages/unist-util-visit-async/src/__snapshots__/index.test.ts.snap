@@ -1,0 +1,279 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`visit should visit all nodes simple 1`] = `
+Array [
+  Array [
+    "root",
+    "# Hello world!
+
+## Heading level 2
+
+I really like using Markdown.
+
+I think I'll use it to format all of my documents from now on.
+
+<p>I really like using Markdown.</p>
+
+<p>I think I'll use it to format all of my documents from now on.</p>
+
+I just love **bold text**.
+
+Italicized text is the _cat's meow_.
+
+This text is **_really important_**.
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+",
+    Array [],
+  ],
+  Array [
+    "heading",
+    "# Hello world!",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "heading",
+    "## Heading level 2",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "paragraph",
+    "I really like using Markdown.",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "paragraph",
+    "I think I'll use it to format all of my documents from now on.",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "html",
+    "<p>I really like using Markdown.</p>",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "html",
+    "<p>I think I'll use it to format all of my documents from now on.</p>",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "paragraph",
+    "I just love **bold text**.",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "paragraph",
+    "Italicized text is the _cat's meow_.",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "paragraph",
+    "This text is **_really important_**.",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "blockquote",
+    "> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.",
+    Array [
+      "root",
+    ],
+  ],
+  Array [
+    "text",
+    "Hello world!",
+    Array [
+      "root",
+      "heading",
+    ],
+  ],
+  Array [
+    "text",
+    "Heading level 2",
+    Array [
+      "root",
+      "heading",
+    ],
+  ],
+  Array [
+    "text",
+    "I really like using Markdown.",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    "I think I'll use it to format all of my documents from now on.",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    "I just love ",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "strong",
+    "**bold text**",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    ".",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    "Italicized text is the ",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "emphasis",
+    "_cat's meow_",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    ".",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    "This text is ",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "strong",
+    "**_really important_**",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    ".",
+    Array [
+      "root",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "paragraph",
+    "Dorothy followed her through many of the beautiful rooms in her castle.",
+    Array [
+      "root",
+      "blockquote",
+    ],
+  ],
+  Array [
+    "paragraph",
+    "The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.",
+    Array [
+      "root",
+      "blockquote",
+    ],
+  ],
+  Array [
+    "text",
+    "bold text",
+    Array [
+      "root",
+      "paragraph",
+      "strong",
+    ],
+  ],
+  Array [
+    "text",
+    "cat's meow",
+    Array [
+      "root",
+      "paragraph",
+      "emphasis",
+    ],
+  ],
+  Array [
+    "emphasis",
+    "_really important_",
+    Array [
+      "root",
+      "paragraph",
+      "strong",
+    ],
+  ],
+  Array [
+    "text",
+    "Dorothy followed her through many of the beautiful rooms in her castle.",
+    Array [
+      "root",
+      "blockquote",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    "The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.",
+    Array [
+      "root",
+      "blockquote",
+      "paragraph",
+    ],
+  ],
+  Array [
+    "text",
+    "really important",
+    Array [
+      "root",
+      "paragraph",
+      "strong",
+      "emphasis",
+    ],
+  ],
+]
+`;
