@@ -1,0 +1,12 @@
+{
+  "name": "@app/register-typescript",
+  "version": "1.0.0",
+  "private": true,
+  "types": "index.d.ts",
+  "dependencies": {
+    "@babel/core": "7.11.6",
+    "@babel/preset-env": "7.11.5",
+    "@babel/preset-typescript": "7.10.4",
+    "@babel/register": "7.11.5"
+  }
+}

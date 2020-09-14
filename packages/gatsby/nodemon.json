@@ -1,6 +1,6 @@
 {
-  "watch": ["./", "node_modules/@app"],
+  "watch": ["gatsby", "node_modules/@app"],
   "ignoreRoot": ["public", ".cache"],
   "ignore": ["**/node_modules/!(@app)/**"],
-  "ext": "js"
+  "ext": "js,ts"
 }

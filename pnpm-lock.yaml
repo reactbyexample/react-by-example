@@ -53,7 +53,9 @@ importers:
     dependencies:
       '@app/example-packages': 'link:../example-packages'
       '@app/gatsby-plugin-codesandbox': 'link:../gatsby-plugin-codesandbox'
-      '@app/gatsby-transformer-file-content': 'link:../gatsby-transformer-file-content'
+      '@app/gatsby-remark-lift': 'link:../gatsby-remark-lift'
+      '@app/unified-filter': 'link:../unified-filter'
+      '@app/unified-parse-yaml': 'link:../unified-parse-yaml'
       '@mdx-js/mdx': 1.6.16
       '@mdx-js/react': 1.6.16_react@16.13.1
       gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
@@ -64,10 +66,7 @@ importers:
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
     devDependencies:
-      '@babel/core': 7.11.6
-      '@babel/preset-env': 7.11.5_@babel+core@7.11.6
-      '@babel/preset-typescript': 7.10.4_@babel+core@7.11.6
-      '@babel/register': 7.11.5_@babel+core@7.11.6
+      '@app/register-typescript': 'link:../register-typescript'
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
@@ -76,11 +75,10 @@ importers:
     specifiers:
       '@app/example-packages': 'workspace:*'
       '@app/gatsby-plugin-codesandbox': 'workspace:*'
-      '@app/gatsby-transformer-file-content': 'workspace:*'
-      '@babel/core': 7.11.6
-      '@babel/preset-env': 7.11.5
-      '@babel/preset-typescript': 7.10.4
-      '@babel/register': 7.11.5
+      '@app/gatsby-remark-lift': 'workspace:*'
+      '@app/register-typescript': 'workspace:*'
+      '@app/unified-filter': 'workspace:*'
+      '@app/unified-parse-yaml': 'workspace:*'
       '@mdx-js/mdx': 1.6.16
       '@mdx-js/react': 1.6.16
       '@types/node': 14.6.3
@@ -113,6 +111,23 @@ importers:
       npm-run-all: 4.1.5
       rimraf: 3.0.2
       typescript: 4.0.2
+  packages/gatsby-remark-lift:
+    devDependencies:
+      '@types/unist': 2.0.3
+      gatsby: 2.24.53_gatsby@2.24.53+typescript@4.0.2
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 4.0.2
+      unified: 9.2.0
+    specifiers:
+      '@types/unist': 2.0.3
+      gatsby: 2.24.53
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      rimraf: 3.0.2
+      typescript: 4.0.2
+      unified: 9.2.0
   packages/gatsby-transformer-file-content:
     devDependencies:
       gatsby: 2.24.53_gatsby@2.24.53+typescript@4.0.2
@@ -147,6 +162,17 @@ importers:
       rimraf: 3.0.2
       ts-jest: 26.3.0
       typescript: 4.0.2
+  packages/register-typescript:
+    dependencies:
+      '@babel/core': 7.11.6
+      '@babel/preset-env': 7.11.5_@babel+core@7.11.6
+      '@babel/preset-typescript': 7.10.4_@babel+core@7.11.6
+      '@babel/register': 7.11.5_@babel+core@7.11.6
+    specifiers:
+      '@babel/core': 7.11.6
+      '@babel/preset-env': 7.11.5
+      '@babel/preset-typescript': 7.10.4
+      '@babel/register': 7.11.5
   packages/templates:
     specifiers: {}
   packages/unified-filter:
@@ -1256,7 +1282,7 @@ packages:
       make-dir: 2.1.0
       pirates: 4.0.1
       source-map-support: 0.5.19
-    dev: true
+    dev: false
     peerDependencies:
       '@babel/core': ^7.0.0-0
     resolution:
@@ -2250,10 +2276,10 @@ packages:
       node: '>=6'
     resolution:
       integrity: sha512-XIB2XbzHTN6ieIjfIMV9hlVcfPU26s2vafYWQcZHWXHOxiaRZYEDKEwdl129Zyg50+foYV2jCgtrqSA6qNuNSA==
-  /@turist/fetch/7.1.7_node-fetch@2.6.0:
+  /@turist/fetch/7.1.7_node-fetch@2.6.1:
     dependencies:
       '@types/node-fetch': 2.5.7
-      node-fetch: 2.6.0
+      node-fetch: 2.6.1
     peerDependencies:
       node-fetch: '2'
     resolution:
@@ -6538,7 +6564,7 @@ packages:
       is-valid-path: 0.1.1
       lodash: 4.17.20
       meant: 1.0.2
-      node-fetch: 2.6.0
+      node-fetch: 2.6.1
       opentracing: 0.14.4
       pretty-error: 2.1.1
       progress: 2.0.3
@@ -6590,7 +6616,7 @@ packages:
       is-valid-path: 0.1.1
       lodash: 4.17.20
       meant: 1.0.2
-      node-fetch: 2.6.0
+      node-fetch: 2.6.1
       opentracing: 0.14.4
       pretty-error: 2.1.1
       progress: 2.0.3
@@ -6945,7 +6971,7 @@ packages:
       lodash: 4.17.20
       mitt: 1.2.0
       mkdirp: 0.5.5
-      node-fetch: 2.6.0
+      node-fetch: 2.6.1
       normalize.css: 8.0.1
       pkg-dir: 4.2.0
       prettier: 2.1.1
@@ -7042,7 +7068,7 @@ packages:
       lodash: 4.17.20
       mitt: 1.2.0
       mkdirp: 0.5.5
-      node-fetch: 2.6.0
+      node-fetch: 2.6.1
       normalize.css: 8.0.1
       pkg-dir: 4.2.0
       prettier: 2.1.1
@@ -7110,7 +7136,7 @@ packages:
     dependencies:
       '@babel/code-frame': 7.10.4
       '@babel/runtime': 7.11.2
-      '@turist/fetch': 7.1.7_node-fetch@2.6.0
+      '@turist/fetch': 7.1.7_node-fetch@2.6.1
       '@turist/time': 0.0.1
       async-retry-ng: 2.0.1
       boxen: 4.2.0
@@ -7121,7 +7147,7 @@ packages:
       git-up: 4.0.2
       is-docker: 2.1.1
       lodash: 4.17.20
-      node-fetch: 2.6.0
+      node-fetch: 2.6.1
       uuid: 8.3.0
     engines:
       node: '>=10.13.0'
@@ -10356,13 +10382,7 @@ packages:
       node: 4.x || >=6.0.0
     resolution:
       integrity: sha1-q4hOjn5X44qUR1POxwb3iNF2i7U=
-  /node-fetch/2.6.0:
-    engines:
-      node: 4.x || >=6.0.0
-    resolution:
-      integrity: sha512-8dG4H5ujfvFiqDmVu9fQ5bOHUC15JMjMY/Zumv26oOvvVJjM67KF8koCWIabKQ1GJIa9r2mMZscBq/TbdOcmNA==
   /node-fetch/2.6.1:
-    dev: false
     engines:
       node: 4.x || >=6.0.0
     resolution:
@@ -10404,7 +10424,6 @@ packages:
     resolution:
       integrity: sha512-h/zcD8H9kaDZ9ALUWwlBUDo6TKF8a7qBSCSEGfjTVIYeqsioSKaAX+BN7NgiMGp6iSIXZ3PxgCu8KS3b71YK5Q==
   /node-modules-regexp/1.0.0:
-    dev: true
     engines:
       node: '>=0.10.0'
     resolution:
@@ -11204,7 +11223,6 @@ packages:
   /pirates/4.0.1:
     dependencies:
       node-modules-regexp: 1.0.0
-    dev: true
     engines:
       node: '>= 6'
     resolution:
