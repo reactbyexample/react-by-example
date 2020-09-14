@@ -22,7 +22,7 @@ describe('remarkInjectCodeBlock', () => {
 
   beforeEach(() => {
     processor = remark().use(remarkInjectCodeBlock, {
-      resolve: async ({ type, url }): Promise<Resolved> => {
+      async resolve({ type, url }): Promise<Resolved> {
         if (type !== 'image') return undefined
         if (typeof url !== 'string') return undefined
 
