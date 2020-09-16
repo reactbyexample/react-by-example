@@ -1,16 +1,20 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`remarkInjectCodeBlock should inject code blocks "simple" 1`] = `
+exports[`remarkInject should inject nodes "simple" 1`] = `
 "# Hello world!
 
-## Heading level 2
+## Heading [level](https://example.com/level)_level_ 2
 
 \`\`\`tsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
+
 \`\`\`![](@app/example-packages/example-packages/hello-world/src/index.tsx)
+
+hello link [injector](https://example.com/injector)_injector_
+
 \`\`\`html
 <!DOCTYPE html>
 <html lang=\\"en\\">
@@ -24,6 +28,7 @@ ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
     <div id=\\"root\\"></div>
   </body>
 </html>
+
 \`\`\`![](@app/example-packages/example-packages/simple-clock/public/index.html)
 "
 `;

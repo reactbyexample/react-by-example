@@ -1,7 +1,6 @@
 import { CodesandboxNode } from '@app/gatsby-plugin-codesandbox'
 import { Options as LiftOptions } from '@app/gatsby-remark-lift'
-import remarkInjectCodeBlock from '@app/remark-inject-code-block'
-import remarkInjectLink from '@app/remark-inject-link'
+import remarkInject from '@app/remark-inject'
 import unifiedFilter from '@app/unified-filter'
 import unifiedParseYaml from '@app/unified-parse-yaml'
 import { extname } from 'path'
@@ -18,42 +17,48 @@ const useLift = <O>(
   },
 })
 
+const normalizeExampleYaml = (yaml: unknown): Required<ExampleYaml> => {
+  const {
+    project,
+    module = 'src/example.tsx',
+    code = true,
+  } = yaml as ExampleYaml
+  return { project, module, code }
+}
+
 export const gatsbyRemarkPlugins = [
   useLift(unifiedParseYaml, () => ({
     filter: ({ type, lang, meta }) => {
       return type === 'code' && lang === 'yaml' && meta === '{example}'
     },
   })),
-  useLift(remarkInjectCodeBlock, ({ getNodesByType }) => ({
-    resolve({ data }) {
-      if (!(data && data.yaml)) return undefined
-      const {
-        project,
-        module = 'src/example.tsx',
-        code = true,
-      } = data.yaml as ExampleYaml
+  useLift(remarkInject(), ({ getNodesByType }) => ({
+    visitor({ node: { data }, inject }) {
+      if (!(data && data.yaml)) return inject.nothing()
 
-      if (!code) return undefined
+      const { project, module, code } = normalizeExampleYaml(data.yaml)
+
+      if (!code) return inject.nothing()
 
       const codesandboxes = getNodesByType('Codesandbox') as CodesandboxNode[]
       const [codesandbox] = codesandboxes.filter(({ name }) => name === project)
       const [file] = codesandbox.files.filter(({ name }) => name === module)
 
-      return { code: file.value, lang: extname(file.name).slice(1) }
+      return inject.code(file.value, extname(file.name).slice(1))
     },
   })),
-  useLift(remarkInjectLink, ({ getNodesByType }) => ({
-    resolve({ data }) {
-      if (!(data && data.yaml)) return undefined
-      const { project } = data.yaml as ExampleYaml
+  useLift(remarkInject(), ({ getNodesByType }) => ({
+    visitor({ node: { data }, inject }) {
+      if (!(data && data.yaml)) return inject.nothing()
+      const { project, module } = normalizeExampleYaml(data.yaml)
 
       const codesandboxes = getNodesByType('Codesandbox') as CodesandboxNode[]
       const [codesandbox] = codesandboxes.filter(({ name }) => name === project)
 
-      return {
-        text: 'CodeSandbox',
-        url: `https://codesandbox.io/s/${codesandbox.sandboxId}`,
-      }
+      return inject.link(
+        'CodeSandbox',
+        `https://codesandbox.io/s/${codesandbox.sandboxId}?module=/${module}`,
+      )
     },
   })),
   useLift(unifiedFilter, () => ({

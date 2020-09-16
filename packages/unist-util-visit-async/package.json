@@ -12,8 +12,6 @@
     "test:watch": "jest --watch"
   },
   "devDependencies": {
-    "@app/examples": "workspace:*",
-    "@app/templates": "workspace:*",
     "@types/jest": "26.0.13",
     "@types/unist": "2.0.3",
     "jest": "26.4.2",
