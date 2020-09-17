@@ -12,7 +12,7 @@ const visitWithParents = async (
   const forEachChild = async (child: Node) => {
     await visitWithParents(child, visitor, [...parents, node])
   }
-  await Promise.all(node.children.map(forEachChild))
+  await Promise.all([...node.children].map(forEachChild))
 }
 
 export const visit = (

@@ -35,8 +35,9 @@ const lift = async <T>(
         Object.assign(markdownAST, transformed)
       }
     }
-  } catch {
-    // noop
+  } catch (e) {
+    // eslint-disable-next-line no-console
+    console.error(e)
   }
 }
 

@@ -277,3 +277,50 @@ This text is **_really important_**.
   ],
 ]
 `;
+
+exports[`visit should visit all nodes simple 2`] = `
+"> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+
+This text is **_really important_**.
+
+Italicized text is the _cat's meow_.
+
+I just love **bold text**.
+
+<p>I think I'll use it to format all of my documents from now on.</p>
+
+<p>I really like using Markdown.</p>
+
+I think I'll use it to format all of my documents from now on.
+
+I really like using Markdown.
+
+## Heading level 2
+
+# Hello world!
+
+# Hello world!
+
+## Heading level 2
+
+I really like using Markdown.
+
+I think I'll use it to format all of my documents from now on.
+
+<p>I really like using Markdown.</p>
+
+<p>I think I'll use it to format all of my documents from now on.</p>
+
+I just love **bold text**.
+
+Italicized text is the _cat's meow_.
+
+This text is **_really important_**.
+
+> Dorothy followed her through many of the beautiful rooms in her castle.
+>
+> The Witch bade her clean the pots and kettles and sweep the floor and keep the fire fed with wood.
+"
+`;

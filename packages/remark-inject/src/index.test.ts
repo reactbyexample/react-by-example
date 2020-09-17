@@ -2,6 +2,7 @@ import { promises } from 'fs'
 import { Emphasis, Image, Text } from 'mdast'
 import { extname } from 'path'
 import remark from 'remark'
+import remarkMdx from 'remark-mdx'
 import { Processor } from 'unified'
 import remarkInject from '.'
 
@@ -26,6 +27,7 @@ describe('remarkInject', () => {
 
   beforeEach(() => {
     processor = remark()
+      .use(remarkMdx)
       .use(remarkInject(), {
         visitor({ node, inject }) {
           const { children, type } = node as Emphasis
@@ -37,7 +39,7 @@ describe('remarkInject', () => {
         },
       })
       .use(remarkInject(), {
-        async visitor({ node, inject }) {
+        async visitor({ node, inject, create }) {
           const { type, url } = node as Image
 
           if (type !== 'image') return inject.nothing()
@@ -47,7 +49,14 @@ describe('remarkInject', () => {
           const lang = extname(path).slice(1)
           const code = await readFile(path, 'utf8')
 
-          return inject.code(code, lang)
+          const result = [...inject.code(code, lang)]
+
+          if (lang === 'tsx') {
+            const identifier = create.defaultImport(url)
+            result.push(...inject.jsx(identifier, { some: 'props' }))
+          }
+
+          return result
         },
       })
   })

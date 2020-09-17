@@ -17,11 +17,13 @@
   "devDependencies": {
     "@app/example-packages": "workspace:*",
     "@types/jest": "26.0.13",
+    "@types/remark-mdx": "workspace:*",
     "@types/unist": "2.0.3",
     "jest": "26.4.2",
     "nodemon": "2.0.4",
     "npm-run-all": "4.1.5",
     "remark": "12.0.1",
+    "remark-mdx": "1.6.17",
     "rimraf": "3.0.2",
     "ts-jest": "26.3.0",
     "typescript": "4.0.2",

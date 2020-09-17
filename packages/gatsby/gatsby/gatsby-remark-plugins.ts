@@ -22,15 +22,15 @@ const normalizeExampleYaml = (yaml: unknown): Required<ExampleYaml> => {
     project,
     module = 'src/example.tsx',
     code = true,
+    render = true,
   } = yaml as ExampleYaml
-  return { project, module, code }
+  return { project, module, code, render }
 }
 
 export const gatsbyRemarkPlugins = [
   useLift(unifiedParseYaml, () => ({
-    filter: ({ type, lang, meta }) => {
-      return type === 'code' && lang === 'yaml' && meta === '{example}'
-    },
+    filter: ({ type, lang, meta }) =>
+      type === 'code' && lang === 'yaml' && meta === '{example}',
   })),
   useLift(remarkInject(), ({ getNodesByType }) => ({
     visitor({ node: { data }, inject }) {
@@ -42,9 +42,29 @@ export const gatsbyRemarkPlugins = [
 
       const codesandboxes = getNodesByType('Codesandbox') as CodesandboxNode[]
       const [codesandbox] = codesandboxes.filter(({ name }) => name === project)
+      if (!codesandbox) return inject.nothing()
+
       const [file] = codesandbox.files.filter(({ name }) => name === module)
+      if (!file) return inject.nothing()
 
       return inject.code(file.value, extname(file.name).slice(1))
+    },
+  })),
+  useLift(remarkInject(), () => ({
+    visitor({ node, inject, create }) {
+      const { data } = node
+      if (!(data && data.yaml)) return inject.nothing()
+
+      const { project, module, render } = normalizeExampleYaml(data.yaml)
+
+      if (!render) return inject.nothing()
+
+      const importedModule = require.resolve(
+        `@app/example-packages/example-packages/${project}/${module}`,
+      )
+      const identifier = create.defaultImport(importedModule)
+
+      return inject.jsx(identifier)
     },
   })),
   useLift(remarkInject(), ({ getNodesByType }) => ({
@@ -54,6 +74,7 @@ export const gatsbyRemarkPlugins = [
 
       const codesandboxes = getNodesByType('Codesandbox') as CodesandboxNode[]
       const [codesandbox] = codesandboxes.filter(({ name }) => name === project)
+      if (!codesandbox) return inject.nothing()
 
       return inject.link(
         'CodeSandbox',
@@ -62,8 +83,6 @@ export const gatsbyRemarkPlugins = [
     },
   })),
   useLift(unifiedFilter, () => ({
-    filter: ({ data }) => {
-      return !(data && data.yaml)
-    },
+    filter: ({ data }) => !(data && data.yaml),
   })),
 ]

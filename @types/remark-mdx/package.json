@@ -1,0 +1,10 @@
+{
+  "name": "@types/remark-mdx",
+  "version": "1.0.0",
+  "private": true,
+  "main": "",
+  "types": "index.d.ts",
+  "dependencies": {
+    "unified": "9.2.0"
+  }
+}

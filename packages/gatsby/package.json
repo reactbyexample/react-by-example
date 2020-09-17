@@ -3,7 +3,7 @@
   "version": "1.0.0",
   "private": true,
   "scripts": {
-    "start": "nodemon -x \"npm run develop\"",
+    "start": "nodemon -x \"run-s clean develop\"",
     "develop": "gatsby develop",
     "build": "gatsby build",
     "serve": "gatsby serve",
@@ -32,6 +32,7 @@
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
     "nodemon": "2.0.4",
+    "npm-run-all": "4.1.5",
     "typescript": "4.0.2"
   }
 }

@@ -1,6 +1,5 @@
-import remarkParse from 'remark-parse'
-import remarkStringify from 'remark-stringify'
-import unified, { Processor } from 'unified'
+import remark from 'remark'
+import { Processor } from 'unified'
 import { Node } from 'unist'
 import { visit } from '.'
 
@@ -37,23 +36,29 @@ describe('visit', () => {
   beforeEach(() => {
     spy.mockReset()
 
-    const plugin = () => (node: Node) => visit(node, spy)
+    const plugin = () => (node: Node) =>
+      visit(node, (child, parents) => {
+        spy(
+          child.type,
+          processor.stringify(child),
+          parents.map((p) => p.type),
+        )
 
-    processor = unified().use(remarkParse).use(plugin).use(remarkStringify)
+        const [lastParent] = parents.slice(-1)
+        if (lastParent && lastParent.type === 'root') {
+          lastParent.children.unshift({ ...child })
+        }
+      })
+
+    processor = remark().use(plugin)
   })
 
   it.each(Object.entries(fixtures))(
     'should visit all nodes %s',
     async (_name, markdown) => {
-      const node = processor.parse(markdown)
-      await processor.run(node)
-      expect(
-        spy.mock.calls.map(([n, ps]: [Node, Node[]]) => [
-          n.type,
-          processor.stringify(n),
-          ps.map((p) => p.type),
-        ]),
-      ).toMatchSnapshot()
+      const result = await processor.process(markdown)
+      expect(spy.mock.calls).toMatchSnapshot()
+      expect(result.toString()).toMatchSnapshot()
     },
   )
 })
