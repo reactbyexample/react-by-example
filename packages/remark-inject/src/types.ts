@@ -13,6 +13,7 @@ export interface VisitorArgs {
     link(text: string, url: string): Nodes
     code(content: string, lang: string): Nodes
     jsx(identifier: ImportIdentifier, props?: Record<string, unknown>): Nodes
+    fragment(identifier: ImportIdentifier): Nodes
   }
   create: {
     defaultImport(target: string): ImportIdentifier

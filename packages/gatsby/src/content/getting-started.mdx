@@ -1,0 +1,73 @@
+# Getting started
+
+## What's React?
+
+- > a JavaScript library for building user interfaces
+  >
+  > -- [React docs](https://reactjs.org/)
+- declarative
+  - declare the view, React does the rest
+- component-based
+  - helps with encapsulation
+- learn once, write anywhere
+  - mobile/desktop apps with react native
+- open source / MIT
+
+## Why React?
+
+- pros:
+  - easy to learn
+  - very popular (249311 SO questions tagged react, 13591 commits)
+  - many ready made component libraries ([material], [bootstrap], etc...)
+  - typed templates (with typescript)
+  - relatively small bundle size (39.39 KB gzip)
+- cons:
+  - batteries not included
+  - unopinionated
+  - only 1-way data binding
+
+[material]: https://material-ui.com/
+[bootstrap]: https://react-bootstrap.github.io/
+
+## Start a New App
+
+- use [`create-react-app`](https://create-react-app.dev/) to start a new app
+
+```sh
+$ npx create-react-app my-awesome-react-app --template typescript
+$ cd my-awesome-react-app
+$ npm start
+```
+
+## Hello World
+
+- React just takes a bit of "HTML" and renders it somewhere in DOM
+
+```yaml {example}
+project: hello-world
+module: src/index.tsx
+render: src/render.tsx
+```
+
+## Current time
+
+- can interpolate values into "HTML"
+- "HTML" can be passed around as data
+
+```yaml {example}
+project: static-clock
+module: src/index.tsx
+render: src/render.tsx
+```
+
+## Clock
+
+- "HTML" can be dynamic
+
+```yaml {example}
+project: dynamic-clock
+module: src/index.tsx
+render: src/render.tsx
+```
+
+> this is a simple demo, please don't update using `setInterval`

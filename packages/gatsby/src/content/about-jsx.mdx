@@ -1,0 +1,85 @@
+# About JSX
+
+- "HTML" that you can write in javascript
+
+## JSX
+
+- > JSX is an XML-like syntax extension to ECMAScript without any defined semantics.
+  >
+  > -- [JSX spec](https://facebook.github.io/jsx/)
+- has to be transpiled to javascript
+- not coupled to React!
+- other implementations: [vue], [preact], [inferno], [stencil], [marko], etc...
+
+[vue]: https://vuejs.org/
+[preact]: https://preactjs.com/
+[inferno]: https://infernojs.org/
+[stencil]: https://stenciljs.com/
+[marko]: https://markojs.com/
+
+## Examples
+
+- examples of JSX and what it transpiles to under the hood
+
+### Simple
+
+- elements become calls to [`React.createElement`][create element]
+- type of element is the first argument
+- the subtree (aka. [children]) becomes the third argument
+
+[create element]: https://reactjs.org/docs/react-api.html#createelement
+[children]: https://reactjs.org/docs/jsx-in-depth.html#children-in-jsx
+
+```yaml {example}
+project: jsx-simple
+```
+
+### Props
+
+- attributes become key-value pairs in the second argument
+
+```yaml {example}
+project: jsx-props
+```
+
+### Prop types
+
+- props can be of any type, not just strings
+
+```yaml {example}
+project: jsx-prop-types
+```
+
+### Spread props
+
+- objects can be spread on elements
+- applies all keys in the object as props
+
+```yaml {example}
+project: jsx-props-spread
+```
+
+### Interpolate
+
+- values can be interpolated using `{value}`
+- usually renders as `String(value)`
+- `true`, `false`, `undefined`, `null` never render; allows for [short-circuit logic]
+- `<></>` is a [fragment]; allows for rendering multiple elements where one is expected
+
+[short-circuit logic]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#Short-circuit_evaluation
+[fragment]: https://reactjs.org/docs/fragments.html
+
+```yaml {example}
+project: jsx-interpolate
+```
+
+### Repeat
+
+- use `array.map` to "loop" over values
+- use the special [`key` prop][key prop] to distinguish elements in the array
+
+[key prop]: https://reactjs.org/docs/lists-and-keys.html
+
+```yaml {example}
+project: jsx-repeat
+```

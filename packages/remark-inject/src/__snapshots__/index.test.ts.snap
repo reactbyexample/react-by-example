@@ -31,6 +31,6 @@ hello link [injector](https://example.com/injector)_injector_
   </body>
 </html>
 
-\`\`\`![](@app/example-packages/example-packages/simple-clock/public/index.html)
+\`\`\`![](@app/example-packages/example-packages/static-clock/public/index.html)
 "
 `;

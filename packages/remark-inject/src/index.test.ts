@@ -18,7 +18,7 @@ const fixtures = {
 
 hello link _injector_
 
-![](@app/example-packages/example-packages/simple-clock/public/index.html)
+![](@app/example-packages/example-packages/static-clock/public/index.html)
 `,
 }
 

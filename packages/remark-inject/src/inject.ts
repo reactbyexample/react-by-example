@@ -29,4 +29,11 @@ const jsx: Inject['jsx'] = (identifier, props) => {
   ]
 }
 
-export const inject: Inject = { nothing, link, code, jsx }
+const fragment: Inject['fragment'] = (identifier) => [
+  {
+    type: 'jsx',
+    value: `<>{${identifier.identifier}}</>`,
+  },
+]
+
+export const inject: Inject = { nothing, link, code, jsx, fragment }

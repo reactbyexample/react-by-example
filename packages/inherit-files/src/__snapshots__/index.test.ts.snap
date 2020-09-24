@@ -7,35 +7,26 @@ import ReactDOM from 'react-dom'
 
 ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
 ",
+  "src/render.tsx": "import React from 'react'
+
+export default <h1>Hello world!</h1>
+",
 }
 `;
 
 exports[`inheritFiles fs should render project react 1`] = `
 Object {
-  "src/example.tsx": "import React, { FC, ReactElement } from 'react'
+  "src/example.tsx": "import React, { FC } from 'react'
 
 export const Simple: FC = () => <h1>Hello world!</h1>
 
-export default (): ReactElement => <Simple />
+export default <Simple />
 ",
   "src/index.tsx": "import React from 'react'
 import ReactDOM from 'react-dom'
-import Example from './example'
+import example from './example'
 
-ReactDOM.render(<Example />, document.getElementById('root'))
-",
-}
-`;
-
-exports[`inheritFiles fs should render project simple-clock 1`] = `
-Object {
-  "src/index.tsx": "import React from 'react'
-import ReactDOM from 'react-dom'
-
-const app = () => <div>the time is {new Date().toLocaleTimeString()}</div>
-setInterval(() => {
-  ReactDOM.render(app(), document.getElementById('root'))
-}, 1000)
+ReactDOM.render(<>{example}</>, document.getElementById('root'))
 ",
 }
 `;
@@ -46,6 +37,21 @@ Object {
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
+",
+}
+`;
+
+exports[`inheritFiles fs should render project static-clock 1`] = `
+Object {
+  "src/index.tsx": "import React from 'react'
+import ReactDOM from 'react-dom'
+
+const app = () => <div>the time is {new Date().toLocaleTimeString()}</div>
+ReactDOM.render(app(), document.getElementById('root'))
+",
+  "src/render.tsx": "import React from 'react'
+
+export default <div>the time is {new Date().toLocaleTimeString()}</div>
 ",
 }
 `;

@@ -107,7 +107,7 @@ describe('inheritFiles', () => {
       throw new Error()
     }
 
-    it.each(['simple-react', 'react', 'hello-world', 'simple-clock'])(
+    it.each(['simple-react', 'react', 'hello-world', 'static-clock'])(
       'should render project %s',
       async (id) => {
         const files = await inheritFiles(id, { resolveProject })

@@ -1,5 +1,5 @@
-import React, { FC, ReactElement } from 'react'
+import React, { FC } from 'react'
 
 export const Simple: FC = () => <h1>Hello world!</h1>
 
-export default (): ReactElement => <Simple />
+export default <Simple />

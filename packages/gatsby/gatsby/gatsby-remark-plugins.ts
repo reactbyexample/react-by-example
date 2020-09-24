@@ -59,12 +59,14 @@ export const gatsbyRemarkPlugins = [
 
       if (!render) return inject.nothing()
 
+      const renderedModuleOverride: string =
+        typeof render === 'string' ? render : module
       const importedModule = require.resolve(
-        `@app/example-packages/example-packages/${project}/${module}`,
+        `@app/example-packages/example-packages/${project}/${renderedModuleOverride}`,
       )
       const identifier = create.defaultImport(importedModule)
 
-      return inject.jsx(identifier)
+      return inject.fragment(identifier)
     },
   })),
   useLift(remarkInject(), ({ getNodesByType }) => ({
