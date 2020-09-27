@@ -23,11 +23,13 @@
     "gatsby-plugin-pnpm": "1.2.5",
     "gatsby-source-filesystem": "2.3.27",
     "gatsby-transformer-json": "2.4.2",
+    "gatsby-transformer-yaml": "2.4.12",
     "react": "16.13.1",
     "react-dom": "16.13.1"
   },
   "devDependencies": {
     "@app/register-typescript": "workspace:*",
+    "@types/mdx-js__react": "workspace:*",
     "@types/node": "14.6.3",
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",

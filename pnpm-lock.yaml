@@ -28,6 +28,11 @@ importers:
       eslint-plugin-react-hooks: 4.1.0
       prettier: 2.1.1
       typescript: 4.0.2
+  '@types/mdx-js__react':
+    dependencies:
+      '@types/react': 16.8.24
+    specifiers:
+      '@types/react': 16.8.24
   '@types/remark-mdx':
     dependencies:
       unified: 9.2.0
@@ -69,10 +74,12 @@ importers:
       gatsby-plugin-pnpm: 1.2.5_gatsby@2.24.53
       gatsby-source-filesystem: 2.3.27_gatsby@2.24.53
       gatsby-transformer-json: 2.4.2_gatsby@2.24.53
+      gatsby-transformer-yaml: 2.4.12_gatsby@2.24.53
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
     devDependencies:
       '@app/register-typescript': 'link:../register-typescript'
+      '@types/mdx-js__react': 'link:../../@types/mdx-js__react'
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
@@ -89,6 +96,7 @@ importers:
       '@app/unified-parse-yaml': 'workspace:*'
       '@mdx-js/mdx': 1.6.16
       '@mdx-js/react': 1.6.16
+      '@types/mdx-js__react': 'workspace:*'
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
@@ -97,6 +105,7 @@ importers:
       gatsby-plugin-pnpm: 1.2.5
       gatsby-source-filesystem: 2.3.27
       gatsby-transformer-json: 2.4.2
+      gatsby-transformer-yaml: 2.4.12
       nodemon: 2.0.4
       npm-run-all: 4.1.5
       react: 16.13.1
@@ -2604,6 +2613,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
+  /@types/react/16.8.24:
+    dependencies:
+      '@types/prop-types': 15.7.3
+      csstype: 2.6.13
+    dev: false
+    resolution:
+      integrity: sha512-VpFHUoD37YNY2+lr/+c7qL/tZsIU/bKuskUF3tmGUArbxIcQdb5j3zvo4cuuzu2A6UaVmVn7sJ4PgWYNFEBGzg==
   /@types/react/16.9.49:
     dependencies:
       '@types/prop-types': 15.7.3
@@ -4821,6 +4837,10 @@ packages:
       nth-check: 1.0.2
     resolution:
       integrity: sha512-Dqk7LQKpwLoH3VovzZnkzegqNSuAziQyNZUcrdDM401iY+R5NkGBXGmtO05/yaXQziALuPogeG0b7UAgjnTJTQ==
+  /css-selector-parser/1.4.1:
+    dev: false
+    resolution:
+      integrity: sha512-HYPSb7y/Z7BNDCOrakL4raGO2zltZkbeXyAd6Tg9obzix6QhzxCotdBl6VT0Dv4vZfJGVz3WL/xaEI9Ly3ul0g==
   /css-selector-tokenizer/0.7.3:
     dependencies:
       cssesc: 3.0.0
@@ -7280,6 +7300,20 @@ packages:
       gatsby: ^2.0.15
     resolution:
       integrity: sha512-huOvWEIHRoKKg/nso3I/ScL+/9LuZdmO9eNmSLqMTVAo8NTtSPlgWSnlllqwdAez0OeuBT+3iCDj4FvbnXCkOA==
+  /gatsby-transformer-yaml/2.4.12_gatsby@2.24.53:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
+      js-yaml: 3.14.0
+      lodash: 4.17.20
+      unist-util-select: 1.5.0
+    dev: false
+    engines:
+      node: '>=10.13.0'
+    peerDependencies:
+      gatsby: ^2.0.15
+    resolution:
+      integrity: sha512-4gLQ/KzqmzlC8BayWxkQ9cptsNgIxkIVNqTomup/stQ4RFEJyACVSPfrjIsTAa6NALQKitEmeCeLnc0W7tENtg==
   /gatsby/2.24.53_a6144f335a406716ef1eb52b0d43a87d:
     dependencies:
       '@babel/code-frame': 7.10.4
@@ -14488,6 +14522,14 @@ packages:
       unist-util-is: 4.0.2
     resolution:
       integrity: sha512-HwwWyNHKkeg/eXRnE11IpzY8JT55JNM1YCwwU9YNCnfzk6s8GhPXrVBBZWiwLeATJbI7euvoGSzcy9M29UeW3g==
+  /unist-util-select/1.5.0:
+    dependencies:
+      css-selector-parser: 1.4.1
+      debug: 2.6.9
+      nth-check: 1.0.2
+    dev: false
+    resolution:
+      integrity: sha1-qTwr6MD2U4J4A7gTMa3sKqJM2TM=
   /unist-util-stringify-position/1.1.2:
     dev: false
     resolution:

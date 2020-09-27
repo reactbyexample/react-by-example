@@ -22,7 +22,19 @@ const gatsbyConfig = {
     },
     {
       resolve: 'gatsby-plugin-mdx',
-      options: { gatsbyRemarkPlugins },
+      options: {
+        gatsbyRemarkPlugins,
+        defaultLayouts: {
+          default: require.resolve('../src/layouts/default.tsx'),
+        },
+      },
+    },
+    {
+      resolve: 'gatsby-transformer-yaml',
+      options: {
+        typeName: ({ object }: { object: Record<string, unknown> }): string =>
+          `${Object.keys(object)[0]}Yaml`,
+      },
     },
     {
       resolve: 'gatsby-source-filesystem',

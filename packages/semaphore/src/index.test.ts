@@ -1,6 +1,6 @@
 import { Semaphore } from '.'
 
-const tick = () => new Promise((resolve) => process.nextTick(resolve))
+const tick = () => new Promise((resolve) => setTimeout(resolve, 0))
 
 class MockIO {
   private tasks: (() => void)[] = []
