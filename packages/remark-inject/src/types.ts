@@ -14,6 +14,7 @@ export interface VisitorArgs {
     code(content: string, lang: string): Nodes
     jsx(identifier: ImportIdentifier, props?: Record<string, unknown>): Nodes
     fragment(identifier: ImportIdentifier): Nodes
+    comment(value: string): Nodes
   }
   create: {
     defaultImport(target: string): ImportIdentifier

@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rehypeMdxWrapWithComponent should inject nodes "simple" 1`] = `
+"<><html><head parentName=\\"html\\"></head><body parentName=\\"html\\"><h1 parentName=\\"body\\">{\`Hello world!\`}</h1>{\`
+
+    \`}
+      <Foo
+        
+          bar={
+            <>{\`
+    \`}<a {...{\\"href\\":\\"/bar\\"}}>{\`bar\`}</a>{\`
+    \`}</>
+          }
+          
+          baz={
+            <>{\`
+    \`}<pre>{\`code\`}</pre>{\`
+    \`}</>
+          }
+          
+      />{\`
+
+
+    \`}
+      <Qux
+        
+      />{\`
+
+    \`}
+      <Quux
+        
+          quuz={
+            <>{\`
+    \`}<video {...{\\"src\\":\\"./video.mp4\\"}}></video>{\`
+    \`}<img {...{\\"src\\":\\"./img.jpg\\"}}></img>{\`
+    \`}<label {...{\\"htmlFor\\":\\"input\\"}}>{\`a label\`}</label>{\`
+    \`}<input {...{\\"id\\":\\"input\\"}}></input>{\`
+    \`}</>
+          }
+          
+      />{\`
+  \`}</body></html></>"
+`;

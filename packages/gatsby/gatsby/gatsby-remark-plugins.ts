@@ -32,6 +32,13 @@ export const gatsbyRemarkPlugins = [
     filter: ({ type, lang, meta }) =>
       type === 'code' && lang === 'yaml' && meta === '{example}',
   })),
+  useLift(remarkInject(), () => ({
+    visitor({ node: { data }, inject }) {
+      if (!(data && data.yaml)) return inject.nothing()
+
+      return inject.comment('component Example')
+    },
+  })),
   useLift(remarkInject(), ({ getNodesByType }) => ({
     visitor({ node: { data }, inject }) {
       if (!(data && data.yaml)) return inject.nothing()
@@ -47,7 +54,10 @@ export const gatsbyRemarkPlugins = [
       const [file] = codesandbox.files.filter(({ name }) => name === module)
       if (!file) return inject.nothing()
 
-      return inject.code(file.value, extname(file.name).slice(1))
+      return [
+        ...inject.comment('prop code'),
+        ...inject.code(file.value, extname(file.name).slice(1)),
+      ]
     },
   })),
   useLift(remarkInject(), () => ({
@@ -66,7 +76,7 @@ export const gatsbyRemarkPlugins = [
       )
       const identifier = create.defaultImport(importedModule)
 
-      return inject.fragment(identifier)
+      return [...inject.comment('prop render'), ...inject.fragment(identifier)]
     },
   })),
   useLift(remarkInject(), ({ getNodesByType }) => ({
@@ -78,10 +88,20 @@ export const gatsbyRemarkPlugins = [
       const [codesandbox] = codesandboxes.filter(({ name }) => name === project)
       if (!codesandbox) return inject.nothing()
 
-      return inject.link(
-        'CodeSandbox',
-        `https://codesandbox.io/s/${codesandbox.sandboxId}?module=/${module}`,
-      )
+      return [
+        ...inject.comment('prop link'),
+        ...inject.link(
+          'CodeSandbox',
+          `https://codesandbox.io/s/${codesandbox.sandboxId}?module=/${module}`,
+        ),
+      ]
+    },
+  })),
+  useLift(remarkInject(), () => ({
+    visitor({ node: { data }, inject }) {
+      if (!(data && data.yaml)) return inject.nothing()
+
+      return inject.comment('end')
     },
   })),
   useLift(unifiedFilter, () => ({

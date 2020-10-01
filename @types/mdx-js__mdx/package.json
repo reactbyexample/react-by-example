@@ -1,10 +1,10 @@
 {
-  "name": "@types/mdx-js__react",
+  "name": "@types/mdx-js__mdx",
   "version": "1.0.0",
   "private": true,
   "main": "",
   "types": "index.d.ts",
   "dependencies": {
-    "@types/react": "16.9.49"
+    "unified": "9.2.0"
   }
 }

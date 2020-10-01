@@ -1,3 +1,4 @@
+import rehypeMdxWrapWithComponent from '@app/rehype-mdx-wrap-with-component'
 import { resolve } from 'path'
 import { gatsbyRemarkPlugins } from './gatsby-remark-plugins'
 
@@ -24,6 +25,7 @@ const gatsbyConfig = {
       resolve: 'gatsby-plugin-mdx',
       options: {
         gatsbyRemarkPlugins,
+        rehypePlugins: [rehypeMdxWrapWithComponent],
         defaultLayouts: {
           default: require.resolve('../src/layouts/default.tsx'),
         },

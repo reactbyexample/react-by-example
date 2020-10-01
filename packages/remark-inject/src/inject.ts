@@ -36,4 +36,11 @@ const fragment: Inject['fragment'] = (identifier) => [
   },
 ]
 
-export const inject: Inject = { nothing, link, code, jsx, fragment }
+const comment: Inject['comment'] = (value) => [
+  {
+    type: 'html',
+    value: `<!--${value}-->`,
+  },
+]
+
+export const inject: Inject = { nothing, link, code, jsx, fragment, comment }

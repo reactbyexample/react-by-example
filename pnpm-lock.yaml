@@ -28,11 +28,16 @@ importers:
       eslint-plugin-react-hooks: 4.1.0
       prettier: 2.1.1
       typescript: 4.0.2
+  '@types/mdx-js__mdx':
+    dependencies:
+      unified: 9.2.0
+    specifiers:
+      unified: 9.2.0
   '@types/mdx-js__react':
     dependencies:
-      '@types/react': 16.8.24
+      '@types/react': 16.9.49
     specifiers:
-      '@types/react': 16.8.24
+      '@types/react': 16.9.49
   '@types/remark-mdx':
     dependencies:
       unified: 9.2.0
@@ -64,6 +69,7 @@ importers:
       '@app/example-packages': 'link:../example-packages'
       '@app/gatsby-plugin-codesandbox': 'link:../gatsby-plugin-codesandbox'
       '@app/gatsby-remark-lift': 'link:../gatsby-remark-lift'
+      '@app/rehype-mdx-wrap-with-component': 'link:../rehype-mdx-wrap-with-component'
       '@app/remark-inject': 'link:../remark-inject'
       '@app/unified-filter': 'link:../unified-filter'
       '@app/unified-parse-yaml': 'link:../unified-parse-yaml'
@@ -91,6 +97,7 @@ importers:
       '@app/gatsby-plugin-codesandbox': 'workspace:*'
       '@app/gatsby-remark-lift': 'workspace:*'
       '@app/register-typescript': 'workspace:*'
+      '@app/rehype-mdx-wrap-with-component': 'workspace:*'
       '@app/remark-inject': 'workspace:*'
       '@app/unified-filter': 'workspace:*'
       '@app/unified-parse-yaml': 'workspace:*'
@@ -193,6 +200,36 @@ importers:
       '@babel/preset-env': 7.11.5
       '@babel/preset-typescript': 7.10.4
       '@babel/register': 7.11.5
+  packages/rehype-mdx-wrap-with-component:
+    dependencies:
+      '@app/unist-util-visit-async': 'link:../unist-util-visit-async'
+    devDependencies:
+      '@mdx-js/mdx': 1.6.18
+      '@types/jest': 26.0.13
+      '@types/mdx-js__mdx': 'link:../../@types/mdx-js__mdx'
+      '@types/unist': 2.0.3
+      jest: 26.4.2
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      rehype: 11.0.0
+      rimraf: 3.0.2
+      ts-jest: 26.3.0_jest@26.4.2+typescript@4.0.2
+      typescript: 4.0.2
+      unified: 9.2.0
+    specifiers:
+      '@app/unist-util-visit-async': 'workspace:*'
+      '@mdx-js/mdx': 1.6.18
+      '@types/jest': 26.0.13
+      '@types/mdx-js__mdx': 'workspace:*'
+      '@types/unist': 2.0.3
+      jest: 26.4.2
+      nodemon: 2.0.4
+      npm-run-all: 4.1.5
+      rehype: 11.0.0
+      rimraf: 3.0.2
+      ts-jest: 26.3.0
+      typescript: 4.0.2
+      unified: 9.2.0
   packages/remark-inject:
     dependencies:
       '@app/unist-util-visit-async': 'link:../unist-util-visit-async'
@@ -1850,6 +1887,30 @@ packages:
     dev: false
     resolution:
       integrity: sha512-jnYyJ0aCafCIehn3GjYcibIapaLBgs3YkoenNQBPcPFyyuUty7B3B07OE+pMllhJ6YkWeP/R5Ax19x0nqTzgJw==
+  /@mdx-js/mdx/1.6.18:
+    dependencies:
+      '@babel/core': 7.11.6
+      '@babel/plugin-syntax-jsx': 7.10.4_@babel+core@7.11.6
+      '@babel/plugin-syntax-object-rest-spread': 7.8.3_@babel+core@7.11.6
+      '@mdx-js/util': 1.6.18
+      babel-plugin-apply-mdx-type-prop: 1.6.18_@babel+core@7.11.6
+      babel-plugin-extract-import-names: 1.6.18
+      camelcase-css: 2.0.1
+      detab: 2.0.3
+      hast-util-raw: 6.0.1
+      lodash.uniq: 4.5.0
+      mdast-util-to-hast: 9.1.1
+      remark-footnotes: 2.0.0
+      remark-mdx: 1.6.18
+      remark-parse: 8.0.3
+      remark-squeeze-paragraphs: 4.0.0
+      style-to-object: 0.3.0
+      unified: 9.2.0
+      unist-builder: 2.0.3
+      unist-util-visit: 2.0.3
+    dev: true
+    resolution:
+      integrity: sha512-RXtdFBP3cnf/RILx/ipp5TsSY1k75bYYmjorv7jTaPcHPQwhQdI6K4TrVUed/GL4f8zX5TN2QwO5g+3E/8RsXA==
   /@mdx-js/mdx/2.0.0-next.7:
     dependencies:
       '@babel/core': 7.10.5
@@ -1909,6 +1970,10 @@ packages:
     dev: true
     resolution:
       integrity: sha512-YFRBmsMyQdOQ2l48hn6DipCmSpz2ySQNrjOptA1RC3+YYC9NcOVvNu2fL0GhuN6Ji/XDJ7bXS+0BADyK6uhP8w==
+  /@mdx-js/util/1.6.18:
+    dev: true
+    resolution:
+      integrity: sha512-axMe+NoLF55OlXPbhRn4GNCHcL1f5W3V3c0dWzg05S9JXm3Ecpxzxaht3g3vTP0dcqBL/yh/xCvzK0ZpO54Eug==
   /@mdx-js/util/2.0.0-next.7:
     resolution:
       integrity: sha512-gsid2rh63B7/U1gPLXz9N5bfWR+n5GYxAcVCJDf8H+XfCC7NHsEX9ZHL9IdmXndOPT4ZTSW6V/jD8VeQdvnzLQ==
@@ -2613,13 +2678,6 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
-  /@types/react/16.8.24:
-    dependencies:
-      '@types/prop-types': 15.7.3
-      csstype: 2.6.13
-    dev: false
-    resolution:
-      integrity: sha512-VpFHUoD37YNY2+lr/+c7qL/tZsIU/bKuskUF3tmGUArbxIcQdb5j3zvo4cuuzu2A6UaVmVn7sJ4PgWYNFEBGzg==
   /@types/react/16.9.49:
     dependencies:
       '@types/prop-types': 15.7.3
@@ -3463,6 +3521,16 @@ packages:
       '@babel/core': ^7.10.5
     resolution:
       integrity: sha512-hjUd24Yhnr5NKtHpC2mcRBGjC6RUKGzSzjN9g5SdjT4WpL/JDlpmjyBf7vWsJJSXFvMIbzRyxF4lT9ukwOnj/w==
+  /babel-plugin-apply-mdx-type-prop/1.6.18_@babel+core@7.11.6:
+    dependencies:
+      '@babel/core': 7.11.6
+      '@babel/helper-plugin-utils': 7.10.4
+      '@mdx-js/util': 1.6.18
+    dev: true
+    peerDependencies:
+      '@babel/core': ^7.11.6
+    resolution:
+      integrity: sha512-lcpbj/GatKQp48jsJ8Os/ZXv381ZYFNKA27EPllcpFMpqiS696XkoK+xie/2GjzQSe5IIbo3srsXpd6/ik8PsQ==
   /babel-plugin-apply-mdx-type-prop/2.0.0-next.7_@babel+core@7.10.5:
     dependencies:
       '@babel/core': 7.10.5
@@ -3502,6 +3570,12 @@ packages:
     dev: false
     resolution:
       integrity: sha512-Da6Ra0sbA/1Iavli8LdMbTjyrsOPaxMm4lrKl8VJN4sJI5F64qy2EpLj3+5INLvNPfW4ddwpStbfP3Rf3jIgcw==
+  /babel-plugin-extract-import-names/1.6.18:
+    dependencies:
+      '@babel/helper-plugin-utils': 7.10.4
+    dev: true
+    resolution:
+      integrity: sha512-2EyZia3Ezl3UdhBcgDl6KZTNkYa2VhmAHHbJdhCroa1pZD/E56BulVsSKIhm/kza9agnabDR2VEHO+ZnqpfxbQ==
   /babel-plugin-extract-import-names/2.0.0-next.7:
     dependencies:
       '@babel/helper-plugin-utils': 7.10.4
@@ -8118,6 +8192,10 @@ packages:
       web-namespaces: 1.1.4
     resolution:
       integrity: sha512-3ZYnfKenbbkhhNdmOQqgH10vnvPivTdsOJCri+APn0Kty+nRkDHArnaX9Hiaf8H+Ig+vkNptL+SRY/6RwWJk1Q==
+  /hast-util-is-element/1.1.0:
+    dev: true
+    resolution:
+      integrity: sha512-oUmNua0bFbdrD/ELDSSEadRVtWZOf3iF6Lbv81naqsIV99RnSCieTbWuWCY8BAeEfKJTKl0gRdokv+dELutHGQ==
   /hast-util-parse-selector/2.2.4:
     resolution:
       integrity: sha512-gW3sxfynIvZApL4L07wryYF4+C9VvH3AUi7LAnVXV4MneGEgwOByXvFo18BgmTWnm7oHAe874jKbIB1YhHSIzA==
@@ -8135,6 +8213,36 @@ packages:
       zwitch: 1.0.5
     resolution:
       integrity: sha512-IQo6tv3bMMKxk53DljswliucCJOQxaZFCuKEJ7X80249dmJ1nA9LtOnnylsLlqTG98NjQ+iGcoLAYo9q5FRhRg==
+  /hast-util-raw/6.0.1:
+    dependencies:
+      '@types/hast': 2.3.1
+      hast-util-from-parse5: 6.0.0
+      hast-util-to-parse5: 6.0.0
+      html-void-elements: 1.0.5
+      parse5: 6.0.1
+      unist-util-position: 3.1.0
+      vfile: 4.2.0
+      web-namespaces: 1.1.4
+      xtend: 4.0.2
+      zwitch: 1.0.5
+    dev: true
+    resolution:
+      integrity: sha512-ZMuiYA+UF7BXBtsTBNcLBF5HzXzkyE6MLzJnL605LKE8GJylNjGc4jjxazAHUtcwT5/CEt6afRKViYB4X66dig==
+  /hast-util-to-html/7.1.1:
+    dependencies:
+      ccount: 1.0.5
+      comma-separated-tokens: 1.0.8
+      hast-util-is-element: 1.1.0
+      hast-util-whitespace: 1.0.4
+      html-void-elements: 1.0.5
+      property-information: 5.5.0
+      space-separated-tokens: 1.1.5
+      stringify-entities: 3.0.1
+      unist-util-is: 4.0.2
+      xtend: 4.0.2
+    dev: true
+    resolution:
+      integrity: sha512-Ujqj0hGuo3dIQKilkbauAv5teOqPvhaSLEgs1lgApFT0812e114KiffV8XfE4ttR8dRPqxNOIJOMu6SKOVOGlg==
   /hast-util-to-parse5/6.0.0:
     dependencies:
       hast-to-hyperscript: 9.0.0
@@ -8144,6 +8252,10 @@ packages:
       zwitch: 1.0.5
     resolution:
       integrity: sha512-Lu5m6Lgm/fWuz8eWnrKezHtVY83JeRGaNQ2kn9aJgqaxvVkFCZQBEhgodZUDUvoodgyROHDb3r5IxAEdl6suJQ==
+  /hast-util-whitespace/1.0.4:
+    dev: true
+    resolution:
+      integrity: sha512-I5GTdSfhYfAPNztx2xJRQpG8cuDSNt599/7YUn7Gx/WxNMsG+a835k97TDkFgk123cwjfwINaZknkKkphx/f2A==
   /hastscript/5.1.2:
     dependencies:
       comma-separated-tokens: 1.0.8
@@ -10181,6 +10293,19 @@ packages:
       unist-util-visit: 2.0.3
     resolution:
       integrity: sha512-Akl2Vi9y9cSdr19/Dfu58PVwifPXuFt1IrHe7l+Crme1KvgUT+5z+cHLVcQVGCiNTZZcdqjnuv9vPkGsqWytWA==
+  /mdast-util-to-hast/9.1.1:
+    dependencies:
+      '@types/mdast': 3.0.3
+      '@types/unist': 2.0.3
+      mdast-util-definitions: 3.0.1
+      mdurl: 1.0.1
+      unist-builder: 2.0.3
+      unist-util-generated: 1.1.5
+      unist-util-position: 3.1.0
+      unist-util-visit: 2.0.3
+    dev: true
+    resolution:
+      integrity: sha512-vpMWKFKM2mnle+YbNgDXxx95vv0CoLU0v/l3F5oFAG5DV7qwkZVWA206LsAdOnEVyf5vQcLnb3cWJywu7mUxsQ==
   /mdast-util-to-nlcst/3.2.3:
     dependencies:
       nlcst-to-string: 2.0.4
@@ -12554,9 +12679,34 @@ packages:
     hasBin: true
     resolution:
       integrity: sha512-64O87/dPDgfk8/RQqC4gkZoGyyWFIEUTTh80CU6CWuK5vkCGyekIx+oKcEIYtP/RAxSQltCZHCNu/mdd7fqlJw==
+  /rehype-parse/7.0.1:
+    dependencies:
+      hast-util-from-parse5: 6.0.0
+      parse5: 6.0.1
+    dev: true
+    resolution:
+      integrity: sha512-fOiR9a9xH+Le19i4fGzIEowAbwG7idy2Jzs4mOrFWBSJ0sNUgy0ev871dwWnbOo371SjgjG4pwzrbgSVrKxecw==
+  /rehype-stringify/8.0.0:
+    dependencies:
+      hast-util-to-html: 7.1.1
+    dev: true
+    resolution:
+      integrity: sha512-VkIs18G0pj2xklyllrPSvdShAV36Ff3yE5PUO9u36f6+2qJFnn22Z5gKwBOwgXviux4UC7K+/j13AnZfPICi/g==
+  /rehype/11.0.0:
+    dependencies:
+      rehype-parse: 7.0.1
+      rehype-stringify: 8.0.0
+      unified: 9.2.0
+    dev: true
+    resolution:
+      integrity: sha512-qXqRqiCFJD5CJ61CSJuNImTFrm3zVkOU9XywHDwrUuvWN74MWt72KJ67c5CM5x8g0vGcOkRVCrYj85vqkmHulQ==
   /remark-footnotes/1.0.0:
     resolution:
       integrity: sha512-X9Ncj4cj3/CIvLI2Z9IobHtVi8FVdUrdJkCNaL9kdX8ohfsi18DXHsCVd/A7ssARBdccdDb5ODnt62WuEWaM/g==
+  /remark-footnotes/2.0.0:
+    dev: true
+    resolution:
+      integrity: sha512-3Clt8ZMH75Ayjp9q4CorNeyjwIxHFcTkaektplKGl2A1jNGEUey8cKL0ZC5vJwfcD5GFGsNLImLG/NGzWIzoMQ==
   /remark-mdx/1.6.16:
     dependencies:
       '@babel/core': 7.10.5
@@ -12583,6 +12733,19 @@ packages:
     dev: true
     resolution:
       integrity: sha512-/Ldq6nsrtTg5gNLdKofbSLdRtzU2o6QYABGA4NQfvF8uOVW2bResMA5bRsrO0bytCg97ZhNdFvcnrUnVXqYI8g==
+  /remark-mdx/1.6.18:
+    dependencies:
+      '@babel/core': 7.11.6
+      '@babel/helper-plugin-utils': 7.10.4
+      '@babel/plugin-proposal-object-rest-spread': 7.11.0_@babel+core@7.11.6
+      '@babel/plugin-syntax-jsx': 7.10.4_@babel+core@7.11.6
+      '@mdx-js/util': 1.6.18
+      is-alphabetical: 1.0.4
+      remark-parse: 8.0.3
+      unified: 9.2.0
+    dev: true
+    resolution:
+      integrity: sha512-xNhjv4kJZ8L6RV68yK8fQ6XWlvSIFOE5VPmM7wMKSwkvwBu6tlUJy0gRF2WiZ4fPPOj6jpqlVB9QakipvZuEqg==
   /remark-mdx/2.0.0-next.7:
     dependencies:
       parse-entities: 2.0.0

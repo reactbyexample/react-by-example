@@ -49,11 +49,11 @@ describe('remarkInject', () => {
           const lang = extname(path).slice(1)
           const code = await readFile(path, 'utf8')
 
-          const result = [...inject.code(code, lang)]
+          const result = [...inject.comment(url), ...inject.code(code, lang)]
 
           if (lang === 'tsx') {
             const identifier = create.defaultImport(url)
-            result.push(...inject.jsx(identifier, { some: 'props' }))
+            result.push(...inject.fragment(identifier))
           }
 
           return result
