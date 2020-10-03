@@ -48,6 +48,14 @@ const gatsbyConfig = {
     { resolve: 'gatsby-transformer-json' },
     { resolve: '@app/gatsby-plugin-codesandbox' },
     { resolve: 'example-packages-to-codesandbox' },
+    {
+      resolve: 'gatsby-plugin-typography',
+      options: {
+        pathToConfigModule: require.resolve('./typography.ts'),
+        omitGoogleFont: true,
+      },
+    },
+    { resolve: 'gatsby-plugin-styled-components' },
   ],
 }
 

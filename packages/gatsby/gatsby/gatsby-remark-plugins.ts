@@ -56,7 +56,7 @@ export const gatsbyRemarkPlugins = [
 
       return [
         ...inject.comment('prop code'),
-        ...inject.code(file.value, extname(file.name).slice(1)),
+        ...inject.code(file.value.trim(), extname(file.name).slice(1)),
       ]
     },
   })),
@@ -107,4 +107,10 @@ export const gatsbyRemarkPlugins = [
   useLift(unifiedFilter, () => ({
     filter: ({ data }) => !(data && data.yaml),
   })),
+  {
+    resolve: 'gatsby-remark-vscode',
+    options: {
+      injectStyles: false,
+    },
+  },
 ]

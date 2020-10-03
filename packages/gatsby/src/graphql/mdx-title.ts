@@ -3,9 +3,9 @@ import { graphql, useStaticQuery } from 'gatsby'
 interface MdxTitleQuery {
   allMdx: {
     nodes: {
-      headings: {
-        value: string
-      }[]
+      frontmatter: {
+        title: string
+      }
       slug: string
     }[]
   }
@@ -18,8 +18,8 @@ export const useMdxTitle = (slug: string): string => {
     query MdxTitleQuery {
       allMdx {
         nodes {
-          headings(depth: h1) {
-            value
+          frontmatter {
+            title
           }
           slug
         }
@@ -28,8 +28,8 @@ export const useMdxTitle = (slug: string): string => {
   `)
   const [
     {
-      headings: [{ value }],
+      frontmatter: { title },
     },
   ] = nodes.filter((node) => node.slug === slug)
-  return value
+  return title
 }
