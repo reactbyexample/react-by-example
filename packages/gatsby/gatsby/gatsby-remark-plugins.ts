@@ -4,6 +4,8 @@ import remarkInject from '@app/remark-inject'
 import unifiedFilter from '@app/unified-filter'
 import unifiedParseYaml from '@app/unified-parse-yaml'
 import { extname } from 'path'
+import remarkAutolinkHeadings, { Options } from 'remark-autolink-headings'
+import remarkSlug from 'remark-slug'
 import { ExampleYaml } from './types'
 
 const useLift = <O>(
@@ -103,6 +105,26 @@ export const gatsbyRemarkPlugins = [
   useLift(unifiedFilter, () => ({
     filter: ({ data }) => !(data && data.yaml),
   })),
+  useLift(remarkSlug),
+  useLift(
+    remarkAutolinkHeadings,
+    (): Options => ({
+      behavior: 'append',
+      linkProperties: { class: 'slug', ariaHidden: true, tabIndex: -1 },
+      content: {
+        type: 'text',
+        value: '#',
+      },
+    }),
+  ),
+  { resolve: 'gatsby-remark-smartypants' },
+  {
+    resolve: 'gatsby-remark-external-links',
+    options: {
+      target: '_blank',
+      rel: 'noreferrer',
+    },
+  },
   {
     resolve: 'gatsby-remark-vscode',
     options: {

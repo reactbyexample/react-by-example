@@ -38,7 +38,19 @@ importers:
       '@types/react': 16.9.49
     specifiers:
       '@types/react': 16.9.49
+  '@types/remark-autolink-headings':
+    dependencies:
+      '@types/unist': 2.0.3
+      unified: 9.2.0
+    specifiers:
+      '@types/unist': 2.0.3
+      unified: 9.2.0
   '@types/remark-mdx':
+    dependencies:
+      unified: 9.2.0
+    specifiers:
+      unified: 9.2.0
+  '@types/remark-slug':
     dependencies:
       unified: 9.2.0
     specifiers:
@@ -82,6 +94,8 @@ importers:
       gatsby-plugin-pnpm: 1.2.5_gatsby@2.24.53
       gatsby-plugin-styled-components: 3.3.12_d47be3c0323e4481a652546f61cbe177
       gatsby-plugin-typography: 2.5.12_95e031d933e1b681fa497b2e9eed1766
+      gatsby-remark-external-links: 0.0.4
+      gatsby-remark-smartypants: 2.3.12_gatsby@2.24.53
       gatsby-remark-vscode: 3.0.1
       gatsby-source-filesystem: 2.3.27_gatsby@2.24.53
       gatsby-transformer-json: 2.4.2_gatsby@2.24.53
@@ -89,6 +103,8 @@ importers:
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
       react-typography: 0.16.19_react@16.13.1
+      remark-autolink-headings: 6.0.1
+      remark-slug: 6.0.0
       styled-components: 5.2.0_975908421a0f349b287d23c767f90c42
       typography: 0.16.19
     devDependencies:
@@ -97,6 +113,8 @@ importers:
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/remark-autolink-headings': 'link:../../@types/remark-autolink-headings'
+      '@types/remark-slug': 'link:../../@types/remark-slug'
       '@types/styled-components': 5.1.3
       '@types/typography': 0.16.3
       nodemon: 2.0.4
@@ -117,6 +135,8 @@ importers:
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/remark-autolink-headings': 'workspace:*'
+      '@types/remark-slug': 'workspace:*'
       '@types/styled-components': 5.1.3
       '@types/typography': 0.16.3
       babel-plugin-styled-components: 1.11.1
@@ -126,6 +146,8 @@ importers:
       gatsby-plugin-pnpm: 1.2.5
       gatsby-plugin-styled-components: 3.3.12
       gatsby-plugin-typography: 2.5.12
+      gatsby-remark-external-links: 0.0.4
+      gatsby-remark-smartypants: 2.3.12
       gatsby-remark-vscode: 3.0.1
       gatsby-source-filesystem: 2.3.27
       gatsby-transformer-json: 2.4.2
@@ -135,6 +157,8 @@ importers:
       react: 16.13.1
       react-dom: 16.13.1
       react-typography: 0.16.19
+      remark-autolink-headings: 6.0.1
+      remark-slug: 6.0.0
       styled-components: 5.2.0
       typescript: 4.0.2
       typography: 0.16.19
@@ -708,8 +732,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-fCL7QF0Jo83uy1K0P2YXrfX11tj3lkpN7l4dMv9Y9VkowkhkQDwFHFd8IiwyK5MZjE8UpbgokkgtcReH88Abaw==
-  ? /@babel/plugin-proposal-logical-assignment-operators/7.11.0_@babel+core@7.11.6
-  : dependencies:
+  /@babel/plugin-proposal-logical-assignment-operators/7.11.0_@babel+core@7.11.6:
+    dependencies:
       '@babel/core': 7.11.6
       '@babel/helper-plugin-utils': 7.10.4
       '@babel/plugin-syntax-logical-assignment-operators': 7.10.4_@babel+core@7.11.6
@@ -1134,8 +1158,8 @@ packages:
       '@babel/core': ^7.0.0-0
     resolution:
       integrity: sha512-mohW5q3uAEt8T45YT7Qc5ws6mWgJAaL/8BfWD9Dodo1A3RKWli8wTS+WiQ/knF+tXlPirW/1/MqzzGfCExKECA==
-  ? /@babel/plugin-transform-named-capturing-groups-regex/7.10.4_@babel+core@7.11.6
-  : dependencies:
+  /@babel/plugin-transform-named-capturing-groups-regex/7.10.4_@babel+core@7.11.6:
+    dependencies:
       '@babel/core': 7.11.6
       '@babel/helper-create-regexp-features-plugin': 7.10.4_@babel+core@7.11.6
     peerDependencies:
@@ -1667,7 +1691,7 @@ packages:
       '@hapi/bourne': 1.3.2
       '@hapi/hoek': 8.5.1
       '@hapi/topo': 3.1.6
-    deprecated: "joi is leaving the @hapi organization and moving back to 'joi' (https://github.com/sideway/joi/issues/2411)"
+    deprecated: 'joi is leaving the @hapi organization and moving back to ''joi'' (https://github.com/sideway/joi/issues/2411)'
     resolution:
       integrity: sha512-entf8ZMOK8sc+8YfeOlM8pCfg3b5+WZIKBfUaaJT8UsjAAPjartzxIYm3TIbjvA4u+u++KbcXD38k682nVHDAQ==
   /@hapi/topo/3.1.6:
@@ -2742,12 +2766,6 @@ packages:
       csstype: 3.0.3
     resolution:
       integrity: sha512-DtLFjSj0OYAdVLBbyjhuV9CdGVHCkHn2R+xr3XkBvK2rS1Y1tkc14XSGjYgm5Fjjr90AxH9tiSzc1pCFMGO06g==
-  /@types/react/16.9.50:
-    dependencies:
-      '@types/prop-types': 15.7.3
-      csstype: 3.0.3
-    resolution:
-      integrity: sha512-kPx5YsNnKDJejTk1P+lqThwxN2PczrocwsvqXnjvVvKpFescoY62ZiM3TV7dH1T8lFhlHZF+PE5xUyimUwqEGA==
   /@types/rimraf/2.0.4:
     dependencies:
       '@types/glob': 5.0.36
@@ -7622,6 +7640,29 @@ packages:
       react: ^16.12.0
     resolution:
       integrity: sha512-HFb9+/ZPoonu+Ywe5Y8RRBUUSB7WPoSlXqO+94Fkf0/55eQHRxOEvyluOqksdlzlCQtsQrXLfpICYQXTstC7RQ==
+  /gatsby-remark-external-links/0.0.4:
+    dependencies:
+      babel-runtime: 6.26.0
+      is-relative-url: 2.0.0
+      unist-util-find: 1.0.1
+      unist-util-visit: 1.4.1
+    dev: false
+    resolution:
+      integrity: sha512-JIKZguAGoGlzsJusfCb4JKM5E6JUEDbtlBkbErt7CdMnfBP+AldZeMQEQWK5xsJ5uXCyc4qqcBWR8vp0afFpOw==
+  /gatsby-remark-smartypants/2.3.12_gatsby@2.24.53:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
+      retext: 5.0.0
+      retext-smartypants: 3.0.3
+      unist-util-visit: 1.4.1
+    dev: false
+    engines:
+      node: '>=10.13.0'
+    peerDependencies:
+      gatsby: ^2.0.0
+    resolution:
+      integrity: sha512-GKN1QoGScsAkP8BqSC2SoDIg0JM3KghFyq2SuTiVrr+tIXHPG3/7leEO952p6md6UHilF+O2UI7lt57e5oMWVg==
   /gatsby-remark-vscode/3.0.1:
     dependencies:
       decompress: 4.2.1
@@ -9407,6 +9448,14 @@ packages:
       node: '>= 0.4'
     resolution:
       integrity: sha512-1+QkEcxiLlB7VEyFtyBg94e08OAsvq7FUBgApTq/w2ymCLyKJgDPsybBENVtA7XCQEgEXxKPonG+mvYRxh/LIg==
+  /is-relative-url/2.0.0:
+    dependencies:
+      is-absolute-url: 2.1.0
+    dev: false
+    engines:
+      node: '>=0.10.0'
+    resolution:
+      integrity: sha1-cpAtf+BLPUeS59sV+duEtyBMnO8=
   /is-relative-url/3.0.0:
     dependencies:
       is-absolute-url: 3.0.3
@@ -10381,6 +10430,10 @@ packages:
     dev: false
     resolution:
       integrity: sha1-POdoEMWSjQM1IwGsKHMX8RwLH/w=
+  /lodash.iteratee/4.7.0:
+    dev: false
+    resolution:
+      integrity: sha1-vkF32yiajMw8CZDx2ya1si/BVUw=
   /lodash.map/4.6.0:
     resolution:
       integrity: sha1-dx7Hg540c9nEzeKLGTlMNWL09tM=
@@ -10443,6 +10496,10 @@ packages:
       node: '>= 0.6.0'
     resolution:
       integrity: sha512-i2sY04nal5jDcagM3FMfG++T69GEEM8CYuOfeOIvmXzOIcwE9a/CJPR0MFM97pYMj/u10lzz7/zd7+qwhrBTqQ==
+  /longest-streak/1.0.0:
+    dev: false
+    resolution:
+      integrity: sha1-0GWXxNTDG1LMsfXY+P5xSOr9aWU=
   /longest-streak/2.0.4:
     resolution:
       integrity: sha512-vM6rUVCVUJJt33bnmHiZEvr7wPT78ztX7rojL+LW51bHtLh6HTjx84LA5W4+oa6aKEJA7jJu5LR6vQRBpA5DVg==
@@ -10567,6 +10624,10 @@ packages:
   /markdown-escapes/1.0.4:
     resolution:
       integrity: sha512-8z4efJYk43E0upd0NbVXwgSTQs6cT3T06etieCMEg7dRbzCbxUCK/GHlX8mhHRDcp+OLlHkPKsvqQTCvsRl2cg==
+  /markdown-table/0.4.0:
+    dev: false
+    resolution:
+      integrity: sha1-iQwsGzv+g/sA5BKbjkz+ZFJw+dE=
   /markdown-table/1.1.3:
     dev: false
     resolution:
@@ -13093,6 +13154,13 @@ packages:
     dev: true
     resolution:
       integrity: sha512-qXqRqiCFJD5CJ61CSJuNImTFrm3zVkOU9XywHDwrUuvWN74MWt72KJ67c5CM5x8g0vGcOkRVCrYj85vqkmHulQ==
+  /remark-autolink-headings/6.0.1:
+    dependencies:
+      extend: 3.0.2
+      unist-util-visit: 2.0.3
+    dev: false
+    resolution:
+      integrity: sha512-LTV5G5NMjypHEr14tMNJ36yrP+xwT7mejJelZOPXKiF5WvRH9o36zXnr2QGqfms2yVASNpDaC9NBOwKlJJKuQw==
   /remark-footnotes/1.0.0:
     resolution:
       integrity: sha512-X9Ncj4cj3/CIvLI2Z9IobHtVi8FVdUrdJkCNaL9kdX8ohfsi18DXHsCVd/A7ssARBdccdDb5ODnt62WuEWaM/g==
@@ -13157,6 +13225,22 @@ packages:
       '@mdx-js/util': 2.0.0-next.8
     resolution:
       integrity: sha512-Z/+0eWc7pBEABwg3a5ptL+vCTWHYMFnYzpLoJxTm2muBSk8XyB/CL+tEJ6SV3Q/fScHX2dtG4JRcGSpbZFLazQ==
+  /remark-parse/1.1.0:
+    dependencies:
+      collapse-white-space: 1.0.6
+      extend: 3.0.2
+      parse-entities: 1.2.2
+      repeat-string: 1.6.1
+      trim: 0.0.1
+      trim-trailing-lines: 1.1.3
+      unherit: 1.1.3
+      unist-util-remove-position: 1.1.4
+      vfile-location: 2.0.6
+    dev: false
+    engines:
+      node: '>=0.11.0'
+    resolution:
+      integrity: sha1-w8oQ+ajaBGFcKPCapOMEUQUm7CE=
   /remark-parse/6.0.3:
     dependencies:
       collapse-white-space: 1.0.6
@@ -13222,11 +13306,34 @@ packages:
     dev: false
     resolution:
       integrity: sha512-UujXAm28u4lnUvtOZQFYfRIhxX+auKI9PuA2QpQVTT7gYk1OgX6o0OUrSo1KOa6GNrFX+OODOtS5PWIHPxM7qw==
+  /remark-slug/6.0.0:
+    dependencies:
+      github-slugger: 1.3.0
+      mdast-util-to-string: 1.1.0
+      unist-util-visit: 2.0.3
+    dev: false
+    resolution:
+      integrity: sha512-ln67v5BrGKHpETnm6z6adlJPhESFJwfuZZ3jrmi+lKTzeZxh2tzFzUfDD4Pm2hRGOarHLuGToO86MNMZ/hA67Q==
   /remark-squeeze-paragraphs/4.0.0:
     dependencies:
       mdast-squeeze-paragraphs: 4.0.0
     resolution:
       integrity: sha512-8qRqmL9F4nuLPIgl92XUuxI3pFxize+F1H0e/W3llTk0UsjJaj01+RrirkMw7P21RKe4X6goQhYRSvNWX+70Rw==
+  /remark-stringify/1.1.0:
+    dependencies:
+      ccount: 1.0.5
+      extend: 3.0.2
+      longest-streak: 1.0.0
+      markdown-table: 0.4.0
+      parse-entities: 1.2.2
+      repeat-string: 1.6.1
+      stringify-entities: 1.3.2
+      unherit: 1.1.3
+    dev: false
+    engines:
+      node: '>=0.11.0'
+    resolution:
+      integrity: sha1-pxBeJbnuK/mkm3XSxCPxGwauIJI=
   /remark-stringify/6.0.4:
     dependencies:
       ccount: 1.0.5
@@ -13280,6 +13387,17 @@ packages:
     dev: true
     resolution:
       integrity: sha512-gS7HDonkdIaHmmP/+shCPejCEEW+liMp/t/QwmF0Xt47Rpuhl32lLtDV1uKWvGoq+kxr5jSgg5oAIpGuyULjUw==
+  /remark/5.1.0:
+    dependencies:
+      remark-parse: 1.1.0
+      remark-stringify: 1.1.0
+      unified: 4.2.1
+    dev: false
+    engines:
+      node: '>=0.11.0'
+    hasBin: true
+    resolution:
+      integrity: sha1-y0Y709vLS5l5STXu4c9x16jjBow=
   /remove-trailing-separator/1.1.0:
     resolution:
       integrity: sha1-wkvOKig62tW8P1jg1IJJuSN52O8=
@@ -13454,6 +13572,36 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yr1PgaBDde+25aJXrnt3p1jvT8FVLVat2Bx8XeAWX13KXo8OT+3nWGU3HWxM4YFJvmfqvJYJZG2d7xxaO774gw==
+  /retext-latin/2.0.4:
+    dependencies:
+      parse-latin: 4.2.1
+      unherit: 1.1.3
+    dev: false
+    resolution:
+      integrity: sha512-fOoSSoQgDZ+l/uS81oxI3alBghDUPja0JEl0TpQxI6MN+dhM6fLFumPJwMZ4PJTyL5FFAgjlsdv8IX+6IRuwMw==
+  /retext-smartypants/3.0.3:
+    dependencies:
+      nlcst-to-string: 2.0.4
+      unist-util-visit: 1.4.1
+    dev: false
+    resolution:
+      integrity: sha512-/0fIipYayOvvucn3yjxvWwyT9P6p8gbpqdqUQNs1+L7av2hxatmiA9sk+fygJSDn5OXRyhBzcezvTbEmEabfIQ==
+  /retext-stringify/2.0.4:
+    dependencies:
+      nlcst-to-string: 2.0.4
+    dev: false
+    resolution:
+      integrity: sha512-xOtx5mFJBoT3j7PBtiY2I+mEGERNniofWktI1cKXvjMEJPOuqve0dghLHO1+gz/gScLn4zqspDGv4kk2wS5kSA==
+  /retext/5.0.0:
+    dependencies:
+      retext-latin: 2.0.4
+      retext-stringify: 2.0.4
+      unified: 6.2.0
+    dev: false
+    engines:
+      node: '>=0.11.0'
+    resolution:
+      integrity: sha1-XZAYxKZ31hA8FCNi129Q6x05i/Y=
   /retry/0.12.0:
     engines:
       node: '>= 4'
@@ -15016,6 +15164,30 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-PqSoPh/pWetQ2phoj5RLiaqIk4kCNwoV3CI+LfGmWLKI3rE3kl1h59XpX2BjgDrmbxD9ARtQobPGU1SguCYuQg==
+  /unified/4.2.1:
+    dependencies:
+      bail: 1.0.5
+      extend: 3.0.2
+      has: 1.0.3
+      once: 1.4.0
+      trough: 1.0.5
+      vfile: 1.4.0
+    dev: false
+    engines:
+      node: '>=0.11.0'
+    resolution:
+      integrity: sha1-dv9Dqo2kMPbn5KVchOusKtLPzS4=
+  /unified/6.2.0:
+    dependencies:
+      bail: 1.0.5
+      extend: 3.0.2
+      is-plain-obj: 1.1.0
+      trough: 1.0.5
+      vfile: 2.3.0
+      x-is-string: 0.1.0
+    dev: false
+    resolution:
+      integrity: sha512-1k+KPhlVtqmG99RaTbAv/usu85fcSRu3wY8X+vnsEhIxNP5VbVIDiXnLqyKIG+UMdyTg0ZX9EI6k2AfjJkHPtA==
   /unified/7.1.0:
     dependencies:
       '@types/unist': 2.0.3
@@ -15111,6 +15283,14 @@ packages:
     dev: false
     resolution:
       integrity: sha512-yHcR4YpvFzKx8EN9i2HhTORIR3zYC6YwsW6b2nuk8EI/3gps2YC008S+KJRyNuPViqScYQdrI67ceOryNL9EUQ==
+  /unist-util-find/1.0.1:
+    dependencies:
+      lodash.iteratee: 4.7.0
+      remark: 5.1.0
+      unist-util-visit: 1.4.1
+    dev: false
+    resolution:
+      integrity: sha1-EGK7tpKMepfGrcibU3RdTEbCIqI=
   /unist-util-generated/1.1.5:
     resolution:
       integrity: sha512-1TC+NxQa4N9pNdayCYA1EGUOCAO0Le3fVp7Jzns6lnua/mYgwHo0tz5WUAfrdpNch1RZLHc61VZ1SDgrtNXLSw==
@@ -15464,6 +15644,19 @@ packages:
       unist-util-stringify-position: 2.0.3
     resolution:
       integrity: sha512-DjssxRGkMvifUOJre00juHoP9DPWuzjxKuMDrhNbk2TdaYYBNMStsNhEOt3idrtI12VQYM/1+iM0KOzXi4pxwQ==
+  /vfile/1.4.0:
+    dev: false
+    resolution:
+      integrity: sha1-wP1vpIT43r23cfaMMe112I2pf+c=
+  /vfile/2.3.0:
+    dependencies:
+      is-buffer: 1.1.6
+      replace-ext: 1.0.0
+      unist-util-stringify-position: 1.1.2
+      vfile-message: 1.1.1
+    dev: false
+    resolution:
+      integrity: sha512-ASt4mBUHcTpMKD/l5Q+WJXNtshlWxOogYyGYYrg4lt/vuRjC1EFQtlAofL5VmtVNIZJzWYFJjzGWZ0Gw8pzW1w==
   /vfile/3.0.1:
     dependencies:
       is-buffer: 2.0.4

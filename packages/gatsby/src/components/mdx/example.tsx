@@ -3,17 +3,17 @@ import styled from 'styled-components'
 
 const Code = styled.div`
   .grvsc-container {
-    --grvsc-border-radius: 4px;
-    --grvsc-padding-h: 0.5rem;
-    --grvsc-padding-v: 0.5rem;
+    --grvsc-border-radius: var(--app-border-radius);
+    --grvsc-padding-h: 0.5em;
+    --grvsc-padding-v: 0.5em;
   }
 `
 
 const Render = styled.div`
   display: flex;
-  padding: 1rem;
-  border: 1px solid #f8f8f2;
-  border-radius: 4px;
+  padding: 1em;
+  border: 1px solid var(--app-foreground);
+  border-radius: var(--app-border-radius);
   align-items: center;
   justify-content: center;
 `

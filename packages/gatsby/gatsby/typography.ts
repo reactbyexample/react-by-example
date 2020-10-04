@@ -16,11 +16,11 @@ export default new Typography({
   baseLineHeight: 1.2,
   headerFontFamily: fontStack,
   bodyFontFamily: fontStack,
-  bodyColor: '#f8f8f2',
-  headerColor: '#bd93f9',
+  bodyColor: 'var(--app-foreground)',
+  headerColor: 'var(--app-purple)',
   overrideStyles: () => ({
     a: { color: 'inherit' },
-    'a:visited': { color: '#8be9fd' },
+    'a:visited': { color: 'var(--app-cyan)' },
     code: { fontFamily: `'Fira Code', monospace` },
   }),
 })

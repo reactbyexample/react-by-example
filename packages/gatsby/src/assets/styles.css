@@ -1,3 +1,13 @@
+:root {
+  --app-background: #191a21;
+  --app-foreground: #f8f8f2;
+  --app-purple: #bd93f9;
+  --app-cyan: #8be9fd;
+  --app-pink: #ff79c6;
+
+  --app-border-radius: 4px;
+}
+
 body {
-  background-color: #191a21;
+  background-color: var(--app-background);
 }

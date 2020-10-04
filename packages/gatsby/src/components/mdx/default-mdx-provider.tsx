@@ -10,11 +10,23 @@ const pre = styled.pre`
 `
 
 const blockquote = styled.blockquote`
-  border-left: 2px solid #ff79c6;
+  border-left: 2px solid var(--app-pink);
   padding-left: 0.5em;
 `
 
-const components = { Link, Example, pre, blockquote }
+const a = styled.a`
+  &.slug {
+    font-size: 0.75em;
+    margin-left: 0.5em;
+    display: none;
+  }
+
+  *:hover > &.slug {
+    display: unset;
+  }
+`
+
+const components = { Link, Example, pre, blockquote, a }
 
 export const DefaultMDXProvider: FC = ({ children }) => (
   <MDXProvider components={components}>{children}</MDXProvider>
