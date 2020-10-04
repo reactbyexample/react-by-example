@@ -26,6 +26,7 @@ const fixtures = {
     <img src="./img.jpg"></img>
     <label for="input">a label</label>
     <input id="input"></input>
+    <!--literal corge="grault"-->
     <!--end-->
   `,
 }

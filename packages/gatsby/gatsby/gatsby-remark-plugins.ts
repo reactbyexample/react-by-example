@@ -88,13 +88,9 @@ export const gatsbyRemarkPlugins = [
       const [codesandbox] = codesandboxes.filter(({ name }) => name === project)
       if (!codesandbox) return inject.nothing()
 
-      return [
-        ...inject.comment('prop link'),
-        ...inject.link(
-          'CodeSandbox',
-          `https://codesandbox.io/s/${codesandbox.sandboxId}?module=/${module}`,
-        ),
-      ]
+      return inject.comment(
+        `literal link="https://codesandbox.io/s/${codesandbox.sandboxId}?file=/${module}"`,
+      )
     },
   })),
   useLift(remarkInject(), () => ({
@@ -111,6 +107,10 @@ export const gatsbyRemarkPlugins = [
     resolve: 'gatsby-remark-vscode',
     options: {
       injectStyles: false,
+      theme: 'Dracula',
+      extensions: [
+        require.resolve('./assets/dracula-theme.theme-dracula-2.22.1.vsix'),
+      ],
     },
   },
 ]

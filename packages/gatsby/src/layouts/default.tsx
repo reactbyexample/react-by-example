@@ -3,7 +3,7 @@ import styled from 'styled-components'
 import { DefaultMDXProvider, Navigation, Next, Prev } from '../components'
 
 const Content = styled.article`
-  max-width: 600px;
+  max-width: 650px;
   margin: auto;
   padding: 0 6px;
 `

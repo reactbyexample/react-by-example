@@ -9,7 +9,12 @@ const pre = styled.pre`
   overflow: auto;
 `
 
-const components = { Link, Example, pre }
+const blockquote = styled.blockquote`
+  border-left: 2px solid #ff79c6;
+  padding-left: 0.5em;
+`
+
+const components = { Link, Example, pre, blockquote }
 
 export const DefaultMDXProvider: FC = ({ children }) => (
   <MDXProvider components={components}>{children}</MDXProvider>

@@ -6,38 +6,43 @@ exports[`rehypeMdxWrapWithComponent should inject nodes "simple" 1`] = `
     \`}
       <Foo
         
-          bar={
-            <>{\`
+        
+        bar={
+          <>{\`
     \`}<a {...{\\"href\\":\\"/bar\\"}}>{\`bar\`}</a>{\`
     \`}</>
-          }
-          
-          baz={
-            <>{\`
+        }
+        
+        baz={
+          <>{\`
     \`}<pre>{\`code\`}</pre>{\`
     \`}</>
-          }
-          
+        }
+        
       />{\`
 
 
     \`}
       <Qux
         
+        
       />{\`
 
     \`}
       <Quux
         
-          quuz={
-            <>{\`
+        corge=\\"grault\\"
+        
+        quuz={
+          <>{\`
     \`}<video {...{\\"src\\":\\"./video.mp4\\"}}></video>{\`
     \`}<img {...{\\"src\\":\\"./img.jpg\\"}}></img>{\`
     \`}<label {...{\\"htmlFor\\":\\"input\\"}}>{\`a label\`}</label>{\`
     \`}<input {...{\\"id\\":\\"input\\"}}></input>{\`
+    \`}{\`
     \`}</>
-          }
-          
+        }
+        
       />{\`
   \`}</body></html></>"
 `;
