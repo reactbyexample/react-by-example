@@ -6,8 +6,12 @@
     "pnpm": ">=5"
   },
   "scripts": {
-    "start": "pnpm -r --no-sort start",
-    "test": "pnpm -r test"
+    "start": "pnpm --parallel start",
+    "test": "pnpm -r test",
+    "pre-gatsby": "pnpm --filter @app/gatsby^...",
+    "gatsby": "pnpm --filter @app/gatsby",
+    "build-requirements": "pnpm run pre-gatsby -- run build",
+    "start-gatsby": "pnpm run gatsby -- run start"
   },
   "license": "MIT",
   "devDependencies": {
