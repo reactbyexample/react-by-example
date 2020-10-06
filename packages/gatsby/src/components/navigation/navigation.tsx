@@ -11,7 +11,6 @@ const Container = styled.nav`
     'title expand'
     'links links';
   grid-template-columns: 1fr auto;
-  padding: var(--app-content-padding);
   align-items: center;
 
   @media (min-width: ${(p) => p.theme.breakpoints.xl}) {
@@ -27,7 +26,11 @@ const Title = styled.header`
 `
 
 const TitleH1 = styled.h1`
-  margin-bottom: 0;
+  margin: 0;
+
+  @media (min-width: ${(p) => p.theme.breakpoints.xl}) {
+    margin-bottom: 0.5em;
+  }
 `
 
 const TitleLink = styled(Link)`

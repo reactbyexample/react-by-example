@@ -19,6 +19,7 @@ const a = styled.a`
     font-size: 0.75em;
     margin-left: 0.5em;
     display: none;
+    text-decoration: none;
   }
 
   *:hover > &.slug {
