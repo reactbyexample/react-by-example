@@ -1,8 +1,12 @@
 import React, { FC } from 'react'
-import { DefaultMDXProvider } from '../components'
+import { DefaultMDXProvider, DefaultThemeProvider } from '../components'
 
 const BlankLayout: FC = ({ children }) => {
-  return <DefaultMDXProvider>{children}</DefaultMDXProvider>
+  return (
+    <DefaultThemeProvider>
+      <DefaultMDXProvider>{children}</DefaultMDXProvider>
+    </DefaultThemeProvider>
+  )
 }
 
 export default BlankLayout

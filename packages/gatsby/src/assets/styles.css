@@ -4,8 +4,10 @@
   --app-purple: #bd93f9;
   --app-cyan: #8be9fd;
   --app-pink: #ff79c6;
+  --app-green: #50fa7b;
 
   --app-border-radius: 4px;
+  --app-content-padding: 0 0.5rem;
 }
 
 body {

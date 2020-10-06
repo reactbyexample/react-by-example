@@ -1,3 +1,5 @@
 export * from './hooks'
+export * from './icons'
 export * from './mdx'
 export * from './navigation'
+export * from './theme'
