@@ -21,6 +21,10 @@ export default new Typography({
   overrideStyles: () => ({
     a: { color: 'inherit' },
     'a:visited': { color: 'var(--app-cyan)' },
-    code: { fontFamily: `'Fira Code', monospace` },
+    code: {
+      fontFamily: `'Fira Code', monospace`,
+      fontSize: '1em',
+      lineHeight: '1.2em',
+    },
   }),
 })

@@ -33,7 +33,9 @@ export const Example: FC<ExampleProps> = ({ code, render, link }) => {
   return (
     <>
       <Code>{code}</Code>
-      <Render>{render}</Render>
+      <Render>
+        <div>{render}</div>
+      </Render>
       {link && (
         <FlexRight>
           <a

@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`inheritFiles fs should render project hello-world 1`] = `
+exports[`inheritFiles fs should render project intro-hello-world 1`] = `
 Object {
   "src/index.tsx": "import React from 'react'
 import ReactDOM from 'react-dom'
@@ -10,6 +10,21 @@ ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
   "src/render.tsx": "import React from 'react'
 
 export default <h1>Hello world!</h1>
+",
+}
+`;
+
+exports[`inheritFiles fs should render project intro-static-clock 1`] = `
+Object {
+  "src/index.tsx": "import React from 'react'
+import ReactDOM from 'react-dom'
+
+const app = () => <div>the time is {new Date().toLocaleTimeString()}</div>
+ReactDOM.render(app(), document.getElementById('root'))
+",
+  "src/render.tsx": "import React from 'react'
+
+export default <div>the time is {new Date().toLocaleTimeString()}</div>
 ",
 }
 `;
@@ -37,21 +52,6 @@ Object {
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
-",
-}
-`;
-
-exports[`inheritFiles fs should render project static-clock 1`] = `
-Object {
-  "src/index.tsx": "import React from 'react'
-import ReactDOM from 'react-dom'
-
-const app = () => <div>the time is {new Date().toLocaleTimeString()}</div>
-ReactDOM.render(app(), document.getElementById('root'))
-",
-  "src/render.tsx": "import React from 'react'
-
-export default <div>the time is {new Date().toLocaleTimeString()}</div>
 ",
 }
 `;

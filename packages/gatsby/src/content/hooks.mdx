@@ -1,0 +1,63 @@
+---
+title: Hooks
+---
+
+# Hooks
+
+- allows state and side-effects in function components
+- simple to use, but follow the [rules](#rules)
+- create custom hooks, great for encapsulating common functionality
+
+## Rules
+
+- only call hooks at the top level
+  - don't call hooks inside loops, conditions, or nested functions
+  - rationale:
+    - same hook can be used multiple times
+    - they must be called in the same order _every time_, otherwise react does not know which hook is which
+- only call hooks from react functions
+  - don't call hooks from regular javascript functions
+  - rationale:
+    - hook state is bound to the _component instance_ that is being rendered
+- (convention) custom hooks start with `use`
+
+* [more details](https://reactjs.org/docs/hooks-rules.html)
+* rules are enforceable [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)
+
+## `useState`
+
+- internal state that affects DOM
+- takes initial value; returns a tuple of the current value and a function to update it
+- [docs](https://reactjs.org/docs/hooks-reference.html#usestate)
+
+```yaml {example}
+project: hooks-use-state
+```
+
+## `useRef`
+
+- reference elements, eg. to use their methods
+- [docs](https://reactjs.org/docs/hooks-reference.html#useref)
+
+```yaml {example}
+project: hooks-use-ref
+```
+
+- internal state that _does not_ affect DOM, eg. timer handles
+
+```yaml {example}
+project: hooks-use-ref-alt
+```
+
+## `useEffect`
+
+- side-effects
+- first parameter: function that can have side-effects; optionally return cleanup function
+- second parameter: a list of values that the side-effect depends on (optional)
+- when dependencies change, the effect is cleaned up and ran again
+- if no dependencies are given, then the effect runs on every render
+- [docs](https://reactjs.org/docs/hooks-reference.html#useeffect)
+
+```yaml {example}
+project: hooks-use-effect
+```

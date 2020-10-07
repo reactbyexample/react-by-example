@@ -14,11 +14,11 @@ const fixtures = {
 
 ## Heading _level_ 2
 
-![](@app/example-packages/example-packages/hello-world/src/index.tsx)
+![](@app/example-packages/example-packages/intro-hello-world/src/index.tsx)
 
 hello link _injector_
 
-![](@app/example-packages/example-packages/static-clock/public/index.html)
+![](@app/example-packages/example-packages/intro-static-clock/public/index.html)
 `,
 }
 

@@ -1,23 +1,23 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`remarkInject should inject nodes "simple" 1`] = `
-"import APP_EXAMPLE_PACKAGES_EXAMPLE_PACKAGES_HELLO_WORLD_SRC_INDEX_TSX_DEFAULT from '@app/example-packages/example-packages/hello-world/src/index.tsx'
+"import APP_EXAMPLE_PACKAGES_EXAMPLE_PACKAGES_INTRO_HELLO_WORLD_SRC_INDEX_TSX_DEFAULT from '@app/example-packages/example-packages/intro-hello-world/src/index.tsx'
 
 # Hello world!
 
 ## Heading [level](https://example.com/level)_level_ 2
 
-<!--@app/example-packages/example-packages/hello-world/src/index.tsx-->\`\`\`tsx
+<!--@app/example-packages/example-packages/intro-hello-world/src/index.tsx-->\`\`\`tsx
 import React from 'react'
 import ReactDOM from 'react-dom'
 
 ReactDOM.render(<h1>Hello world!</h1>, document.getElementById('root'))
 
-\`\`\`<>{APP_EXAMPLE_PACKAGES_EXAMPLE_PACKAGES_HELLO_WORLD_SRC_INDEX_TSX_DEFAULT}</>![](@app/example-packages/example-packages/hello-world/src/index.tsx)
+\`\`\`<>{APP_EXAMPLE_PACKAGES_EXAMPLE_PACKAGES_INTRO_HELLO_WORLD_SRC_INDEX_TSX_DEFAULT}</>![](@app/example-packages/example-packages/intro-hello-world/src/index.tsx)
 
 hello link [injector](https://example.com/injector)_injector_
 
-<!--@app/example-packages/example-packages/static-clock/public/index.html-->\`\`\`html
+<!--@app/example-packages/example-packages/intro-static-clock/public/index.html-->\`\`\`html
 <!DOCTYPE html>
 <html lang=\\"en\\">
   <head>
@@ -31,6 +31,6 @@ hello link [injector](https://example.com/injector)_injector_
   </body>
 </html>
 
-\`\`\`![](@app/example-packages/example-packages/static-clock/public/index.html)
+\`\`\`![](@app/example-packages/example-packages/intro-static-clock/public/index.html)
 "
 `;

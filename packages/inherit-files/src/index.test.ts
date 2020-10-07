@@ -107,16 +107,18 @@ describe('inheritFiles', () => {
       throw new Error()
     }
 
-    it.each(['simple-react', 'react', 'hello-world', 'static-clock'])(
-      'should render project %s',
-      async (id) => {
-        const files = await inheritFiles(id, { resolveProject })
-        const importantBits: Project = {}
-        for (const [filename, content] of Object.entries(files)) {
-          if (filename.endsWith('.tsx')) importantBits[filename] = content
-        }
-        expect(importantBits).toMatchSnapshot()
-      },
-    )
+    it.each([
+      'simple-react',
+      'react',
+      'intro-hello-world',
+      'intro-static-clock',
+    ])('should render project %s', async (id) => {
+      const files = await inheritFiles(id, { resolveProject })
+      const importantBits: Project = {}
+      for (const [filename, content] of Object.entries(files)) {
+        if (filename.endsWith('.tsx')) importantBits[filename] = content
+      }
+      expect(importantBits).toMatchSnapshot()
+    })
   })
 })
