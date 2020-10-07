@@ -1,5 +1,5 @@
 import { Link } from 'gatsby'
-import React, { FC, useCallback, useState } from 'react'
+import React, { ComponentProps, FC, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { useNavigation } from '../../graphql'
 import { MenuIcon } from '../icons'
@@ -78,13 +78,14 @@ const Links = styled.ul<LinksProps>`
   }
 `
 
-export const Navigation: FC = () => {
+type ContainerProps = ComponentProps<typeof Container>
+export const Navigation: FC<ContainerProps> = (p) => {
   const navigation = useNavigation()
   const [isExpanded, setIsExpanded] = useState(false)
   const toggle = useCallback(() => setIsExpanded((s) => !s), [])
 
   return (
-    <Container>
+    <Container {...p}>
       <Title>
         <TitleH1>
           <TitleLink to="/">React by Example</TitleLink>

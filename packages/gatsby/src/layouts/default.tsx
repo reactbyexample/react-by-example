@@ -11,9 +11,9 @@ import {
 const Grid = styled.div`
   display: grid;
   grid-template-areas:
-    'nav'
-    'content';
-  grid-template-columns: minmax(0, 1fr);
+    'left-void nav     right-void'
+    'left-void content right-void';
+  grid-template-columns: 1fr minmax(0, 75ch) 1fr;
   padding: 0 0.5rem;
 
   @media (min-width: ${(p) => p.theme.breakpoints.xl}) {
@@ -23,7 +23,7 @@ const Grid = styled.div`
   }
 `
 
-const Nav = styled.div`
+const NavigationSlot = styled.div`
   grid-area: nav;
 `
 
@@ -34,8 +34,8 @@ const Content = styled.article`
 const Paging = styled.div`
   display: grid;
   grid-template-areas:
-    'prev'
-    'next';
+    'next'
+    'prev';
 
   @media (min-width: ${(p) => p.theme.breakpoints.xl}) {
     grid-template-areas: 'prev void next';
@@ -43,10 +43,10 @@ const Paging = styled.div`
   }
 `
 
-const PrevSlot = styled.div`
+const StyledPrev = styled(Prev)`
   grid-area: prev;
 `
-const NextSlot = styled.div`
+const StyledNext = styled(Next)`
   grid-area: next;
   justify-self: flex-end;
 `
@@ -55,18 +55,14 @@ const DefaultLayout: FC = ({ children }) => {
   return (
     <DefaultThemeProvider>
       <Grid>
-        <Nav>
+        <NavigationSlot>
           <Navigation />
-        </Nav>
+        </NavigationSlot>
         <Content>
           <DefaultMDXProvider>{children}</DefaultMDXProvider>
           <Paging>
-            <PrevSlot>
-              <Prev />
-            </PrevSlot>
-            <NextSlot>
-              <Next />
-            </NextSlot>
+            <StyledPrev />
+            <StyledNext />
           </Paging>
         </Content>
       </Grid>
