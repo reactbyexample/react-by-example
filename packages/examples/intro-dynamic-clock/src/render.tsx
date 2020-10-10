@@ -2,7 +2,7 @@ import React, { FC, useEffect, useState } from 'react'
 
 const getTime = () => `the time is ${new Date().toLocaleTimeString()}`
 
-const DynamicClock: FC = () => {
+export const DynamicClock: FC = () => {
   const [time, setTime] = useState<string>(getTime())
 
   useEffect(() => {

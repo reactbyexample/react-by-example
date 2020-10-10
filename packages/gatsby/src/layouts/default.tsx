@@ -20,6 +20,8 @@ const Grid = styled.div`
     grid-template-areas: 'nav content void';
     grid-template-columns: 1fr 75ch 1fr;
     padding: 1rem;
+    max-width: 150ch;
+    margin: 0 auto;
   }
 `
 

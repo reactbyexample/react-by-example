@@ -1,30 +1,31 @@
-import React, { FC, useRef } from 'react'
+import React, { FC, useRef, useState } from 'react'
 
-const UseRefAlt: FC = () => {
-  const intervalRef = useRef<number>()
+export const SelfDestruct: FC = () => {
+  const [destroyed, setDestroyed] = useState(false)
+  const timeoutRef = useRef<number>()
 
   const stop = () => {
-    window.clearInterval(intervalRef.current)
-    intervalRef.current = undefined
+    window.clearTimeout(timeoutRef.current)
+    timeoutRef.current = undefined
   }
   const start = () => {
     stop()
-    intervalRef.current = window.setInterval(() => {
-      document.title = `[${document.title}`
-    }, 100)
+    timeoutRef.current = window.setTimeout(() => {
+      setDestroyed(true)
+    }, 5000)
   }
 
-  return (
+  return destroyed ? null : (
     <>
       <button type="button" onClick={start}>
-        start tick
+        start self-destruct sequence
       </button>
       <button type="button" onClick={stop}>
-        stop tick
+        stop self-destruct sequence
       </button>
-      <p>check out the title bar</p>
+      <p>this message will destroy itself in 5 seconds</p>
     </>
   )
 }
 
-export default <UseRefAlt />
+export default <SelfDestruct />

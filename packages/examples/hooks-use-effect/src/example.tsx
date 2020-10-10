@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 
-const UseEffect: FC<{ locale?: string }> = ({ locale }) => {
+export const LocaleClock: FC<{ locale?: string }> = ({ locale }) => {
   // note how different hooks can be used together
   const [timeString, setTimeString] = useState<string>()
   useEffect(() => {
@@ -19,7 +19,7 @@ const UseEffect: FC<{ locale?: string }> = ({ locale }) => {
   return <p>{timeString}</p>
 }
 
-const ToggleLocale: FC = () => {
+export const ToggleLocale: FC = () => {
   const [locale, setLocale] = useState('en-GB')
 
   return (
@@ -32,7 +32,7 @@ const ToggleLocale: FC = () => {
       >
         toggle locale
       </button>
-      <UseEffect locale={locale} />
+      <LocaleClock locale={locale} />
     </>
   )
 }

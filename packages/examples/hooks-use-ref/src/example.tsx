@@ -1,6 +1,6 @@
 import React, { FC, useRef } from 'react'
 
-const UseRef: FC = () => {
+export const PlayPause: FC = () => {
   const videoRef = useRef<HTMLVideoElement>(null)
   const playPause = async () => {
     const video = videoRef.current as HTMLVideoElement
@@ -27,4 +27,4 @@ const UseRef: FC = () => {
   )
 }
 
-export default <UseRef />
+export default <PlayPause />

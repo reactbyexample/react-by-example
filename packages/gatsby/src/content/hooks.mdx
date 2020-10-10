@@ -14,8 +14,8 @@ title: Hooks
   - don't call hooks inside loops, conditions, or nested functions
   - rationale:
     - same hook can be used multiple times
-    - they must be called in the same order _every time_, otherwise react does not know which hook is which
-- only call hooks from react functions
+    - they must be called in the same order _every time_, otherwise React does not know which hook is which
+- only call hooks from React functions
   - don't call hooks from regular javascript functions
   - rationale:
     - hook state is bound to the _component instance_ that is being rendered
@@ -26,7 +26,8 @@ title: Hooks
 
 ## `useState`
 
-- internal state that affects DOM
+- `ts∫const [currentState, setNextStateFn] = useState(initialValue?)`
+- use for internal state that affects DOM
 - takes initial value; returns a tuple of the current value and a function to update it
 - [docs](https://reactjs.org/docs/hooks-reference.html#usestate)
 
@@ -36,14 +37,15 @@ project: hooks-use-state
 
 ## `useRef`
 
-- reference elements, eg. to use their methods
+- `ts∫const ref = useRef(initialValue)`
+- use to reference elements, eg. to use their methods
 - [docs](https://reactjs.org/docs/hooks-reference.html#useref)
 
 ```yaml {example}
 project: hooks-use-ref
 ```
 
-- internal state that _does not_ affect DOM, eg. timer handles
+- use for internal state that _does not_ affect DOM, eg. timer handles
 
 ```yaml {example}
 project: hooks-use-ref-alt
@@ -51,7 +53,8 @@ project: hooks-use-ref-alt
 
 ## `useEffect`
 
-- side-effects
+- `ts∫useEffect(effectFn, deps?)`
+- use for side-effects
 - first parameter: function that can have side-effects; optionally return cleanup function
 - second parameter: a list of values that the side-effect depends on (optional)
 - when dependencies change, the effect is cleaned up and ran again

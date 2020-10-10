@@ -1,6 +1,6 @@
 import React, { FC, useState } from 'react'
 
-const Counter: FC = () => {
+export const Counter: FC = () => {
   const [value, setValue] = useState(0)
 
   return (

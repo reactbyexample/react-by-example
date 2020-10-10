@@ -133,6 +133,10 @@ export const gatsbyRemarkPlugins = [
       extensions: [
         require.resolve('./assets/dracula-theme.theme-dracula-2.22.1.vsix'),
       ],
+      inlineCode: {
+        marker: '∫', // Option+B,
+        className: 'inline',
+      },
     },
   },
 ]

@@ -27,7 +27,7 @@ title: About JSX
 
 ### Simple
 
-- elements become calls to [`React.createElement`][create element]
+- elements become calls to [`ts∫React.createElement()`][create element]
 - type of element is the first argument
 - the subtree (aka. [children]) becomes the third argument
 
@@ -66,8 +66,8 @@ project: jsx-props-spread
 ### Interpolate
 
 - values can be interpolated using `{value}`
-- usually renders as `String(value)`
-- `true`, `false`, `undefined`, `null` never render; allows for [short-circuit logic]
+- usually renders as `ts∫String(value)`
+- `ts∫true`, `ts∫false`, `ts∫undefined`, `ts∫null` never render; allows for [short-circuit logic]
 - `<></>` is a [fragment]; allows for rendering multiple elements where one is expected
 
 [short-circuit logic]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Logical_AND#Short-circuit_evaluation
@@ -79,7 +79,7 @@ project: jsx-interpolate
 
 ### Repeat
 
-- use `array.map` to "loop" over values
+- use `ts∫array.map()` to "loop" over values
 - use the special [`key` prop][key prop] to distinguish elements in the array
 
 [key prop]: https://reactjs.org/docs/lists-and-keys.html

@@ -20,11 +20,16 @@ export default new Typography({
   headerColor: 'var(--app-purple)',
   overrideStyles: () => ({
     a: { color: 'inherit' },
+    'a:focus': { outline: '2px solid var(--app-cyan)', outlineOffset: '0' },
     'a:visited': { color: 'var(--app-cyan)' },
     code: {
       fontFamily: `'Fira Code', monospace`,
       fontSize: '1em',
-      lineHeight: '1.2em',
+      lineHeight: '1.4em',
+    },
+    'code.inline': {
+      lineHeight: '1em',
+      background: 'none',
     },
   }),
 })

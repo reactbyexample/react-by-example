@@ -1,6 +1,6 @@
-import React, { FC, ReactNode } from 'react'
+import React, { FC, ReactNode, useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { CodeSandboxIcon } from '../icons'
+import { CodeSandboxIcon, ResetIcon } from '../icons'
 
 const Code = styled.div`
   .grvsc-container {
@@ -23,6 +23,26 @@ const FlexRight = styled.div`
   justify-content: flex-end;
 `
 
+const CodeSandboxLink = styled.a`
+  display: flex;
+`
+
+const ResetButton = styled.button`
+  display: flex;
+  margin: 0;
+  padding: 0;
+  color: var(--app-foreground);
+  background: none;
+  border: none;
+  cursor: pointer;
+
+  :focus,
+  :active {
+    color: var(--app-cyan);
+    outline: 2px solid var(--app-cyan);
+  }
+`
+
 export interface ExampleProps {
   code?: ReactNode
   render?: ReactNode
@@ -30,22 +50,29 @@ export interface ExampleProps {
 }
 
 export const Example: FC<ExampleProps> = ({ code, render, link }) => {
+  const [resetKey, setResetKey] = useState(Date.now())
+  const triggerReset = useCallback(() => {
+    setResetKey(Date.now())
+  }, [])
   return (
     <>
       <Code>{code}</Code>
-      <Render>
+      <Render key={resetKey}>
         <div>{render}</div>
       </Render>
       {link && (
         <FlexRight>
-          <a
+          <ResetButton type="button" onClick={triggerReset}>
+            <ResetIcon />
+          </ResetButton>
+          <CodeSandboxLink
             target="_blank"
             rel="noreferrer"
             href={link}
             title="Edit on CodeSandbox"
           >
             <CodeSandboxIcon />
-          </a>
+          </CodeSandboxLink>
         </FlexRight>
       )}
     </>

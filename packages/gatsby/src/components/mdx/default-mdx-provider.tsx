@@ -27,7 +27,9 @@ const a = styled.a`
   }
 `
 
-const components = { Link, Example, pre, blockquote, a }
+const inlineCode = styled.code.attrs({ className: 'inline' })``
+
+const components = { Link, Example, pre, blockquote, a, inlineCode }
 
 export const DefaultMDXProvider: FC = ({ children }) => (
   <MDXProvider components={components}>{children}</MDXProvider>
