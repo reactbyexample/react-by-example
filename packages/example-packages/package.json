@@ -14,6 +14,13 @@
     "watch:build": "nodemon --config nodemon.build.json -x \"run-s build\"",
     "watch:example-packages": "nodemon --config nodemon.example-packages.json -x \"run-s build:example-packages\""
   },
+  "peerDependencies": {
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "formik": "2.2.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1"
+  },
   "devDependencies": {
     "@app/examples": "workspace:*",
     "@app/inherit-files": "workspace:*",

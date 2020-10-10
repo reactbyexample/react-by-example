@@ -1,0 +1,40 @@
+---
+title: Events & Forms
+---
+
+# Events & Forms
+
+## Events
+
+- handlers are props
+- `tsx∫onSomeEvent={event => console.log(event.target)}`
+- events are ["synthetic"](https://reactjs.org/docs/events.html), normalized between browsers
+- [supported events](https://reactjs.org/docs/events.html#supported-events)
+
+[formik]: https://jaredpalmer.com/formik/
+[recommendation]: https://reactjs.org/docs/forms.html#fully-fledged-solutions
+
+```yaml {example}
+project: forms-event-log
+```
+
+## Forms
+
+- use `value` & `onChange` props to control form items
+
+```yaml {example}
+project: forms-simple-input
+```
+
+- with multiple form items
+
+```yaml {example}
+project: forms-simple-form
+```
+
+- using plain React to handle complex forms doesn't scale well
+- use [formik] ([recommended by React][recommendation]), or other form library
+
+```yaml {example}
+project: forms-formik
+```

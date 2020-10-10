@@ -1,6 +1,7 @@
 import { inheritFiles, Project } from '@app/inherit-files'
 import { promises } from 'fs'
 import { dirname, resolve } from 'path'
+import { filterNodeModules } from './filter-node-modules'
 import { readFilesRecursively } from './read-files-recursively'
 import { subDirectories } from './sub-directories'
 
@@ -11,10 +12,12 @@ export const main = async (
   examplesDirectory: string,
   outputDirectory: string,
 ): Promise<void> => {
-  const examples = await subDirectories(examplesDirectory)
+  const examples = filterNodeModules(await subDirectories(examplesDirectory))
 
   const resolveProject = async (id: string): Promise<Project> => {
-    const templates = await subDirectories(templatesDirectory)
+    const templates = filterNodeModules(
+      await subDirectories(templatesDirectory),
+    )
     if (templates.includes(id))
       return readFilesRecursively(resolve(templatesDirectory, id))
 

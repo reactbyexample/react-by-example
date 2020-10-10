@@ -21,6 +21,7 @@
     "@mdx-js/react": "1.6.16",
     "babel-plugin-styled-components": "1.11.1",
     "firacode": "5.2.0",
+    "formik": "2.2.0",
     "gatsby": "2.24.53",
     "gatsby-plugin-mdx": "1.2.37",
     "gatsby-plugin-pnpm": "1.2.5",

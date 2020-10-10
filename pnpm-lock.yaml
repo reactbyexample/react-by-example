@@ -75,7 +75,18 @@ importers:
       rimraf: 3.0.2
       typescript: 4.0.2
   packages/examples:
-    specifiers: {}
+    devDependencies:
+      '@types/react': 16.9.49
+      '@types/react-dom': 16.9.8
+      formik: 2.2.0_react@16.13.1
+      react: 16.13.1
+      react-dom: 16.13.1_react@16.13.1
+    specifiers:
+      '@types/react': 16.9.49
+      '@types/react-dom': 16.9.8
+      formik: 2.2.0
+      react: 16.13.1
+      react-dom: 16.13.1
   packages/gatsby:
     dependencies:
       '@app/example-packages': 'link:../example-packages'
@@ -89,6 +100,7 @@ importers:
       '@mdx-js/react': 1.6.16_react@16.13.1
       babel-plugin-styled-components: 1.11.1_styled-components@5.2.0
       firacode: 5.2.0
+      formik: 2.2.0_react@16.13.1
       gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
       gatsby-plugin-mdx: 1.2.37_aeae3a2c041369d9e1c46f54553684e8
       gatsby-plugin-pnpm: 1.2.5_gatsby@2.24.53
@@ -142,6 +154,7 @@ importers:
       '@types/typography': 0.16.3
       babel-plugin-styled-components: 1.11.1
       firacode: 5.2.0
+      formik: 2.2.0
       gatsby: 2.24.53
       gatsby-plugin-mdx: 1.2.37
       gatsby-plugin-pnpm: 1.2.5
@@ -326,7 +339,16 @@ importers:
       ts-jest: 26.3.0
       typescript: 4.0.2
   packages/templates:
-    specifiers: {}
+    devDependencies:
+      '@types/react': 16.9.49
+      '@types/react-dom': 16.9.8
+      react: 16.13.1
+      react-dom: 16.13.1_react@16.13.1
+    specifiers:
+      '@types/react': 16.9.49
+      '@types/react-dom': 16.9.8
+      react: 16.13.1
+      react-dom: 16.13.1
   packages/unified-filter:
     dependencies:
       unist-util-filter: 2.0.2
@@ -3712,7 +3734,7 @@ packages:
       integrity: sha512-uX5ni5zoCqBzOMNDlgCaf4apVyqBlzDbOexG7qOhuoXUKHU5v1G0gmGaV5Wvs4cAOtyL1294h3rBEWbj9sMeCg==
   /babel-plugin-remove-graphql-queries/2.9.20_gatsby@2.24.53:
     dependencies:
-      gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
+      gatsby: 2.24.53_gatsby@2.24.53+typescript@4.0.2
     engines:
       node: '>=10.13.0'
     peerDependencies:
@@ -6965,6 +6987,21 @@ packages:
       react: '>=16.8.0'
     resolution:
       integrity: sha512-n1wviIh0JsvHqj9PufNvOV+fS7mFwh9FfMxxTMnTrKR/uVYMS06DKaivXBlJdDF0qEwTcPHxSmIQ3deFHL3Hsg==
+  /formik/2.2.0_react@16.13.1:
+    dependencies:
+      deepmerge: 2.2.1
+      hoist-non-react-statics: 3.3.2
+      lodash: 4.17.20
+      lodash-es: 4.17.15
+      react: 16.13.1
+      react-fast-compare: 2.0.4
+      scheduler: 0.18.0
+      tiny-warning: 1.0.3
+      tslib: 1.13.0
+    peerDependencies:
+      react: '>=16.8.0'
+    resolution:
+      integrity: sha512-l47RfvejhfHNh8rTRVaCaPfx8nyeYDSTLaEqRvLX4qkWnrrq9ByGVCWggVR+0TVtzc5Ub1gLUuVu9UKuGwfhjA==
   /forwarded/0.1.2:
     engines:
       node: '>= 0.6'
@@ -7355,7 +7392,7 @@ packages:
       '@sindresorhus/slugify': 1.1.0
       chokidar: 3.4.2
       fs-exists-cached: 1.0.0
-      gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
+      gatsby: 2.24.53_gatsby@2.24.53+typescript@4.0.2
       gatsby-page-utils: 0.2.27
       globby: 11.0.1
       graphql: 14.7.0
@@ -8960,7 +8997,7 @@ packages:
   /ink-box/1.0.0_ink@2.7.1+react@16.13.1:
     dependencies:
       boxen: 3.2.0
-      ink: 2.7.1_5ce8f66b58dc92cd3f67a918e0e72f70
+      ink: 2.7.1_react@16.13.1
       prop-types: 15.7.2
       react: 16.13.1
     engines:
@@ -8973,7 +9010,7 @@ packages:
   /ink-spinner/3.1.0_ink@2.7.1+react@16.13.1:
     dependencies:
       cli-spinners: 1.3.1
-      ink: 2.7.1_5ce8f66b58dc92cd3f67a918e0e72f70
+      ink: 2.7.1_react@16.13.1
       prop-types: 15.7.2
       react: 16.13.1
     engines:
@@ -12664,7 +12701,6 @@ packages:
       prop-types: 15.7.2
       react: 16.13.1
       scheduler: 0.19.1
-    dev: false
     peerDependencies:
       react: ^16.13.1
     resolution:
