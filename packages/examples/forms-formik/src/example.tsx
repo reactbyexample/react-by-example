@@ -1,6 +1,6 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import { Field, FieldProps, Form, Formik } from 'formik'
 import React, { FC } from 'react'
+import { UserAPI } from './user-api'
 
 const SimpleFormik: FC = () => {
   return (
@@ -11,8 +11,14 @@ const SimpleFormik: FC = () => {
         terms: false,
         submitted: false,
       }}
-      onSubmit={(_values, { setFieldValue }) => {
+      onSubmit={async ({ username, password }, { setFieldValue }) => {
         setFieldValue('submitted', true)
+        try {
+          await UserAPI.register({ username, password })
+          // redirect to profile
+        } catch {
+          // show error
+        }
       }}
     >
       <Form>
@@ -30,11 +36,11 @@ const SimpleFormik: FC = () => {
         </div>
         <div>
           <label>
-            <Field name="terms" type="checkbox" />
-            Read the T&amp;C
+            <Field type="checkbox" name="terms" />
+            <span>I have read the Terms and Conditions</span>
           </label>
         </div>
-        <button type="submit">Submit</button>
+        <button type="submit">Register</button>
         <Field>
           {({ form }: FieldProps) => (
             <pre>{JSON.stringify(form.values, null, '  ')}</pre>

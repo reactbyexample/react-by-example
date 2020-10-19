@@ -7,6 +7,10 @@ import { Example } from './example'
 const pre = styled.pre`
   max-width: 100%;
   overflow: auto;
+
+  --grvsc-border-radius: var(--app-border-radius);
+  --grvsc-padding-h: 0.5em;
+  --grvsc-padding-v: 0.5em;
 `
 
 const blockquote = styled.blockquote`

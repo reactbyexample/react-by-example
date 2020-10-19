@@ -39,7 +39,7 @@ const Paging = styled.div`
     'next'
     'prev';
 
-  @media (min-width: ${(p) => p.theme.breakpoints.xl}) {
+  @media (min-width: ${(p) => p.theme.breakpoints.sm}) {
     grid-template-areas: 'prev void next';
     grid-template-columns: auto 1fr auto;
   }

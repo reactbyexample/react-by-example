@@ -2,14 +2,6 @@ import React, { FC, ReactNode, useCallback, useState } from 'react'
 import styled from 'styled-components'
 import { CodeSandboxIcon, ResetIcon } from '../icons'
 
-const Code = styled.div`
-  .grvsc-container {
-    --grvsc-border-radius: var(--app-border-radius);
-    --grvsc-padding-h: 0.5em;
-    --grvsc-padding-v: 0.5em;
-  }
-`
-
 const Render = styled.div`
   display: flex;
   padding: 1em;
@@ -56,20 +48,24 @@ export const Example: FC<ExampleProps> = ({ code, render, link }) => {
   }, [])
   return (
     <>
-      <Code>{code}</Code>
+      {code}
       <Render key={resetKey}>
         <div>{render}</div>
       </Render>
       {link && (
         <FlexRight>
-          <ResetButton type="button" onClick={triggerReset}>
+          <ResetButton
+            type="button"
+            title="reset example"
+            onClick={triggerReset}
+          >
             <ResetIcon />
           </ResetButton>
           <CodeSandboxLink
             target="_blank"
             rel="noreferrer"
             href={link}
-            title="Edit on CodeSandbox"
+            title="edit on CodeSandbox"
           >
             <CodeSandboxIcon />
           </CodeSandboxLink>

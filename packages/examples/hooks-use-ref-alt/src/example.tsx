@@ -4,15 +4,15 @@ export const SelfDestruct: FC = () => {
   const [destroyed, setDestroyed] = useState(false)
   const timeoutRef = useRef<number>()
 
-  const stop = () => {
+  const cancel = () => {
     window.clearTimeout(timeoutRef.current)
     timeoutRef.current = undefined
   }
   const start = () => {
-    stop()
+    cancel()
     timeoutRef.current = window.setTimeout(() => {
       setDestroyed(true)
-    }, 5000)
+    }, 2000)
   }
 
   return destroyed ? null : (
@@ -20,10 +20,10 @@ export const SelfDestruct: FC = () => {
       <button type="button" onClick={start}>
         start self-destruct sequence
       </button>
-      <button type="button" onClick={stop}>
-        stop self-destruct sequence
+      <button type="button" onClick={cancel}>
+        cancel self-destruct sequence
       </button>
-      <p>this message will destroy itself in 5 seconds</p>
+      <p>this message will destroy itself in 2 seconds</p>
     </>
   )
 }

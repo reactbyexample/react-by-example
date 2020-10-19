@@ -1,7 +1,8 @@
+/* eslint-disable no-alert */
 import React from 'react'
 
 const propsToSpread = {
-  onClick: () => document.body.append(`don't do this in prod`),
+  onClick: () => alert(`please don't click me`),
 }
 
 export default (

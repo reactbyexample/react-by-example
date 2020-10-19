@@ -21,15 +21,13 @@ export const LocaleClock: FC<{ locale?: string }> = ({ locale }) => {
 
 export const ToggleLocale: FC = () => {
   const [locale, setLocale] = useState('en-GB')
+  const toggleLocale = () => {
+    setLocale(locale === 'en-GB' ? 'th-TH-u-nu-thai' : 'en-GB')
+  }
 
   return (
     <>
-      <button
-        type="button"
-        onClick={() =>
-          setLocale(locale === 'en-GB' ? 'th-TH-u-nu-thai' : 'en-GB')
-        }
-      >
+      <button type="button" onClick={toggleLocale}>
         toggle locale
       </button>
       <LocaleClock locale={locale} />

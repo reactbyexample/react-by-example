@@ -30,6 +30,7 @@ module.exports = {
         'no-restricted-syntax': 'off',
         'import/no-extraneous-dependencies': 'off',
         'import/prefer-default-export': 'off',
+        'jsx-a11y/label-has-associated-control': 'off',
         'jsx-a11y/media-has-caption': 'off',
         'react/jsx-props-no-spreading': 'off',
         'react/prop-types': 'off',

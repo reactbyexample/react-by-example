@@ -1,5 +1,5 @@
-/* eslint-disable jsx-a11y/label-has-associated-control */
 import React, { FC, useState } from 'react'
+import { UserAPI } from './user-api'
 
 const SimpleForm: FC = () => {
   const [username, setUsername] = useState('')
@@ -9,9 +9,15 @@ const SimpleForm: FC = () => {
 
   return (
     <form
-      onSubmit={(event) => {
+      onSubmit={async (event) => {
         event.preventDefault()
         setSubmitted(true)
+        try {
+          await UserAPI.register({ username, password })
+          // redirect to profile
+        } catch {
+          // show error
+        }
       }}
     >
       <div>
@@ -41,10 +47,10 @@ const SimpleForm: FC = () => {
             checked={terms}
             onChange={(event) => setTerms(event.target.checked)}
           />
-          Read the T&amp;C
+          <span>I have read the Terms and Conditions</span>
         </label>
       </div>
-      <button type="submit">Submit</button>
+      <button type="submit">Register</button>
       <pre>
         {JSON.stringify({ username, password, terms, submitted }, null, '  ')}
       </pre>

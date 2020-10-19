@@ -16,7 +16,7 @@ title: Hooks
     - same hook can be used multiple times
     - they must be called in the same order _every time_, otherwise React does not know which hook is which
 - only call hooks from React functions
-  - don't call hooks from regular javascript functions
+  - don't call hooks from regular JavaScript functions
   - rationale:
     - hook state is bound to the _component instance_ that is being rendered
 - (convention) custom hooks start with `use`
@@ -55,8 +55,8 @@ project: hooks-use-ref-alt
 
 - `ts∫useEffect(effectFn, deps?)`
 - use for side-effects
-- first parameter: function that can have side-effects; optionally return cleanup function
-- second parameter: a list of values that the side-effect depends on (optional)
+- `effectFn`: function that can have side-effects; optionally return cleanup function
+- `deps`: a list of values that the side-effect depends on (optional)
 - when dependencies change, the effect is cleaned up and ran again
 - if no dependencies are given, then the effect runs on every render
 - [docs](https://reactjs.org/docs/hooks-reference.html#useeffect)
