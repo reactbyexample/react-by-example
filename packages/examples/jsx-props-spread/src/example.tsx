@@ -1,4 +1,3 @@
-/* eslint-disable no-alert */
 import React from 'react'
 
 const propsToSpread = {

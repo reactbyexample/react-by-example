@@ -18,10 +18,21 @@ export const inheritFiles = async (
   const extendsFileContent = project[extendsFile]
   if (!extendsFileContent) return project
 
-  const parentProject = await inheritFiles(extendsFileContent.trim(), args)
+  const extendsProjects = await Promise.all(
+    extendsFileContent
+      .split('\n')
+      .map((s) => s.trim())
+      .filter(Boolean)
+      .map((id) => inheritFiles(id, args)),
+  )
+
+  const inheritedFiles = extendsProjects.reduce(
+    (acc, curr) => ({ ...acc, ...curr }),
+    {},
+  )
 
   const extendedProject = {
-    ...parentProject,
+    ...inheritedFiles,
     ...project,
   }
   delete extendedProject[extendsFile]

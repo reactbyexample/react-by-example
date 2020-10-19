@@ -1,58 +1,9 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`inheritFiles fs should render project intro-hello-world 1`] = `
+exports[`inheritFiles mock multiple extends should render project 1`] = `
 Object {
-  "src/index.tsx": "import React from 'react'
-import ReactDOM from 'react-dom'
-
-ReactDOM.render(<p>Hello world!</p>, document.getElementById('root'))
-",
-  "src/render.tsx": "import React from 'react'
-
-export default <p>Hello world!</p>
-",
-}
-`;
-
-exports[`inheritFiles fs should render project intro-static-clock 1`] = `
-Object {
-  "src/index.tsx": "import React from 'react'
-import ReactDOM from 'react-dom'
-
-const app = () => <div>the time is {new Date().toLocaleTimeString()}</div>
-ReactDOM.render(app(), document.getElementById('root'))
-",
-  "src/render.tsx": "import React from 'react'
-
-export default <div>the time is {new Date().toLocaleTimeString()}</div>
-",
-}
-`;
-
-exports[`inheritFiles fs should render project react 1`] = `
-Object {
-  "src/example.tsx": "import React, { FC } from 'react'
-
-export const Simple: FC = () => <h1>Hello world!</h1>
-
-export default <Simple />
-",
-  "src/index.tsx": "import React from 'react'
-import ReactDOM from 'react-dom'
-import example from './example'
-
-ReactDOM.render(<>{example}</>, document.getElementById('root'))
-",
-}
-`;
-
-exports[`inheritFiles fs should render project simple-react 1`] = `
-Object {
-  "src/index.tsx": "import React from 'react'
-import ReactDOM from 'react-dom'
-
-ReactDOM.render(<p>Hello world!</p>, document.getElementById('root'))
-",
+  ".tool.rc": "configuration file",
+  "foo.txt": "foo",
 }
 `;
 
