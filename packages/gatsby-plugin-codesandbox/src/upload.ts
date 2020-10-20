@@ -1,3 +1,4 @@
+import { backoff } from '@app/backoff'
 import { Semaphore } from '@app/semaphore'
 import fetch from 'node-fetch'
 import { CodesandboxInput } from './types'
@@ -29,5 +30,19 @@ const uploadUnlimited = async (sandbox: CodesandboxInput): Promise<string> => {
 
 const semaphore = new Semaphore()
 export const upload = (sandbox: CodesandboxInput): Promise<string> => {
-  return semaphore.enter(() => uploadUnlimited(sandbox))
+  return semaphore.enter(() =>
+    backoff(
+      (attempt) => {
+        // eslint-disable-next-line no-console
+        console.log(
+          '[gatsby-plugin-codesandbox]',
+          `uploading ${sandbox.name}`,
+          attempt > 0 ? `(attempt ${attempt + 1})` : '',
+        )
+
+        return uploadUnlimited(sandbox)
+      },
+      { maxRetries: 5, factor: 2.8 },
+    ),
+  )
 }
