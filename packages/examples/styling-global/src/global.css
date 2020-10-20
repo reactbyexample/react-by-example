@@ -1,0 +1,18 @@
+.global__wrapper {
+  min-height: 250px;
+  min-width: 250px;
+}
+
+.global__circle {
+  align-items: center;
+  background-color: dodgerblue;
+  border-radius: 99999px;
+  color: aliceblue;
+  display: flex;
+  flex-direction: column;
+  font-family: Arial, Helvetica, sans-serif;
+  height: 10em;
+  justify-content: center;
+  transition: all 0.5s cubic-bezier(0.68, -0.55, 0.265, 1.55);
+  width: 10em;
+}

@@ -1,0 +1,70 @@
+---
+title: Styling
+---
+
+# Styling
+
+> React does not have an opinion about how styles are defined; if in doubt, a
+> good starting point is to define your styles in a separate `*.css` file as
+> usual and refer to them using `className`.
+>
+> -- [React](https://reactjs.org/docs/faq-styling.html#what-is-css-in-js)
+
+## Global CSS
+
+![the ol' reliable]
+
+- just import some CSS
+- no scoping
+- have to use [BEM]
+
+[the ol' reliable]: https://external-content.duckduckgo.com/iu/?u=https%3A%2F%2Fi.ytimg.com%2Fvi%2F4dFgGp8Bfoo%2Fhqdefault.jpg
+[bem]: http://getbem.com
+
+```yaml {example}
+project: styling-global
+```
+
+## CSS modules
+
+- just import some CSS
+- must be named `*.module.css`
+- classes automatically scoped, worry free naming
+- CSS bundled with component
+- short class names in production
+- less dead CSS
+
+```yaml {example}
+project: styling-module
+```
+
+- note that both CSS approaches have to use the [`style`] prop for dynamic styles
+
+[`style`]: https://reactjs.org/docs/dom-elements.html#style
+
+## CSS in JS
+
+- common pattern in React apps **provided by libraries**
+- [`styled-components`][styled] most popular
+
+  > - Automatic critical CSS
+  > - No class name bugs
+  > - Easier deletion of CSS
+  > - Simple dynamic styling
+  > - Painless maintenance
+  > - Automatic vendor prefixing
+
+- fantastic for dynamic styling
+- component fully contained in single file
+- needs [extension] for syntax highlighting
+
+[styled]: https://styled-components.com
+[extension]: https://github.com/styled-components/vscode-styled-components
+
+```yaml {example}
+project: styling-styled
+```
+
+## PS
+
+- it doesn't matter which approach you use, but don't mix them

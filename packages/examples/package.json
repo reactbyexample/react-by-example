@@ -5,15 +5,21 @@
   "peerDependencies": {
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
+    "@types/styled-components": "5.1.3",
     "formik": "2.2.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-is": "16.13.1",
+    "styled-components": "5.2.0"
   },
   "devDependencies": {
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
+    "@types/styled-components": "5.1.3",
     "formik": "2.2.0",
     "react": "16.13.1",
-    "react-dom": "16.13.1"
+    "react-dom": "16.13.1",
+    "react-is": "16.13.1",
+    "styled-components": "5.2.0"
   }
 }

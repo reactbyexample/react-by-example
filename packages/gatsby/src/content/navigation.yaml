@@ -3,4 +3,5 @@ navigation:
   - about-jsx
   - function-components
   - hooks
+  - styling
   - events-forms
