@@ -1,5 +1,5 @@
 export interface BackoffArgs {
-  maxRetries?: number
+  maxAttempts?: number
   factor?: number
   minTimeout?: number
   maxTimeout?: number
