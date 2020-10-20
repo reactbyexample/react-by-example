@@ -127,6 +127,7 @@ importers:
       gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
       gatsby-plugin-mdx: 1.2.37_aeae3a2c041369d9e1c46f54553684e8
       gatsby-plugin-pnpm: 1.2.5_gatsby@2.24.53
+      gatsby-plugin-react-helmet: 3.3.6_63e36baafb7138579b2c6b885441331a
       gatsby-plugin-styled-components: 3.3.12_d47be3c0323e4481a652546f61cbe177
       gatsby-plugin-typography: 2.5.12_95e031d933e1b681fa497b2e9eed1766
       gatsby-remark-external-links: 0.0.4
@@ -137,6 +138,7 @@ importers:
       gatsby-transformer-yaml: 2.4.12_gatsby@2.24.53
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
+      react-helmet: 6.1.0_react@16.13.1
       react-typography: 0.16.19_react@16.13.1
       regenerator-runtime: 0.13.7
       remark-autolink-headings: 6.0.1
@@ -149,6 +151,7 @@ importers:
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/react-helmet': 5.0.6
       '@types/remark-autolink-headings': 'link:../../@types/remark-autolink-headings'
       '@types/remark-slug': 'link:../../@types/remark-slug'
       '@types/styled-components': 5.1.3
@@ -171,6 +174,7 @@ importers:
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/react-helmet': 5.0.6
       '@types/remark-autolink-headings': 'workspace:*'
       '@types/remark-slug': 'workspace:*'
       '@types/styled-components': 5.1.3
@@ -181,6 +185,7 @@ importers:
       gatsby: 2.24.53
       gatsby-plugin-mdx: 1.2.37
       gatsby-plugin-pnpm: 1.2.5
+      gatsby-plugin-react-helmet: 3.3.6
       gatsby-plugin-styled-components: 3.3.12
       gatsby-plugin-typography: 2.5.12
       gatsby-remark-external-links: 0.0.4
@@ -193,6 +198,7 @@ importers:
       npm-run-all: 4.1.5
       react: 16.13.1
       react-dom: 16.13.1
+      react-helmet: 6.1.0
       react-typography: 0.16.19
       regenerator-runtime: 0.13.7
       remark-autolink-headings: 6.0.1
@@ -2825,6 +2831,12 @@ packages:
     dev: true
     resolution:
       integrity: sha512-ykkPQ+5nFknnlU6lDd947WbQ6TE3NNzbQAkInC2EKY1qeYdTKp7onFusmYZb+ityzx2YviqT6BXSu+LyWWJwcA==
+  /@types/react-helmet/5.0.6:
+    dependencies:
+      '@types/react': 16.9.49
+    dev: true
+    resolution:
+      integrity: sha512-M+m7XUzRdk9g8utnJR3FP6mpQ38GuXuC5hfJe5w6NbwFIoWEyLRObj6iZSEEFnh8XX26J9ybQPYI2dBeP/VIWg==
   /@types/react/16.9.49:
     dependencies:
       '@types/prop-types': 15.7.3
@@ -7463,6 +7475,19 @@ packages:
       gatsby: ~2.x.x
     resolution:
       integrity: sha512-zGJUVApj641WTPiE0L4ZEFbt0iK8pEVIP0dtG5hPTRaTrb0zeZRp8Id9COf5sciwO0zGfT1/CmF6OyhV8KZr+g==
+  /gatsby-plugin-react-helmet/3.3.6_63e36baafb7138579b2c6b885441331a:
+    dependencies:
+      '@babel/runtime': 7.11.2
+      gatsby: 2.24.53_a6144f335a406716ef1eb52b0d43a87d
+      react-helmet: 6.1.0_react@16.13.1
+    dev: false
+    engines:
+      node: '>=10.13.0'
+    peerDependencies:
+      gatsby: ^2.0.0
+      react-helmet: ^5.1.3 || ^6.0.0
+    resolution:
+      integrity: sha512-KEmgL5TxdMsMNm6p5jgz422p8qwogriDlm0WPgObFshR3fkAFtbqEX6FlZW0Vv8itt6tP3YbKHN4exxIA2Hc8g==
   /gatsby-plugin-styled-components/3.3.12_d47be3c0323e4481a652546f61cbe177:
     dependencies:
       '@babel/runtime': 7.11.2
@@ -12762,6 +12787,10 @@ packages:
   /react-fast-compare/2.0.4:
     resolution:
       integrity: sha512-suNP+J1VU1MWFKcyt7RtjiSWUjvidmQSlqu+eHslq+342xCbGTYmC0mEhPCOHxlW0CywylOC1u2DFAT+bv4dBw==
+  /react-fast-compare/3.2.0:
+    dev: false
+    resolution:
+      integrity: sha512-rtGImPZ0YyLrscKI9xTpV8psd6I8VAtjKCzQDlzyDvqJA8XOW78TXYQwNRNd8g8JZnDu8q9Fu/1v4HPAVwVdHA==
   /react-focus-lock/2.4.1_5ce8f66b58dc92cd3f67a918e0e72f70:
     dependencies:
       '@babel/runtime': 7.11.2
@@ -12791,6 +12820,18 @@ packages:
       react: ^16.8.0
     resolution:
       integrity: sha512-c5ZP56KSpj9EAxzScTqQO7bQQNPltf/W1ZEBDqNDOV1XOIwvAyHX0O7db9ekiAtxyKgnqZjQlLppVg94fUeL9w==
+  /react-helmet/6.1.0_react@16.13.1:
+    dependencies:
+      object-assign: 4.1.1
+      prop-types: 15.7.2
+      react: 16.13.1
+      react-fast-compare: 3.2.0
+      react-side-effect: 2.1.0_react@16.13.1
+    dev: false
+    peerDependencies:
+      react: '>=16.3.0'
+    resolution:
+      integrity: sha512-4uMzEY9nlDlgxr61NL3XbKRy1hEkXmKNXhjbAIOVw5vcFrsdYbH2FEwcNyWvWinl103nXgzYNlns9ca+8kFiWw==
   /react-hot-loader/4.13.0:
     dependencies:
       fast-levenshtein: 2.0.6
@@ -12955,6 +12996,14 @@ packages:
         optional: true
     resolution:
       integrity: sha512-BZIO3GaEs0Or1OhA5C//n1ibUP1HdjJmqUVUsOCMxwoIpaCocbB9TFKwHOkBa/nyYy3slirqXeiPYGwdSDiseA==
+  /react-side-effect/2.1.0_react@16.13.1:
+    dependencies:
+      react: 16.13.1
+    dev: false
+    peerDependencies:
+      react: ^16.3.0
+    resolution:
+      integrity: sha512-IgmcegOSi5SNX+2Snh1vqmF0Vg/CbkycU9XZbOHJlZ6kMzTmi3yc254oB1WCkgA7OQtIAoLmcSFuHTc/tlcqXg==
   /react-style-singleton/2.1.0_5ce8f66b58dc92cd3f67a918e0e72f70:
     dependencies:
       '@types/react': 16.9.49

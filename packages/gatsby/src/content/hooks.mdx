@@ -2,13 +2,13 @@
 title: Hooks
 ---
 
-# Hooks
+## Hooks
 
 - allows state and side-effects in function components
 - simple to use, but follow the [rules](#rules)
 - create custom hooks, great for encapsulating common functionality
 
-## Rules
+### Rules
 
 - only call hooks at the top level
   - don't call hooks inside loops, conditions, or nested functions
@@ -24,7 +24,7 @@ title: Hooks
 * [more details](https://reactjs.org/docs/hooks-rules.html)
 * rules are enforceable [`eslint-plugin-react-hooks`](https://www.npmjs.com/package/eslint-plugin-react-hooks)
 
-## `useState`
+### `useState`
 
 - `ts∫const [currentState, setNextStateFn] = useState(initialValue?)`
 - use for internal state that affects DOM
@@ -35,9 +35,9 @@ title: Hooks
 project: hooks-use-state
 ```
 
-## `useRef`
+### `useRef`
 
-- `ts∫const ref = useRef(initialValue)`
+- `ts∫const ref = useRef(initialValue?)`
 - use to reference elements, eg. to use their methods
 - [docs](https://reactjs.org/docs/hooks-reference.html#useref)
 
@@ -51,7 +51,7 @@ project: hooks-use-ref
 project: hooks-use-ref-alt
 ```
 
-## `useEffect`
+### `useEffect`
 
 - `ts∫useEffect(effectFn, deps?)`
 - use for side-effects

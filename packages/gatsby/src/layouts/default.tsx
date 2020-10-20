@@ -6,7 +6,10 @@ import {
   Navigation,
   Next,
   Prev,
+  SEO,
+  useSlug,
 } from '../components'
+import { useMdxTitle } from '../graphql'
 
 const Grid = styled.div`
   display: grid;
@@ -54,21 +57,26 @@ const StyledNext = styled(Next)`
 `
 
 const DefaultLayout: FC = ({ children }) => {
+  const slug = useSlug()
+  const title = useMdxTitle(slug)
   return (
-    <DefaultThemeProvider>
-      <Grid>
-        <NavigationSlot>
-          <Navigation />
-        </NavigationSlot>
-        <Content>
-          <DefaultMDXProvider>{children}</DefaultMDXProvider>
-          <Paging>
-            <StyledPrev />
-            <StyledNext />
-          </Paging>
-        </Content>
-      </Grid>
-    </DefaultThemeProvider>
+    <>
+      <SEO title={title} />
+      <DefaultThemeProvider>
+        <Grid>
+          <NavigationSlot>
+            <Navigation />
+          </NavigationSlot>
+          <Content>
+            <DefaultMDXProvider>{children}</DefaultMDXProvider>
+            <Paging>
+              <StyledPrev />
+              <StyledNext />
+            </Paging>
+          </Content>
+        </Grid>
+      </DefaultThemeProvider>
+    </>
   )
 }
 

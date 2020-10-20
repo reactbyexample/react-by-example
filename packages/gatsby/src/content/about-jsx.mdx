@@ -2,15 +2,16 @@
 title: About JSX
 ---
 
-# About JSX
+## About JSX
 
 - "HTML" that you can write in JavaScript
 
-## JSX
+### JSX
 
-- > JSX is an XML-like syntax extension to ECMAScript without any defined semantics.
-  >
-  > -- [JSX spec](https://facebook.github.io/jsx/)
+> JSX is an XML-like syntax extension to ECMAScript without any defined semantics.
+>
+> -- [JSX spec](https://facebook.github.io/jsx/)
+
 - has to be transpiled to JavaScript
 - not coupled to React!
 - other implementations: [vue], [preact], [inferno], [stencil], [marko], etc...
@@ -21,11 +22,11 @@ title: About JSX
 [stencil]: https://stenciljs.com/
 [marko]: https://markojs.com/
 
-## Examples
+### Examples
 
 - examples of JSX and what it transpiles to under the hood
 
-### Simple
+#### Simple
 
 - elements become calls to [`ts∫React.createElement()`][create element]
 - first argument: type of element
@@ -38,7 +39,7 @@ title: About JSX
 project: jsx-simple
 ```
 
-### Props
+#### Props
 
 - second argument: attributes (aka. [props]) as key-value pairs
 
@@ -48,7 +49,7 @@ project: jsx-simple
 project: jsx-props
 ```
 
-### Prop types
+#### Prop types
 
 - props can be of any type, not just strings
 
@@ -56,7 +57,7 @@ project: jsx-props
 project: jsx-prop-types
 ```
 
-### Spread props
+#### Spread props
 
 - objects can be spread on elements
 - applies all keys in the object as props
@@ -65,7 +66,7 @@ project: jsx-prop-types
 project: jsx-props-spread
 ```
 
-### Interpolate
+#### Interpolate
 
 - values can be interpolated using `{value}`
 - usually renders as `ts∫String(value)`
@@ -79,7 +80,7 @@ project: jsx-props-spread
 project: jsx-interpolate
 ```
 
-### Repeat
+#### Repeat
 
 - use `ts∫array.map()` to "loop" over values
 - use the special [`key` prop][key prop] to distinguish elements in the array

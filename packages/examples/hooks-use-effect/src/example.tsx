@@ -1,7 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 
 export const LocaleClock: FC<{ locale?: string }> = ({ locale }) => {
-  // note how different hooks can be used together
   const [timeString, setTimeString] = useState<string>()
   useEffect(() => {
     const update = () => {

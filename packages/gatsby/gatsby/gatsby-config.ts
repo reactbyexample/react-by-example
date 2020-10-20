@@ -5,7 +5,11 @@ import { gatsbyRemarkPlugins } from './gatsby-remark-plugins'
 const root = resolve(__dirname, '..')
 
 const gatsbyConfig = {
-  siteMetadata: {},
+  siteMetadata: {
+    title: 'React by Example',
+    description: 'A React tutorial for programmers',
+    lang: 'en',
+  },
   plugins: [
     { resolve: 'gatsby-plugin-pnpm' },
     {
