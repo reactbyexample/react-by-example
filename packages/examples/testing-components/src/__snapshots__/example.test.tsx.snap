@@ -1,0 +1,87 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<GifFinder /> should snapshot 1`] = `
+<div>
+  <section>
+    <label>
+      find a gif
+      <input
+        placeholder="query"
+        value=""
+      />
+    </label>
+  </section>
+</div>
+`;
+
+exports[`<GifFinder /> when searching should render the gifs 1`] = `
+.c0 {
+  display: -webkit-box;
+  display: -webkit-flex;
+  display: -ms-flexbox;
+  display: flex;
+  width: 600px;
+  -webkit-flex-wrap: wrap;
+  -ms-flex-wrap: wrap;
+  flex-wrap: wrap;
+}
+
+.c1 {
+  width: 200px;
+  height: 200px;
+}
+
+.c2 {
+  max-width: 100%;
+  max-height: 100%;
+}
+
+<div>
+  <section>
+    <label>
+      find a gif
+      <input
+        placeholder="query"
+        value="react"
+      />
+    </label>
+    <div
+      class="c0"
+    >
+      <button
+        aria-label="gif"
+        class="c1"
+        type="button"
+      >
+        <img
+          alt="gif"
+          class="c2"
+          src="gif1"
+        />
+      </button>
+      <button
+        aria-label="gif"
+        class="c1"
+        type="button"
+      >
+        <img
+          alt="gif"
+          class="c2"
+          src="gif2"
+        />
+      </button>
+      <button
+        aria-label="gif"
+        class="c1"
+        type="button"
+      >
+        <img
+          alt="gif"
+          class="c2"
+          src="gif3"
+        />
+      </button>
+    </div>
+  </section>
+</div>
+`;

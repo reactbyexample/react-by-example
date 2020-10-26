@@ -11,6 +11,10 @@ const pre = styled.pre`
   --grvsc-border-radius: var(--app-border-radius);
   --grvsc-padding-h: 0.5em;
   --grvsc-padding-v: 0.5em;
+
+  .dense & {
+    margin: 0;
+  }
 `
 
 const blockquote = styled.blockquote`

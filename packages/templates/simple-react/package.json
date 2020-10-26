@@ -2,6 +2,7 @@
   "name": "react-example",
   "scripts": {
     "start": "react-scripts start",
+    "start-test": "majestic",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -18,6 +19,7 @@
     "@types/node": "14.6.4",
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
+    "majestic": "1.8.0",
     "react-scripts": "3.4.3",
     "typescript": "4.0.2"
   },

@@ -1,6 +1,6 @@
 import React, { FC, ReactNode, useCallback, useState } from 'react'
 import styled from 'styled-components'
-import { CodeSandboxIcon, ResetIcon } from '../icons'
+import { BeakerIcon, CodeSandboxIcon, ResetIcon } from '../icons'
 
 const Render = styled.div`
   display: flex;
@@ -10,12 +10,17 @@ const Render = styled.div`
   align-items: center;
   justify-content: center;
 `
+
 const FlexRight = styled.div`
   display: flex;
   justify-content: flex-end;
+  margin-top: 0.25em;
 `
 
-const CodeSandboxLink = styled.a`
+const CodeSandboxLink = styled.a.attrs({
+  target: '_blank',
+  rel: 'noreferrer',
+})`
   display: flex;
 `
 
@@ -39,36 +44,43 @@ export interface ExampleProps {
   code?: ReactNode
   render?: ReactNode
   link?: string
+  testLink?: string
 }
 
-export const Example: FC<ExampleProps> = ({ code, render, link }) => {
+export const Example: FC<ExampleProps> = ({ code, render, link, testLink }) => {
   const [resetKey, setResetKey] = useState(Date.now())
   const triggerReset = useCallback(() => {
     setResetKey(Date.now())
   }, [])
   return (
     <>
-      {code}
-      <Render key={resetKey}>
-        <div>{render}</div>
-      </Render>
-      {link && (
+      {render ? code : <div className="dense">{code}</div>}
+      {render && (
+        <Render key={resetKey}>
+          <div>{render}</div>
+        </Render>
+      )}
+      {(render || link || testLink) && (
         <FlexRight>
-          <ResetButton
-            type="button"
-            title="reset example"
-            onClick={triggerReset}
-          >
-            <ResetIcon />
-          </ResetButton>
-          <CodeSandboxLink
-            target="_blank"
-            rel="noreferrer"
-            href={link}
-            title="edit on CodeSandbox"
-          >
-            <CodeSandboxIcon />
-          </CodeSandboxLink>
+          {render && (
+            <ResetButton
+              type="button"
+              title="reset example"
+              onClick={triggerReset}
+            >
+              <ResetIcon />
+            </ResetButton>
+          )}
+          {link && (
+            <CodeSandboxLink href={link} title="edit on CodeSandbox">
+              <CodeSandboxIcon />
+            </CodeSandboxLink>
+          )}
+          {testLink && (
+            <CodeSandboxLink href={testLink} title="test on CodeSandbox">
+              <BeakerIcon />
+            </CodeSandboxLink>
+          )}
         </FlexRight>
       )}
     </>

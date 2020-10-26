@@ -22,11 +22,12 @@ const useLift = <O>(
 const normalizeExampleYaml = (yaml: unknown): Required<ExampleYaml> => {
   const {
     project,
-    module = 'src/example.tsx',
+    type = 'component',
+    module = type === 'component' ? 'src/example.tsx' : 'src/example.test.tsx',
     code = true,
-    render = true,
+    render = type === 'component',
   } = yaml as ExampleYaml
-  return { project, module, code, render }
+  return { project, module, code, render, type }
 }
 
 export const gatsbyRemarkPlugins = [
@@ -84,14 +85,38 @@ export const gatsbyRemarkPlugins = [
   useLift(remarkInject(), ({ getNodesByType }) => ({
     visitor({ node: { data }, inject }) {
       if (!(data && data.yaml)) return inject.nothing()
-      const { project, module } = normalizeExampleYaml(data.yaml)
+
+      const { project, module, type } = normalizeExampleYaml(data.yaml)
 
       const codesandboxes = getNodesByType('Codesandbox') as CodesandboxNode[]
       const [codesandbox] = codesandboxes.filter(({ name }) => name === project)
       if (!codesandbox) return inject.nothing()
 
+      const prop = type === 'component' ? 'link' : 'testLink'
       return inject.comment(
-        `literal link="https://codesandbox.io/s/${codesandbox.sandboxId}?file=/${module}"`,
+        `literal ${prop}="https://codesandbox.io/s/${codesandbox.sandboxId}?file=/${module}"`,
+      )
+    },
+  })),
+  useLift(remarkInject(), ({ getNodesByType }) => ({
+    visitor({ node: { data }, inject }) {
+      if (!(data && data.yaml)) return inject.nothing()
+
+      const { project, module } = normalizeExampleYaml(data.yaml)
+
+      const codesandboxes = getNodesByType('Codesandbox') as CodesandboxNode[]
+      const [codesandbox] = codesandboxes.filter(
+        ({ name }) => name === `${project}-test`,
+      )
+      if (!codesandbox) return inject.nothing()
+
+      const moduleExtName = extname(module)
+      const testModule = module.replace(moduleExtName, `.test${moduleExtName}`)
+      if (!codesandbox.files.some((f) => f.name === testModule))
+        return inject.nothing()
+
+      return inject.comment(
+        `literal testLink="https://codesandbox.io/s/${codesandbox.sandboxId}?file=/${module}"`,
       )
     },
   })),

@@ -3,4 +3,5 @@ export interface ExampleYaml {
   module?: string
   code?: boolean
   render?: boolean | string
+  type?: 'component' | 'test'
 }

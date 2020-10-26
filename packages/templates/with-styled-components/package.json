@@ -2,6 +2,7 @@
   "name": "react-example",
   "scripts": {
     "start": "react-scripts start",
+    "start-test": "majestic",
     "build": "react-scripts build",
     "test": "react-scripts test",
     "eject": "react-scripts eject"
@@ -21,6 +22,8 @@
     "@types/react": "16.9.49",
     "@types/react-dom": "16.9.8",
     "@types/styled-components": "5.1.3",
+    "jest-styled-components": "7.0.3",
+    "majestic": "1.8.0",
     "react-scripts": "3.4.3",
     "typescript": "4.0.2"
   },

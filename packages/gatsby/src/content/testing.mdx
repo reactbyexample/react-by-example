@@ -1,0 +1,48 @@
+---
+title: Testing
+---
+
+## Testing
+
+- [Arrange-Act-Assert][aaa] pattern works great with React
+
+[aaa]: https://duckduckgo.com/?q=arrange+act+assert
+
+```yaml {example}
+type: test
+project: testing-dummy
+module: src/index.test.ts
+```
+
+### `GifFinder`
+
+- let's test a component that uses state & effects to find gifs
+
+```yaml {example}
+project: testing-components
+```
+
+### Testing `GifFinder`
+
+> The more your tests resemble the way your software is used,
+> the more confidence they can give you.
+>
+> -- [`@testing-library`]
+
+- [`create-react-app`] comes with [`@testing-library`]
+- works with [angular], [vue], [plain DOM][dom], etc...
+- no selectors, [forcing] you to write accessible components
+- alternatively, use [enzyme]
+
+[`create-react-app`]: https://create-react-app.dev/
+[`@testing-library`]: https://testing-library.com/
+[angular]: https://testing-library.com/docs/angular-testing-library/intro
+[vue]: https://testing-library.com/docs/vue-testing-library/intro
+[dom]: https://testing-library.com/docs/dom-testing-library/intro
+[forcing]: https://coderefinery.nz/2020/10/21/forcing-functions-in-software-development/
+[enzyme]: https://github.com/enzymejs/enzyme
+
+```yaml {example}
+type: test
+project: testing-components-test
+```

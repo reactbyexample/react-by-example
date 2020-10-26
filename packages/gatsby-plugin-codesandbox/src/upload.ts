@@ -42,7 +42,7 @@ export const upload = (sandbox: CodesandboxInput): Promise<string> => {
 
         return uploadUnlimited(sandbox)
       },
-      { maxRetries: 5, factor: 2.8 },
+      { maxAttempts: 10, minTimeout: 1000, factor: 1.37 },
     ),
   )
 }

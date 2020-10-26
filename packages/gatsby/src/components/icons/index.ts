@@ -1,4 +1,5 @@
 export * from './arrow'
+export * from './beaker'
 export * from './code-sandbox'
 export * from './icon'
 export * from './menu'
