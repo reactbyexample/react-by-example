@@ -1,0 +1,22 @@
+.button {
+  background: none;
+  border: 2px solid #ff5555;
+  color: inherit;
+  margin: 0.5em;
+  padding: 1em;
+  border-radius: 999px;
+  transition: 0.3s cubic-bezier(0.83, 0, 0.17, 1);
+  transition-property: box-shadow, transform;
+}
+.button:focus {
+  outline: 1px dotted #f1fa8c;
+  outline-offset: -1em;
+}
+.button:hover {
+  box-shadow: 3px 3px #f1fa8c;
+  transform: translate(-3px, -3px);
+}
+.button:active {
+  box-shadow: 1px 1px #f1fa8c;
+  transform: translate(-1px, -1px);
+}

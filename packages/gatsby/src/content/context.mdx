@@ -1,0 +1,40 @@
+---
+title: Context
+---
+
+## Context
+
+> Context is designed to share data that can be considered "global" for a tree of React components
+>
+> -- [React]
+
+- e.g. current user, theme, language, settings
+- props that need to be passed thru layers of components
+- parent to child communication
+- can be nested, [closest] value wins
+
+[react]: https://reactjs.org/docs/context.html#when-to-use-context
+[closest]: https://developer.mozilla.org/en-US/docs/Web/API/Element/closest
+
+### How?
+
+- [declare the context][create]
+- `ts∫const ThemeCtx = createContext(defaultTheme)`
+- [provide a value][provide]
+- `tsx∫<ThemeCtx.Provider value={dark}>…</ThemeCtx.Provider>`
+- [use the value][use]
+- `ts∫const currentTheme = useContext(ThemeCtx)`
+
+[create]: https://reactjs.org/docs/context.html#reactcreatecontext
+[provide]: https://reactjs.org/docs/context.html#contextprovider
+[use]: https://reactjs.org/docs/hooks-reference.html#usecontext
+
+```yaml {example}
+project: context-simple
+```
+
+### Dynamic Theme Example
+
+```yaml {example}
+project: context-complex
+```

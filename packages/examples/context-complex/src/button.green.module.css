@@ -1,0 +1,26 @@
+.button {
+  margin: 0.25em;
+  padding: 0.25em 1em;
+  background: #50fa7b;
+  border: none;
+  --clip-size: 0.7em;
+  clip-path: polygon(
+    100% 0,
+    100% calc(100% - var(--clip-size)),
+    calc(100% - var(--clip-size)) 100%,
+    0 100%,
+    0 var(--clip-size),
+    var(--clip-size) 0
+  );
+  transition: clip-path 0.1s cubic-bezier(0.785, 0.135, 0.15, 0.86);
+  outline: none;
+}
+.button:focus {
+  text-decoration: underline;
+}
+.button:hover {
+  --clip-size: 0.5em;
+}
+.button:active {
+  --clip-size: 0.3em;
+}

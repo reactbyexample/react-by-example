@@ -1,0 +1,19 @@
+.button {
+  margin: 0.25em;
+  padding: 0.5em 1em;
+  background: #8be9fd;
+  color: #21222c;
+  border: none;
+  border-radius: 4px;
+  transition: transform 0.2s cubic-bezier(0.68, -0.6, 0.32, 1.6);
+}
+.button:focus {
+  outline: 2px solid #8be9fd;
+  outline-offset: 2px;
+}
+.button:hover {
+  transform: scale(1.05);
+}
+.button:active {
+  transform: scale(0.95);
+}
