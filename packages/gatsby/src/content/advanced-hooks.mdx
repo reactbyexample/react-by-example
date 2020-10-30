@@ -1,0 +1,68 @@
+---
+title: Advanced Hooks
+---
+
+## Advanced Hooks
+
+- remember the [rules]
+
+[rules]: /hooks#rules
+
+### `useCallback`
+
+- `ts∫const memoizedFn = useCallback(fn, deps)`
+- `tsx∫<button onClick={() => ...} />` triggers unnecessary re-renders
+- because `ts∫(() => ...) !== (() => ...)`
+- every event handler should be wrapped with `useCallback`
+- [docs](https://reactjs.org/docs/hooks-reference.html#usecallback)
+
+### `useMemo`
+
+- `ts∫const memoizedValue = useMemo(computeValueFn, deps)`
+- `useMemo` will only recompute `memoizedValue` when one of `deps` have changed
+- wrap expensive computations to improve render performance
+- [docs](https://reactjs.org/docs/hooks-reference.html#usememo)
+
+```yaml {example}
+project: hooks-use-memo
+```
+
+### `useReducer`
+
+- `ts∫const [currentState, dispatchFn] = useReducer(reducerFn, initialState)`
+- use for
+  - complex state
+  - distributed state updates
+  - migrating from [redux]
+- if possible, use multiple [`useState`]s instead
+- [docs](https://reactjs.org/docs/hooks-reference.html#usereducer)
+
+[redux]: https://redux.js.org/
+[`usestate`]: /hooks#usestate
+
+```yaml {example}
+project: hooks-use-reducer
+```
+
+### `useLayoutEffect`
+
+- same as [`useEffect`] but runs synchronously, immediately after rendering
+- use for
+  - DOM manipulation
+  - when relying on order of effects
+- prefer [`useEffect`]
+- [docs](https://reactjs.org/docs/hooks-reference.html#uselayouteffect)
+
+[`useeffect`]: /hooks#useeffect
+
+### `useImperativeHandle`
+
+- `ts∫useImperativeHandle(ref, createRefValueFn, deps?)`
+- use for
+  - exposing an imperative API
+  - syncing two refs
+- [docs](https://reactjs.org/docs/hooks-reference.html#useimperativehandle)
+
+```yaml {example}
+project: hooks-use-imperative-handle
+```

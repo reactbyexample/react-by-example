@@ -9,8 +9,8 @@ const pre = styled.pre`
   overflow: auto;
 
   --grvsc-border-radius: var(--app-border-radius);
-  --grvsc-padding-h: 0.5em;
-  --grvsc-padding-v: 0.5em;
+  --grvsc-padding-h: 1em;
+  --grvsc-padding-v: 1em;
 
   .dense & {
     margin: 0;
