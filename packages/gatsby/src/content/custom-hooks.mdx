@@ -24,3 +24,45 @@ title: Custom Hooks
 ```yaml {example}
 project: custom-hooks-formik
 ```
+
+### On Click Out Event
+
+- a custom hook can return props in an object that can be spread
+- short, expressive & reusable
+- `tsx∫<div {...useClickOut(() => setOpen(false))}>…</div>`
+- can cause issues, [use][use] [sparingly][sparingly]
+
+[use]: https://reactjs.org/docs/jsx-in-depth.html#spread-attributes
+[sparingly]: https://github.com/yannickcr/eslint-plugin-react/blob/master/docs/rules/jsx-props-no-spreading.md
+
+```yaml {example}
+project: custom-hooks-click-out
+```
+
+### Keyboard Navigation
+
+- keyboard navigation is a common requirement for [accessible][accessible] [components][components]
+- using [context] and custom hooks makes it possible to reuse this logic
+
+[accessible]: https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction
+[components]: https://www.w3.org/TR/wai-aria-practices/#keyboard-interaction-19
+[context]: /context
+
+```yaml {example}
+project: custom-hooks-navigation
+module: src/navigation.tsx
+render: false
+```
+
+#### Tabs With Keyboard Navigation
+
+```yaml {example}
+project: custom-hooks-navigation
+```
+
+#### Accordion With Keyboard Navigation
+
+```yaml {example}
+project: custom-hooks-navigation
+module: src/accordion-example.tsx
+```

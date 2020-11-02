@@ -1,0 +1,16 @@
+.container {
+  position: relative;
+}
+
+.toggle {
+  width: 100%;
+}
+
+.content {
+  border: 2px solid #ff5555;
+  position: absolute;
+  left: 0;
+  right: 0;
+  background: #282a36;
+  color: #f8f8f2;
+}
