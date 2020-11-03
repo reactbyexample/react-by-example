@@ -1,0 +1,98 @@
+---
+title: Routing
+---
+
+## Routing
+
+### Why?
+
+- navigating makes the page reload
+- without caching it can be slow
+- avoid page reloads by using a router
+
+### How?
+
+- no official way, but many libraries
+- [`react-router`] is the most popular
+- [other libraries to consider][others]
+- [`navi`] promising up-and-comer
+
+[`react-router`]: https://github.com/ReactTraining/react-router
+[others]: https://github.com/enaqx/awesome-react#react-routing
+[`navi`]: https://github.com/frontarm/navi
+
+### Using `react-router`
+
+- the following is just an overview, the [docs] are more detailed
+
+[docs]: https://reacttraining.com/react-router/
+
+#### `Router`
+
+- [docs](https://reactrouter.com/core/api/Router)
+- at top-level
+- `BrowserRouter` for browser [docs](https://reactrouter.com/web/api/BrowserRouter)
+- `StaticRouter` for [server-side rendering][ssr] [docs](https://reactrouter.com/core/api/StaticRouter)
+- `MemoryRouter` for testing [docs](https://reactrouter.com/core/api/MemoryRouter)
+
+> examples use a custom `Router` based on `MemoryRouter`
+
+[ssr]: https://reactjs.org/docs/react-dom-server.html#rendertostring
+
+#### `Route`
+
+- [docs](https://reactrouter.com/web/api/Route)
+- matches `path` to components
+- multiple can be active
+- can be nested, side-by-side
+- fully dynamic
+- can have params `/some/route/:param`
+
+#### `Switch`
+
+- [docs](https://reactrouter.com/web/api/Switch)
+- ensures that only one `Route` is active at a time
+- use for fallback (404) routes
+
+#### `Link`
+
+- [docs](https://reactrouter.com/web/api/Link)
+- replaces `a` tags to avoid reloads
+- `NavLink` can be used to apply "active styles" [docs](https://reactrouter.com/web/api/NavLink)
+
+#### `Redirect`
+
+- [docs](https://reactrouter.com/web/api/Redirect)
+- when rendered, redirect to `to` prop
+- use it to keep old links working
+
+#### `useParams`
+
+- [docs](https://reactrouter.com/core/api/Hooks/useparams)
+- get hold of params in your components
+
+### Simple
+
+```yaml {example}
+project: routing-simple
+render: src/render.tsx
+style:
+  height: 12em
+```
+
+### 404 Page
+
+```yaml {example}
+project: routing-fallback
+render: src/render.tsx
+```
+
+### Using Params
+
+```yaml {example}
+project: routing-params
+render: src/render.tsx
+style:
+  width: 100%
+  height: 16em
+```

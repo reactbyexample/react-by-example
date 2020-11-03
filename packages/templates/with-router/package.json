@@ -1,0 +1,47 @@
+{
+  "name": "react-example",
+  "scripts": {
+    "start": "react-scripts start",
+    "start-test": "majestic",
+    "build": "react-scripts build",
+    "test": "react-scripts test",
+    "eject": "react-scripts eject"
+  },
+  "dependencies": {
+    "history": "4.9.0",
+    "react": "16.13.1",
+    "react-dom": "16.13.1",
+    "react-router": "5.2.0",
+    "react-router-dom": "5.2.0"
+  },
+  "devDependencies": {
+    "@testing-library/jest-dom": "5.11.4",
+    "@testing-library/react": "11.0.2",
+    "@testing-library/user-event": "12.1.3",
+    "@types/history": "4.6.2",
+    "@types/jest": "26.0.13",
+    "@types/node": "14.6.4",
+    "@types/react": "16.9.49",
+    "@types/react-dom": "16.9.8",
+    "@types/react-router": "5.1.8",
+    "@types/react-router-dom": "5.1.6",
+    "majestic": "1.8.0",
+    "react-scripts": "3.4.3",
+    "typescript": "4.0.2"
+  },
+  "eslintConfig": {
+    "extends": "react-app"
+  },
+  "browserslist": {
+    "production": [
+      ">0.2%",
+      "not dead",
+      "not op_mini all"
+    ],
+    "development": [
+      "last 1 chrome version",
+      "last 1 firefox version",
+      "last 1 safari version"
+    ]
+  }
+}

@@ -45,44 +45,60 @@ export interface ExampleProps {
   render?: ReactNode
   link?: string
   testLink?: string
+  style?: Record<string, string>
 }
 
-export const Example: FC<ExampleProps> = ({ code, render, link, testLink }) => {
+export const Example: FC<ExampleProps> = ({
+  code,
+  render,
+  link,
+  testLink,
+  style,
+}) => {
   const [resetKey, setResetKey] = useState(Date.now())
   const triggerReset = useCallback(() => {
     setResetKey(Date.now())
   }, [])
+
+  const renderLink = link && (
+    <CodeSandboxLink href={link} title="edit on CodeSandbox">
+      <CodeSandboxIcon />
+    </CodeSandboxLink>
+  )
+
+  const renderTestLink = testLink && (
+    <CodeSandboxLink href={testLink} title="test on CodeSandbox">
+      <BeakerIcon />
+    </CodeSandboxLink>
+  )
+
+  if (!render) {
+    return (
+      <>
+        <div className="dense">{code}</div>
+        {(renderLink || renderTestLink) && (
+          <FlexRight>
+            {renderLink}
+            {renderTestLink}
+          </FlexRight>
+        )}
+      </>
+    )
+  }
+
   return (
     <>
-      {render ? code : <div className="dense">{code}</div>}
-      {render && (
-        <Render key={resetKey}>
-          <div>{render}</div>
-        </Render>
-      )}
-      {(render || link || testLink) && (
-        <FlexRight>
-          {render && (
-            <ResetButton
-              type="button"
-              title="reset example"
-              onClick={triggerReset}
-            >
-              <ResetIcon />
-            </ResetButton>
-          )}
-          {link && (
-            <CodeSandboxLink href={link} title="edit on CodeSandbox">
-              <CodeSandboxIcon />
-            </CodeSandboxLink>
-          )}
-          {testLink && (
-            <CodeSandboxLink href={testLink} title="test on CodeSandbox">
-              <BeakerIcon />
-            </CodeSandboxLink>
-          )}
-        </FlexRight>
-      )}
+      {code}
+      <Render key={resetKey}>
+        <div style={style}>{render}</div>
+      </Render>
+      <FlexRight>
+        <ResetButton type="button" title="reset example" onClick={triggerReset}>
+          <ResetIcon />
+        </ResetButton>
+        {renderLink}
+        {renderTestLink}
+      </FlexRight>
     </>
   )
 }

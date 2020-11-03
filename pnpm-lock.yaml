@@ -97,16 +97,20 @@ importers:
       '@testing-library/jest-dom': 5.11.4
       '@testing-library/react': 11.0.2_react-dom@16.13.1+react@16.13.1
       '@testing-library/user-event': 12.1.3_@testing-library+dom@7.26.0
+      '@types/history': 4.6.2
       '@types/jest': 26.0.13
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
       '@types/styled-components': 5.1.3
       formik: 2.2.0_react@16.13.1
+      history: 4.9.0
       jest: 26.5.3
       jest-styled-components: 7.0.3_styled-components@5.2.0
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
       react-is: 16.13.1
+      react-router: 5.2.0_react@16.13.1
       styled-components: 5.2.0_6ff3463a423d4fb96b301c6d719de9c5
       ts-jest: 26.3.0_jest@26.5.3+typescript@4.0.2
       typescript: 4.0.2
@@ -115,16 +119,20 @@ importers:
       '@testing-library/jest-dom': 5.11.4
       '@testing-library/react': 11.0.2
       '@testing-library/user-event': 12.1.3
+      '@types/history': 4.6.2
       '@types/jest': 26.0.13
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
       '@types/styled-components': 5.1.3
       formik: 2.2.0
+      history: 4.9.0
       jest: 26.5.3
       jest-styled-components: 7.0.3
       react: 16.13.1
       react-dom: 16.13.1
       react-is: 16.13.1
+      react-router: 5.2.0
       styled-components: 5.2.0
       ts-jest: 26.3.0
       typescript: 4.0.2
@@ -154,9 +162,12 @@ importers:
       gatsby-source-filesystem: 2.3.27_gatsby@2.24.53
       gatsby-transformer-json: 2.4.2_gatsby@2.24.53
       gatsby-transformer-yaml: 2.4.12_gatsby@2.24.53
+      history: 4.9.0
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
       react-helmet: 6.1.0_react@16.13.1
+      react-router: 5.2.0_react@16.13.1
+      react-router-dom: 5.2.0_react@16.13.1
       react-typography: 0.16.19_react@16.13.1
       regenerator-runtime: 0.13.7
       remark-autolink-headings: 6.0.1
@@ -165,11 +176,14 @@ importers:
       typography: 0.16.19
     devDependencies:
       '@app/register-typescript': 'link:../register-typescript'
+      '@types/history': 4.6.2
       '@types/mdx-js__react': 'link:../../@types/mdx-js__react'
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
       '@types/react-helmet': 5.0.6
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.6
       '@types/remark-autolink-headings': 'link:../../@types/remark-autolink-headings'
       '@types/remark-slug': 'link:../../@types/remark-slug'
       '@types/styled-components': 5.1.3
@@ -188,11 +202,14 @@ importers:
       '@app/unified-parse-yaml': 'workspace:*'
       '@mdx-js/mdx': 1.6.16
       '@mdx-js/react': 1.6.16
+      '@types/history': 4.6.2
       '@types/mdx-js__react': 'workspace:*'
       '@types/node': 14.6.3
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
       '@types/react-helmet': 5.0.6
+      '@types/react-router': 5.1.8
+      '@types/react-router-dom': 5.1.6
       '@types/remark-autolink-headings': 'workspace:*'
       '@types/remark-slug': 'workspace:*'
       '@types/styled-components': 5.1.3
@@ -212,11 +229,14 @@ importers:
       gatsby-source-filesystem: 2.3.27
       gatsby-transformer-json: 2.4.2
       gatsby-transformer-yaml: 2.4.12
+      history: 4.9.0
       nodemon: 2.0.4
       npm-run-all: 4.1.5
       react: 16.13.1
       react-dom: 16.13.1
       react-helmet: 6.1.0
+      react-router: 5.2.0
+      react-router-dom: 5.2.0
       react-typography: 0.16.19
       regenerator-runtime: 0.13.7
       remark-autolink-headings: 6.0.1
@@ -389,15 +409,23 @@ importers:
       typescript: 4.0.2
   packages/templates:
     devDependencies:
+      '@types/history': 4.6.2
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      history: 4.9.0
       react: 16.13.1
       react-dom: 16.13.1_react@16.13.1
+      react-router: 5.2.0_react@16.13.1
     specifiers:
+      '@types/history': 4.6.2
       '@types/react': 16.9.49
       '@types/react-dom': 16.9.8
+      '@types/react-router': 5.1.8
+      history: 4.9.0
       react: 16.13.1
       react-dom: 16.13.1
+      react-router: 5.2.0
   packages/unified-filter:
     dependencies:
       unist-util-filter: 2.0.2
@@ -1579,6 +1607,11 @@ packages:
       regenerator-runtime: 0.13.7
     resolution:
       integrity: sha512-TeWkU52so0mPtDcaCTxNBI/IHiz0pZgr8VEFqXFtZWpYD08ZB6FaSwVAS8MKRQAP3bYKiVjwysOJgMFY28o6Tw==
+  /@babel/runtime/7.12.1:
+    dependencies:
+      regenerator-runtime: 0.13.7
+    resolution:
+      integrity: sha512-J5AIf3vPj3UwXaAzb5j1xM4WAQDX3EMgemF8rjCP3SoW09LfRKAXQKt6CoVYl230P6iWdRcBbnLDDdnqWxZSCA==
   /@babel/standalone/7.11.6:
     resolution:
       integrity: sha512-Ye1pj3fN76OWlJyi+Ocy1kTr1BNs5vFWHsq2oKPp3lB4Q0r2WrHi+n/Y2w3sZK+1QSKAkDXTp12tCuBprBHZ1w==
@@ -2969,6 +3002,10 @@ packages:
       '@types/unist': 2.0.3
     resolution:
       integrity: sha512-viwwrB+6xGzw+G1eWpF9geV3fnsDgXqHG+cqgiHrvQfDUW5hzhCyV7Sy3UJxhfRFBsgky2SSW33qi/YrIkjX5Q==
+  /@types/history/4.6.2:
+    dev: true
+    resolution:
+      integrity: sha512-eVAb52MJ4lfPLiO9VvTgv8KaZDEIqCwhv+lXOMLlt4C1YHTShgmMULEg0RrCbnqfYd6QKfHsMp0MiX0vWISpSw==
   /@types/history/4.7.8:
     resolution:
       integrity: sha512-S78QIYirQcUoo6UJZx9CSP0O2ix9IaeAXwQi26Rhr/+mg7qqPy8TzaxHSUut7eGjL8WmLccT7/MXf304WjqHcA==
@@ -3099,6 +3136,21 @@ packages:
     dev: true
     resolution:
       integrity: sha512-M+m7XUzRdk9g8utnJR3FP6mpQ38GuXuC5hfJe5w6NbwFIoWEyLRObj6iZSEEFnh8XX26J9ybQPYI2dBeP/VIWg==
+  /@types/react-router-dom/5.1.6:
+    dependencies:
+      '@types/history': 4.7.8
+      '@types/react': 16.9.49
+      '@types/react-router': 5.1.8
+    dev: true
+    resolution:
+      integrity: sha512-gjrxYqxz37zWEdMVvQtWPFMFj1dRDb4TGOcgyOfSXTrEXdF92L00WE3C471O3TV/RF1oskcStkXsOU0Ete4s/g==
+  /@types/react-router/5.1.8:
+    dependencies:
+      '@types/history': 4.7.8
+      '@types/react': 16.9.49
+    dev: true
+    resolution:
+      integrity: sha512-HzOyJb+wFmyEhyfp4D4NYrumi+LQgQL/68HvJO+q6XtuHSDvw6Aqov7sCAhjbNq3bUPgPqbdvjXC5HeB2oEAPg==
   /@types/react/16.9.49:
     dependencies:
       '@types/prop-types': 15.7.3
@@ -9135,6 +9187,16 @@ packages:
   /highlight.js/8.9.1:
     resolution:
       integrity: sha1-uKnFSTISqTkvAiK2SclhFJfr+4g=
+  /history/4.9.0:
+    dependencies:
+      '@babel/runtime': 7.12.1
+      loose-envify: 1.4.0
+      resolve-pathname: 2.2.0
+      tiny-invariant: 1.1.0
+      tiny-warning: 1.0.3
+      value-equal: 0.4.0
+    resolution:
+      integrity: sha512-H2DkjCjXf0Op9OAr6nJ56fcRkTSNrUiv41vNJ6IswJjif6wlpZK0BTfFbi7qK9dXLSYZxkq5lBsj3vUjlYBYZA==
   /hmac-drbg/1.0.1:
     dependencies:
       hash.js: 1.1.7
@@ -11756,6 +11818,17 @@ packages:
       node: '>=4'
     resolution:
       integrity: sha512-I9jwMn07Sy/IwOj3zVkVik2JTvgpaykDZEigL6Rx6N9LbMywwUSMtxET+7lVoDLLd3O3IXwJwvuuns8UB/HeAg==
+  /mini-create-react-context/0.4.1_prop-types@15.7.2+react@16.13.1:
+    dependencies:
+      '@babel/runtime': 7.12.1
+      prop-types: 15.7.2
+      react: 16.13.1
+      tiny-warning: 1.0.3
+    peerDependencies:
+      prop-types: ^15.0.0
+      react: ^0.14.0 || ^15.0.0 || ^16.0.0 || ^17.0.0
+    resolution:
+      integrity: sha512-YWCYEmd5CQeHGSAKrYvXgmzzkrvssZcuuQDDeqkT+PziKGMgE+0MCCtcKbROzocGBG1meBLl2FotlRwf4gAzbQ==
   /mini-css-extract-plugin/0.8.2_webpack@4.44.2:
     dependencies:
       loader-utils: 1.4.0
@@ -12731,6 +12804,11 @@ packages:
   /path-to-regexp/0.1.7:
     resolution:
       integrity: sha1-32BBeABfUi8V60SQ5yR6G/qmf4w=
+  /path-to-regexp/1.8.0:
+    dependencies:
+      isarray: 0.0.1
+    resolution:
+      integrity: sha512-n43JRhlUKUAlibEJhPeir1ncUID16QnEjNpwzNdO3Lm4ywrBpBZ5oLD0I6br9evr1Y9JTqwRtAh7JLoOzAQdVA==
   /path-type/2.0.0:
     dependencies:
       pify: 2.3.0
@@ -13788,6 +13866,38 @@ packages:
         optional: true
     resolution:
       integrity: sha512-BZIO3GaEs0Or1OhA5C//n1ibUP1HdjJmqUVUsOCMxwoIpaCocbB9TFKwHOkBa/nyYy3slirqXeiPYGwdSDiseA==
+  /react-router-dom/5.2.0_react@16.13.1:
+    dependencies:
+      '@babel/runtime': 7.12.1
+      history: 4.9.0
+      loose-envify: 1.4.0
+      prop-types: 15.7.2
+      react: 16.13.1
+      react-router: 5.2.0_react@16.13.1
+      tiny-invariant: 1.1.0
+      tiny-warning: 1.0.3
+    dev: false
+    peerDependencies:
+      react: '>=15'
+    resolution:
+      integrity: sha512-gxAmfylo2QUjcwxI63RhQ5G85Qqt4voZpUXSEqCwykV0baaOTQDR1f0PmY8AELqIyVc0NEZUj0Gov5lNGcXgsA==
+  /react-router/5.2.0_react@16.13.1:
+    dependencies:
+      '@babel/runtime': 7.12.1
+      history: 4.9.0
+      hoist-non-react-statics: 3.3.2
+      loose-envify: 1.4.0
+      mini-create-react-context: 0.4.1_prop-types@15.7.2+react@16.13.1
+      path-to-regexp: 1.8.0
+      prop-types: 15.7.2
+      react: 16.13.1
+      react-is: 16.13.1
+      tiny-invariant: 1.1.0
+      tiny-warning: 1.0.3
+    peerDependencies:
+      react: '>=15'
+    resolution:
+      integrity: sha512-smz1DUuFHRKdcJC0jobGo8cVbhO3x50tCL4icacOlcwDOEQPq4TMqwx3sY1TP+DvtTgz4nm3thuo7A+BK2U0Dw==
   /react-side-effect/2.1.0_react@16.13.1:
     dependencies:
       react: 16.13.1
@@ -14469,6 +14579,9 @@ packages:
       node: '>=8'
     resolution:
       integrity: sha512-qYg9KP24dD5qka9J47d0aVky0N+b4fTU89LN9iDnjB5waksiC49rvMB0PrUJQGoTmH50XPiqOvAjDfaijGxYZw==
+  /resolve-pathname/2.2.0:
+    resolution:
+      integrity: sha512-bAFz9ld18RzJfddgrO2e/0S2O81710++chRMUxHjXOYKF6jTAMrUNZrEZ1PvV0zlhfjidm08iRPdTLPno1FuRg==
   /resolve-url/0.2.1:
     deprecated: 'https://github.com/lydell/resolve-url#deprecated'
     resolution:
@@ -15784,6 +15897,9 @@ packages:
   /timsort/0.3.0:
     resolution:
       integrity: sha1-QFQRqOfmM5/mTbmiNN4R3DHgK9Q=
+  /tiny-invariant/1.1.0:
+    resolution:
+      integrity: sha512-ytxQvrb1cPc9WBEI/HSeYYoGD0kWnGEOR8RY6KomWLBVhqz0RgTwVO9dLrGz7dC+nN9llyI7OKAgRq8Vq4ZBSw==
   /tiny-warning/1.0.3:
     resolution:
       integrity: sha512-lBN9zLN/oAf68o3zNXYrdCt1kP8WsiGW8Oo2ka41b2IM5JL/S1CTyX1rW0mb/zSuJun0ZUrDxx4sqvYS2FWzPA==
@@ -16619,6 +16735,9 @@ packages:
       spdx-expression-parse: 3.0.1
     resolution:
       integrity: sha512-DpKm2Ui/xN7/HQKCtpZxoRWBhZ9Z0kqtygG8XCgNQ8ZlDnxuQmWhj566j8fN4Cu3/JmbhsDo7fcAJq4s9h27Ew==
+  /value-equal/0.4.0:
+    resolution:
+      integrity: sha512-x+cYdNnaA3CxvMaTX0INdTCN8m8aF2uY9BvEqmxuYp8bL09cs/kWVQPVGcA35fMktdOsP69IgU7wFj/61dJHEw==
   /vary/1.1.2:
     engines:
       node: '>= 0.8'

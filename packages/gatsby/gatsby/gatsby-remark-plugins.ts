@@ -26,8 +26,9 @@ const normalizeExampleYaml = (yaml: unknown): Required<ExampleYaml> => {
     module = type === 'component' ? 'src/example.tsx' : 'src/example.test.tsx',
     code = true,
     render = type === 'component',
+    style = null,
   } = yaml as ExampleYaml
-  return { project, module, code, render, type }
+  return { project, module, code, render, type, style }
 }
 
 export const gatsbyRemarkPlugins = [
@@ -118,6 +119,17 @@ export const gatsbyRemarkPlugins = [
       return inject.comment(
         `literal testLink="https://codesandbox.io/s/${codesandbox.sandboxId}?file=/${module}"`,
       )
+    },
+  })),
+  useLift(remarkInject(), () => ({
+    visitor({ node: { data }, inject }) {
+      if (!(data && data.yaml)) return inject.nothing()
+
+      const { style } = normalizeExampleYaml(data.yaml)
+
+      if (!style) return inject.nothing()
+
+      return inject.comment(`literal style={${JSON.stringify(style)}}`)
     },
   })),
   useLift(remarkInject(), () => ({

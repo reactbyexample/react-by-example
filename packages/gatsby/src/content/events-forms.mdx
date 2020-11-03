@@ -15,15 +15,8 @@ title: Events & Forms
 [supported events]: https://reactjs.org/docs/events.html#supported-events
 
 ```yaml {example}
-project: forms-event-log
+project: forms-events
 ```
-
-> - note that `pushEvent` is not simply `ts∫eventLog.push(event)`
-> - this is because React needs to know about the update, thru `setEventLog`
-> - and React needs the updated value to be a new array, to avoid a [bailout], thru [spread]
-
-[bailout]: https://reactjs.org/docs/hooks-reference.html#bailing-out-of-a-state-update
-[spread]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax#Spread_in_array_literals
 
 ### Forms
 

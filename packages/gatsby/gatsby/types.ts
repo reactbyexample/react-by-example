@@ -4,4 +4,5 @@ export interface ExampleYaml {
   code?: boolean
   render?: boolean | string
   type?: 'component' | 'test'
+  style?: Record<string, string> | null
 }

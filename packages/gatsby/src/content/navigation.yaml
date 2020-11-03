@@ -9,3 +9,4 @@ navigation:
   - context
   - advanced-hooks
   - custom-hooks
+  - routing
