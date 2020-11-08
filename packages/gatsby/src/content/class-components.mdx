@@ -1,0 +1,84 @@
+---
+title: Class Components
+---
+
+## Class Components
+
+### What?
+
+- class components used to be the first class citizens
+- has state, props, and lifecycle methods
+- error prone, unless dead simple
+
+### Why?
+
+- legacy, mainly
+- please use `FC` whenever possible
+- migrate class components to `FC` if possible
+
+### How?
+
+- use [arrow functions] instead of methods [(docs)][why]
+
+[arrow functions]: https://reactjs.org/docs/faq-functions.html#class-properties-stage-3-proposal
+[why]: https://reactjs.org/docs/faq-functions.html#why-is-binding-necessary-at-all
+
+#### `render`
+
+- examine `state` and `props` -> return JSX
+- MUST BE PURE
+- can't use hooks 😞
+
+```yaml {example}
+project: class-simple
+```
+
+#### `componentDidMount`
+
+- after component rendered to DOM
+- use for:
+  - data fetching
+  - manipulating DOM
+
+#### `componentDidUpdate`
+
+- after `state` or `props` update
+- usually a copy of `componentDidMount`
+
+#### `setState`
+
+- triggers render
+- multiple calls are [batched]
+- always use `setState` to update state
+- `ts∫this.state.something = 'bad'`
+
+[batched]: https://reactjs.org/docs/state-and-lifecycle.html#state-updates-may-be-asynchronous
+
+#### `componentWillUnmount`
+
+- before removing component from DOM
+- use for:
+  - freeing resources
+  - canceling requests
+
+#### Other lifecycle methods
+
+- [docs]
+- [lifecycle methods cheat sheet]
+
+[docs]: https://reactjs.org/docs/react-component.html
+[lifecycle methods cheat sheet]: https://projects.wojtekmaj.pl/react-lifecycle-methods-diagram/
+
+### Bitcoin Price
+
+```yaml {example}
+project: class-bitcoin
+```
+
+- there is a subtle race-condition above; hard to resolve elegantly
+- cf. `FC` style below; shorter, simpler & race-condition free
+
+```yaml {example}
+project: class-bitcoin
+module: src/fc-example.tsx
+```
