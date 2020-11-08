@@ -11,3 +11,4 @@ navigation:
   - custom-hooks
   - routing
   - class-components
+  - higher-order-components

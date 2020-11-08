@@ -1,0 +1,54 @@
+---
+title: HOC
+---
+
+## Higher Order Components
+
+### Higher Order Functions
+
+> A higher-order function is a function that does at least one of the following:
+>
+> - takes one or more functions as arguments
+> - returns a function as its result
+>
+> -- [Wikipedia](https://en.wikipedia.org/wiki/Higher-order_function)
+
+### What?
+
+> A higher-order component is a function that takes a component and returns a new component.
+>
+> -- [React docs](https://reactjs.org/docs/higher-order-components.html)
+
+- `ts∫const ComponentWithFeature = withFeature(InternalComponent)`
+- usually for injecting props in the wrapped component
+
+### Why?
+
+- [code sharing] for class components (and `FC`s)
+- `FC`s should always use [hooks]
+- HOCs can be [composed]
+
+[code sharing]: https://en.wikipedia.org/wiki/Cross-cutting_concern
+[hooks]: /custom-hooks
+[composed]: https://reactjs.org/docs/higher-order-components.html#convention-maximizing-composability
+
+### `withTheme`
+
+- `withTheme` is a HOC that encapsulates `ThemeContext`
+- note the [`displayName` convention]
+
+[`displayname` convention]: https://reactjs.org/docs/higher-order-components.html#convention-wrap-the-display-name-for-easy-debugging
+
+```yaml {example}
+project: hoc-theme
+module: src/theme-library/with-theme.tsx
+render: false
+```
+
+- injected `theme` prop can be used outside of render (cf. [`Context.Consumer`])
+
+[`context.consumer`]: https://reactjs.org/docs/context.html#contextconsumer
+
+```yaml {example}
+project: hoc-theme
+```
