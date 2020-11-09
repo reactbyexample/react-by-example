@@ -5,6 +5,7 @@
   "main": "",
   "types": "index.d.ts",
   "dependencies": {
+    "@types/unist": "2.0.3",
     "unified": "9.2.0"
   }
 }

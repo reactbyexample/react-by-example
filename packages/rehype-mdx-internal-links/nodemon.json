@@ -1,0 +1,6 @@
+{
+  "watch": ["src", "node_modules/@app"],
+  "ignoreRoot": [],
+  "ignore": ["**/node_modules/!(@app)/**"],
+  "ext": "js,ts"
+}

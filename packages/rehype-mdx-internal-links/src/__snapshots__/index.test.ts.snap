@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`rehypeMdxInternalLinks should rewrite links "simple" 1`] = `
+"<><html><head parentName=\\"html\\"></head><body parentName=\\"html\\"><TheLinkComponent parentName=\\"body\\" {...{\\"theHrefProp\\":\\"/is-relative\\",\\"target\\":\\"_blank\\",\\"className\\":\\"relative\\"}}>{\`
+      relative link
+    \`}</TheLinkComponent>{\`
+
+    \`}<a parentName=\\"body\\" {...{\\"href\\":\\"#is-anchor\\",\\"id\\":\\"is-anchor\\",\\"className\\":\\"anchor\\"}}>{\`
+      anchor link
+    \`}</a>{\`
+
+    \`}<a parentName=\\"body\\" {...{\\"href\\":\\"https://github.com/absolute/link\\",\\"target\\":\\"_blank\\",\\"className\\":\\"absolute\\"}}>{\`
+      absolute link
+    \`}</a>{\`
+  \`}</body></html></>"
+`;

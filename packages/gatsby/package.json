@@ -13,6 +13,7 @@
     "@app/example-packages": "workspace:*",
     "@app/gatsby-plugin-codesandbox": "workspace:*",
     "@app/gatsby-remark-lift": "workspace:*",
+    "@app/rehype-mdx-internal-links": "workspace:*",
     "@app/rehype-mdx-wrap-with-component": "workspace:*",
     "@app/remark-inject": "workspace:*",
     "@app/unified-filter": "workspace:*",
