@@ -1,0 +1,18 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`PlayPause should snapshot 1`] = `
+<div>
+  <video
+    aria-label="video"
+    autoplay=""
+    loop=""
+    src="https://media.tenor.com/videos/632c96bbc411d8baa3f7f43692474808/webm"
+  />
+  <br />
+  <button
+    type="button"
+  >
+    ⏯
+  </button>
+</div>
+`;

@@ -7,10 +7,10 @@ describe('Counter', () => {
   let decrement: HTMLElement
   let increment: HTMLElement
 
-  beforeEach(async () => {
+  beforeEach(() => {
     component = render(<Counter />)
-    decrement = await component.findByText('-')
-    increment = await component.findByText('+')
+    decrement = component.getByText('-')
+    increment = component.getByText('+')
   })
 
   it('should snapshot', () => {

@@ -18,6 +18,7 @@ export const PlayPause: FC = () => {
         autoPlay
         loop
         src="https://media.tenor.com/videos/632c96bbc411d8baa3f7f43692474808/webm"
+        aria-label="video"
       />
       <br />
       <button type="button" onClick={playPause}>

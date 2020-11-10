@@ -19,8 +19,8 @@ describe('Pizza', () => {
 
   const choices = ['tomato sauce', 'bbq sauce', 'garlic sauce']
   describe.each(choices)('when choosing %s', (choice) => {
-    beforeEach(async () => {
-      const button = await component.findByText(choice)
+    beforeEach(() => {
+      const button = component.getByText(choice)
       fireEvent.click(button)
     })
 
