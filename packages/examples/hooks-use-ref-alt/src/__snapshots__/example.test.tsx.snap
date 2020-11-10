@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SelfDestruct should snapshot 1`] = `
+<div>
+  <button
+    type="button"
+  >
+    start self-destruct sequence
+  </button>
+  <button
+    type="button"
+  >
+    cancel self-destruct sequence
+  </button>
+  <p>
+    this message will destroy itself in 2 seconds
+  </p>
+</div>
+`;
