@@ -1,0 +1,32 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Pizza should snapshot 1`] = `
+<div>
+  <div>
+    <p>
+      Choose a pizza topping:
+    </p>
+    <div>
+      <button
+        type="button"
+      >
+        tomato sauce
+      </button>
+      <button
+        type="button"
+      >
+        bbq sauce
+      </button>
+      <button
+        type="button"
+      >
+        garlic sauce
+      </button>
+    </div>
+    <p>
+      Chosen topping: 
+      none
+    </p>
+  </div>
+</div>
+`;

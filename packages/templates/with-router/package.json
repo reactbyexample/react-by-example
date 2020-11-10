@@ -4,7 +4,7 @@
     "start": "react-scripts start",
     "start-test": "majestic",
     "build": "react-scripts build",
-    "test": "react-scripts test",
+    "test": "react-scripts test --env jest-environment-jsdom-fourteen",
     "eject": "react-scripts eject"
   },
   "dependencies": {
@@ -42,6 +42,11 @@
       "last 1 chrome version",
       "last 1 firefox version",
       "last 1 safari version"
+    ]
+  },
+  "majestic": {
+    "args": [
+      "--env jest-environment-jsdom-fourteen"
     ]
   }
 }
