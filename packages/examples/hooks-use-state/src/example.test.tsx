@@ -1,4 +1,9 @@
-import { fireEvent, render, RenderResult } from '@testing-library/react'
+import {
+  cleanup,
+  fireEvent,
+  render,
+  RenderResult,
+} from '@testing-library/react'
 import React from 'react'
 import { Counter } from './example'
 
@@ -11,6 +16,10 @@ describe('Counter', () => {
     component = render(<Counter />)
     decrement = component.getByText('-')
     increment = component.getByText('+')
+  })
+
+  afterEach(() => {
+    cleanup()
   })
 
   it('should snapshot', () => {

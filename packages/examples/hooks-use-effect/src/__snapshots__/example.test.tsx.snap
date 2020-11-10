@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`LocaleClock default locale should snapshot 1`] = `
+<div>
+  <p>
+    12:34:00
+  </p>
+</div>
+`;
+
+exports[`ToggleLocale should snapshot 1`] = `
+<div>
+  <button
+    type="button"
+  >
+    toggle locale
+  </button>
+  <p>
+    current time in "en-GB" locale
+  </p>
+</div>
+`;

@@ -1,4 +1,10 @@
-import { act, fireEvent, render, RenderResult } from '@testing-library/react'
+import {
+  act,
+  cleanup,
+  fireEvent,
+  render,
+  RenderResult,
+} from '@testing-library/react'
 import React from 'react'
 import { SelfDestruct } from './example'
 
@@ -15,6 +21,7 @@ describe('SelfDestruct', () => {
   })
 
   afterEach(() => {
+    cleanup()
     jest.useRealTimers()
   })
 

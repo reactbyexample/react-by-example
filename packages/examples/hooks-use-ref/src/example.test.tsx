@@ -1,4 +1,9 @@
-import { fireEvent, render, RenderResult } from '@testing-library/react'
+import {
+  cleanup,
+  fireEvent,
+  render,
+  RenderResult,
+} from '@testing-library/react'
 import React from 'react'
 import { PlayPause } from './example'
 
@@ -30,6 +35,7 @@ describe('PlayPause', () => {
   })
 
   afterEach(() => {
+    cleanup()
     jest.restoreAllMocks()
   })
 

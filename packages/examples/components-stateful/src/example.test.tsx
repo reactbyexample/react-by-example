@@ -1,4 +1,9 @@
-import { fireEvent, render, RenderResult } from '@testing-library/react'
+import {
+  cleanup,
+  fireEvent,
+  render,
+  RenderResult,
+} from '@testing-library/react'
 import React from 'react'
 import { Pizza } from './example'
 
@@ -7,6 +12,10 @@ describe('Pizza', () => {
 
   beforeEach(() => {
     component = render(<Pizza />)
+  })
+
+  afterEach(() => {
+    cleanup()
   })
 
   it('should snapshot', () => {
