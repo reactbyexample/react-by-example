@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Counter should snapshot 1`] = `
+<div>
+  <button
+    type="button"
+  >
+    -
+  </button>
+  <span>
+     
+    0
+     
+  </span>
+  <button
+    type="button"
+  >
+    +
+  </button>
+</div>
+`;
