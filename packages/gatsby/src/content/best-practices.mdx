@@ -1,0 +1,120 @@
+---
+title: Best Practices
+---
+
+## Best Practices
+
+> obviously opinionated, apply as appropriate
+
+### Tools
+
+- [`typescript`]
+  - typed templates are awesome
+  - 1000x better than [`propTypes`]
+- [`eslint`]
+  - automated code review
+- [`prettier`]
+  - never worry about about whitespace again
+- [`jest`]
+  - unit testing never felt this good
+- [`husky`] & [`lint-staged`]
+  - enforce linting rules on everyone
+  - less failed builds
+- [`create-react-app`]
+  - baked in with most of these
+
+[`typescript`]: https://github.com/Microsoft/TypeScript
+[`proptypes`]: https://reactjs.org/docs/typechecking-with-proptypes.html
+[`eslint`]: https://github.com/eslint/eslint
+[`prettier`]: https://github.com/prettier/prettier
+[`jest`]: https://github.com/facebook/jest
+[`husky`]: https://github.com/typicode/husky
+[`lint-staged`]: https://github.com/okonet/lint-staged
+[`create-react-app`]: https://github.com/facebook/create-react-app
+
+### Components
+
+- prefer `FC`
+  - [compare]
+  - smaller the better
+- prefer primitive state/props over objects/arrays
+  - React can [optimize] away updates
+
+```yaml {example}
+project: best-prefer-primitive
+render: false
+```
+
+- [custom hook] all the things
+  - even if it's not (yet) shared
+  - easier testing, can be mocked
+- props
+  - use [destructuring] to set defaults
+  - [spread] unused props [(contentious)]
+
+```yaml {example}
+project: best-props
+render: false
+```
+
+- parent-child communication & global state via context
+  - don't [`cloneElement`]
+
+```yaml {example}
+project: best-context
+```
+
+[compare]: /class-components#bitcoin-price
+[optimize]: https://reactjs.org/docs/hooks-reference.html#bailing-out-of-a-state-update
+[custom hook]: /custom-hooks
+[destructuring]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment#Default_values_2
+[spread]: /about-jsx#spread-props
+[(contentious)]: https://reactjs.org/docs/jsx-in-depth.html#spread-attributes
+[`cloneelement`]: https://reactjs.org/docs/react-api.html#cloneelement
+
+### Performance
+
+- [`useCallback`] every event handler
+- [`useMemo`] expensive computations
+- [`memo`] "don't render this component unless props changed since the last render"
+- [`PureComponent`] is [`memo`] for class components
+- test with [DevTools] and/or [why-did-you-render]
+- respect the [change detector] ([`ts∫Object.is()`])
+
+[`usecallback`]: /advanced-hooks#usecallback
+[`usememo`]: /advanced-hooks#usememo
+[`memo`]: https://reactjs.org/docs/react-api.html#reactmemo
+[`purecomponent`]: https://reactjs.org/docs/react-api.html#reactpurecomponent
+[devtools]: https://github.com/facebook/react/tree/master/packages/react-devtools-extensions
+[why-did-you-render]: https://github.com/welldone-software/why-did-you-render
+[change detector]: https://reactjs.org/docs/hooks-reference.html#bailing-out-of-a-state-update
+[`ts∫object.is()`]: https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Global_Objects/Object/is
+
+```yaml {example}
+project: best-performance
+style:
+  height: 18em
+```
+
+### Organization
+
+- 1 feature per directory
+- 1 component per file
+- helper & tightly coupled components / hooks can be in same directory
+- keep business logic out of components
+
+```yaml {example}
+project: best-business-logic
+render: false
+```
+
+### Forms
+
+- see [Events & Forms]
+- [pick] and use a [form library]
+- when implementing form controls use [`value` & `onChange`]
+
+[events & forms]: /events-forms
+[pick]: https://github.com/enaqx/awesome-react#forms
+[form library]: https://github.com/formium/formik
+[`value` & `onchange`]: https://reactjs.org/docs/forms.html#controlled-components
