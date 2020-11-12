@@ -8,7 +8,10 @@ const SimpleInput: FC = () => {
 
   return (
     <div>
-      <input type="text" value={value} onChange={onChange} />
+      <label>
+        simple input
+        <input type="text" value={value} onChange={onChange} />
+      </label>
       <pre>{value}</pre>
       <button type="button" onClick={() => setValue('new value')}>
         change to `new value`

@@ -21,11 +21,8 @@ const Container = styled.nav`
   }
 `
 
-const Title = styled.header`
+const Title = styled.h1`
   grid-area: title;
-`
-
-const TitleH1 = styled.h1`
   margin: 0;
 
   @media (min-width: ${(p) => p.theme.breakpoints.xl}) {
@@ -87,11 +84,9 @@ export const Navigation: FC<ContainerProps> = (p) => {
   return (
     <Container {...p}>
       <Title>
-        <TitleH1>
-          <TitleLink to="/">React by Example</TitleLink>
-        </TitleH1>
+        <TitleLink to="/">React by Example</TitleLink>
       </Title>
-      <Expand onClick={toggle}>
+      <Expand title="menu" aria-label="menu" onClick={toggle}>
         <MenuIcon size={3} />
       </Expand>
       <Links expanded={isExpanded}>

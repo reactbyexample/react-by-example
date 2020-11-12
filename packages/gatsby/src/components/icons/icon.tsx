@@ -8,7 +8,12 @@ export interface IconProps {
 
 const sizeToEm = [0, 1, 1.5, 2, 3]
 
-export const Icon = styled.svg<IconProps>`
+export const Icon = styled.svg
+  .withConfig<IconProps>({
+    shouldForwardProp: (prop, defaultValidatorFn) =>
+      !['size', 'rotate'].includes(prop) && defaultValidatorFn(prop),
+  })
+  .attrs({ focusable: false })`
   fill: currentColor;
   height: ${(p) => sizeToEm[assertNonNull(p.size)]}em;
   margin: 0.25em;

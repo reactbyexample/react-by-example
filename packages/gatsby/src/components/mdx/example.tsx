@@ -61,13 +61,21 @@ export const Example: FC<ExampleProps> = ({
   }, [])
 
   const renderLink = link && (
-    <CodeSandboxLink href={link} title="edit on CodeSandbox">
+    <CodeSandboxLink
+      href={link}
+      title="edit on CodeSandbox"
+      aria-label="edit on CodeSandbox"
+    >
       <CodeSandboxIcon />
     </CodeSandboxLink>
   )
 
   const renderTestLink = testLink && (
-    <CodeSandboxLink href={testLink} title="test on CodeSandbox">
+    <CodeSandboxLink
+      href={testLink}
+      title="test on CodeSandbox"
+      aria-label="test on CodeSandbox"
+    >
       <BeakerIcon />
     </CodeSandboxLink>
   )
@@ -93,7 +101,12 @@ export const Example: FC<ExampleProps> = ({
         <div style={style}>{render}</div>
       </Render>
       <FlexRight>
-        <ResetButton type="button" title="reset example" onClick={triggerReset}>
+        <ResetButton
+          type="button"
+          title="reset example"
+          aria-label="reset example"
+          onClick={triggerReset}
+        >
           <ResetIcon />
         </ResetButton>
         {renderLink}

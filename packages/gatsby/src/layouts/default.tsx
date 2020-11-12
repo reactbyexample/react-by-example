@@ -32,7 +32,7 @@ const NavigationSlot = styled.div`
   grid-area: nav;
 `
 
-const Content = styled.article`
+const Content = styled.main`
   grid-area: content;
 `
 
@@ -68,7 +68,9 @@ const DefaultLayout: FC = ({ children }) => {
             <Navigation />
           </NavigationSlot>
           <Content>
-            <DefaultMDXProvider>{children}</DefaultMDXProvider>
+            <article>
+              <DefaultMDXProvider>{children}</DefaultMDXProvider>
+            </article>
             <Paging>
               <StyledPrev />
               <StyledNext />

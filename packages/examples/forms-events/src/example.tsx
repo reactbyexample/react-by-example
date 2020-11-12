@@ -5,6 +5,7 @@ export const Events: FC = () => {
   return (
     <div>
       <input
+        aria-label="try copy/pasting"
         defaultValue="try copy/pasting"
         onFocus={() => setLastEvent('onFocus')}
         onBlur={() => setLastEvent('onBlur')}

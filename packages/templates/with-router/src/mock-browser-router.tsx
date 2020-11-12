@@ -71,6 +71,7 @@ export const MockBrowserRouter: FC = ({ children }) => {
           →
         </button>
         <input
+          aria-label="url"
           value={pendingLocation == null ? location : pendingLocation}
           onChange={onChange}
           onKeyDown={onKeyDown}
