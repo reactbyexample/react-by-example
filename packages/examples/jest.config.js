@@ -4,4 +4,7 @@ module.exports = {
     'jest-styled-components',
     '@testing-library/jest-dom/extend-expect',
   ],
+  moduleNameMapper: {
+    '\\.css$': 'identity-obj-proxy',
+  },
 }

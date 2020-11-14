@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Module should snapshot 1`] = `
+<div>
+  <div
+    class="wrapper"
+  >
+    <div
+      id="slider"
+    />
+    <div
+      class="circle"
+      style="font-size: 1em;"
+    >
+      awesome circle
+    </div>
+  </div>
+</div>
+`;
