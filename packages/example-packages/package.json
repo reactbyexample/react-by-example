@@ -9,7 +9,7 @@
     "build:tsc": "tsc -p ./tsconfig.json",
     "build:example-packages": "run-s build:example-packages:*",
     "build:example-packages:clean": "rimraf example-packages",
-    "build:example-packages:cli": "node cli node_modules/@app/templates node_modules/@app/examples example-packages",
+    "build:example-packages:cli": "node cli node_modules/@app/templates/src node_modules/@app/examples/src example-packages",
     "watch": "run-p watch:*",
     "watch:build": "nodemon --config nodemon.build.json -x \"run-s build\"",
     "watch:example-packages": "nodemon --config nodemon.example-packages.json -x \"run-s build:example-packages\""
