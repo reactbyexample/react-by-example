@@ -1,4 +1,4 @@
-import { act, render, RenderResult } from '@testing-library/react'
+import { act, cleanup, render, RenderResult } from '@testing-library/react'
 import React from 'react'
 import { Global } from './example'
 import { SliderProps } from './slider'
@@ -23,6 +23,7 @@ describe('Global', () => {
 
   afterEach(() => {
     mockSliderOnChange.mockReset()
+    cleanup()
   })
 
   it('should snapshot', () => {
@@ -30,7 +31,7 @@ describe('Global', () => {
   })
 
   it('should set dynamic styles', () => {
-    expect(circle.style).toMatchObject({ fontSize: '1em' })
+    expect(circle).toHaveStyle({ fontSize: '1em' })
   })
 
   describe('when changing slider', () => {
@@ -42,7 +43,7 @@ describe('Global', () => {
       })
 
       it('should update styles', () => {
-        expect(circle.style).toMatchObject({ fontSize: '1.5em' })
+        expect(circle).toHaveStyle({ fontSize: '1.5em' })
       })
     })
 
@@ -54,7 +55,7 @@ describe('Global', () => {
       })
 
       it('should update styles', () => {
-        expect(circle.style).toMatchObject({ fontSize: '0.75em' })
+        expect(circle).toHaveStyle({ fontSize: '0.75em' })
       })
     })
   })

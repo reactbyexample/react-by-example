@@ -1,0 +1,16 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Events should snapshot 1`] = `
+<div>
+  <div>
+    <input
+      aria-label="try copy/pasting"
+      value="try copy/pasting"
+    />
+    <pre>
+      last event: 
+      N/A
+    </pre>
+  </div>
+</div>
+`;

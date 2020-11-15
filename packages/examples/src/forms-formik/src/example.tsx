@@ -2,7 +2,7 @@ import { Field, FieldProps, Form, Formik } from 'formik'
 import React, { FC } from 'react'
 import { UserAPI } from './user-api'
 
-const SimpleFormik: FC = () => {
+export const SimpleFormik: FC = () => {
   return (
     <Formik
       initialValues={{
@@ -21,7 +21,7 @@ const SimpleFormik: FC = () => {
         }
       }}
     >
-      <Form>
+      <Form aria-label="registration form">
         <div>
           <label>
             Username

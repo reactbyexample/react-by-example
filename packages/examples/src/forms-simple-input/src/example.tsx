@@ -1,6 +1,6 @@
 import React, { ChangeEvent, FC, useState } from 'react'
 
-const SimpleInput: FC = () => {
+export const SimpleInput: FC = () => {
   const [value, setValue] = useState('default value')
   const onChange = (event: ChangeEvent<HTMLInputElement>) => {
     setValue(event.target.value)

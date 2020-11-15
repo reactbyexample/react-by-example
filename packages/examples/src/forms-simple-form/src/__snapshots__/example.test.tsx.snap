@@ -1,0 +1,54 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleForm should snapshot 1`] = `
+<div>
+  <form
+    aria-label="registration form"
+  >
+    <div>
+      <label>
+        Username
+        <input
+          name="username"
+          type="text"
+          value=""
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        Password
+        <input
+          name="password"
+          type="password"
+          value=""
+        />
+      </label>
+    </div>
+    <div>
+      <label>
+        <input
+          name="terms"
+          type="checkbox"
+        />
+        <span>
+          I have read the Terms and Conditions
+        </span>
+      </label>
+    </div>
+    <button
+      type="submit"
+    >
+      Register
+    </button>
+    <pre>
+      {
+  "username": "",
+  "password": "",
+  "terms": false,
+  "submitted": false
+}
+    </pre>
+  </form>
+</div>
+`;

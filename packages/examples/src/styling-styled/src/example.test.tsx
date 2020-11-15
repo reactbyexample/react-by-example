@@ -1,4 +1,4 @@
-import { act, render, RenderResult } from '@testing-library/react'
+import { act, cleanup, render, RenderResult } from '@testing-library/react'
 import React from 'react'
 import { Styled } from './example'
 import { SliderProps } from './slider'
@@ -21,6 +21,7 @@ describe('Styled', () => {
 
   afterEach(() => {
     mockSliderOnChange.mockReset()
+    cleanup()
   })
 
   it('should snapshot', () => {

@@ -1,7 +1,7 @@
 import React, { FC, useState } from 'react'
 import { UserAPI } from './user-api'
 
-const SimpleForm: FC = () => {
+export const SimpleForm: FC = () => {
   const [username, setUsername] = useState('')
   const [password, setPassword] = useState('')
   const [terms, setTerms] = useState(false)
@@ -9,6 +9,7 @@ const SimpleForm: FC = () => {
 
   return (
     <form
+      aria-label="registration form"
       onSubmit={async (event) => {
         event.preventDefault()
         setSubmitted(true)
@@ -25,6 +26,7 @@ const SimpleForm: FC = () => {
           Username
           <input
             type="text"
+            name="username"
             value={username}
             onChange={(event) => setUsername(event.target.value)}
           />
@@ -35,6 +37,7 @@ const SimpleForm: FC = () => {
           Password
           <input
             type="password"
+            name="password"
             value={password}
             onChange={(event) => setPassword(event.target.value)}
           />
@@ -44,6 +47,7 @@ const SimpleForm: FC = () => {
         <label>
           <input
             type="checkbox"
+            name="terms"
             checked={terms}
             onChange={(event) => setTerms(event.target.checked)}
           />

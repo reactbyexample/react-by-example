@@ -1,0 +1,23 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`SimpleInput should snapshot 1`] = `
+<div>
+  <div>
+    <label>
+      simple input
+      <input
+        type="text"
+        value="default value"
+      />
+    </label>
+    <pre>
+      default value
+    </pre>
+    <button
+      type="button"
+    >
+      change to \`new value\`
+    </button>
+  </div>
+</div>
+`;

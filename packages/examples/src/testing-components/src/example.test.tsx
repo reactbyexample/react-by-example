@@ -1,4 +1,9 @@
-import { fireEvent, render, RenderResult } from '@testing-library/react'
+import {
+  cleanup,
+  fireEvent,
+  render,
+  RenderResult,
+} from '@testing-library/react'
 import React from 'react'
 import { GifFinder } from './example'
 import { TenorApi } from './tenor-api'
@@ -10,7 +15,7 @@ jest.mock('./tenor-api', () => ({
   },
 }))
 
-describe('<GifFinder />', () => {
+describe('GifFinder', () => {
   let component: RenderResult
   let onFound: jest.Mock
 
@@ -19,6 +24,10 @@ describe('<GifFinder />', () => {
   beforeEach(() => {
     onFound = jest.fn()
     component = render(<GifFinder onFound={onFound} />)
+  })
+
+  afterEach(() => {
+    cleanup()
   })
 
   it('should snapshot', () => {

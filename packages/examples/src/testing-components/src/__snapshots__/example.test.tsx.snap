@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<GifFinder /> should snapshot 1`] = `
+exports[`GifFinder should snapshot 1`] = `
 <div>
   <section>
     <label>
@@ -14,7 +14,7 @@ exports[`<GifFinder /> should snapshot 1`] = `
 </div>
 `;
 
-exports[`<GifFinder /> when searching should render the gifs 1`] = `
+exports[`GifFinder when searching should render the gifs 1`] = `
 .c0 {
   display: -webkit-box;
   display: -webkit-flex;
