@@ -1,0 +1,63 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Context should snapshot 1`] = `
+<div>
+  <p>
+    default value is used when there is no provider
+  </p>
+  <pre>
+    using value: \`
+    default
+    \`
+  </pre>
+  <div
+    class="box"
+    style="border-color: #ff5555; border-style: solid;"
+  >
+    <pre>
+      providing value: \`
+      #ff5555
+      \`
+    </pre>
+    <pre>
+      using value: \`
+      #ff5555
+      \`
+    </pre>
+    <div
+      class="box"
+      style="border-color: #50fa7b; border-style: dashed;"
+    >
+      <p>
+        value pierces component boundaries
+      </p>
+      <pre>
+        using value: \`
+        #ff5555
+        \`
+      </pre>
+      <div
+        class="box"
+        style="border-color: #8be9fd; border-style: solid;"
+      >
+        <pre>
+          providing value: \`
+          #8be9fd
+          \`
+        </pre>
+        <p>
+          providers can be nested
+        </p>
+        <p>
+          closest value is used
+        </p>
+        <pre>
+          using value: \`
+          #8be9fd
+          \`
+        </pre>
+      </div>
+    </div>
+  </div>
+</div>
+`;

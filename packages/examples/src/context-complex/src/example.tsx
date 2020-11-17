@@ -3,10 +3,10 @@ import defaultClasses from './button.default.module.css'
 import greenClasses from './button.green.module.css'
 import redClasses from './button.red.module.css'
 
-type ThemeContextType = 'default' | 'red' | 'green'
-const ThemeContext = createContext<ThemeContextType>('default')
+export type ThemeContextType = 'default' | 'red' | 'green'
+export const ThemeContext = createContext<ThemeContextType>('default')
 
-const Button: FC = () => {
+export const Button: FC = () => {
   const theme = useContext(ThemeContext)
   const classes = {
     default: defaultClasses,
@@ -21,7 +21,7 @@ const Button: FC = () => {
   )
 }
 
-const ThemeSwitcher: FC = () => {
+export const ThemeSwitcher: FC = ({ children }) => {
   const [theme, setTheme] = useState('default')
 
   return (
@@ -36,10 +36,14 @@ const ThemeSwitcher: FC = () => {
       </label>
       <br />
       <ThemeContext.Provider value={theme as ThemeContextType}>
-        <Button />
+        {children}
       </ThemeContext.Provider>
     </>
   )
 }
 
-export default <ThemeSwitcher />
+export default (
+  <ThemeSwitcher>
+    <Button />
+  </ThemeSwitcher>
+)

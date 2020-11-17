@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemeSwitcher example should snapshot 1`] = `
+<div>
+  <label>
+    theme
+    <select>
+      <option>
+        default
+      </option>
+      <option>
+        red
+      </option>
+      <option>
+        green
+      </option>
+    </select>
+  </label>
+  <br />
+  <button
+    class="button"
+    type="button"
+  >
+    themed button
+  </button>
+</div>
+`;
