@@ -1,22 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
-import styled from 'styled-components'
+import classes from './example.module.css'
 import { TenorApi } from './tenor-api'
-
-const Grid = styled.div`
-  display: flex;
-  width: 600px;
-  flex-wrap: wrap;
-`
-
-const Button = styled.button`
-  width: 200px;
-  height: 200px;
-`
-
-const Img = styled.img`
-  max-width: 100%;
-  max-height: 100%;
-`
 
 export interface GifFinderProps {
   onFound?(url: string): void
@@ -27,18 +11,17 @@ export const GifFinder: FC<GifFinderProps> = ({ onFound }) => {
   const [results, setResults] = useState<string[] | null>(null)
 
   useEffect(() => {
-    let mounted = true
+    let shouldUpdate = true
 
     if (query) {
       TenorApi.search(query).then((newResults) => {
-        if (mounted) {
-          setResults(newResults)
-        }
+        if (!shouldUpdate) return
+        setResults(newResults)
       })
     }
 
     return () => {
-      mounted = false
+      shouldUpdate = false
     }
   }, [query])
 
@@ -53,18 +36,19 @@ export const GifFinder: FC<GifFinderProps> = ({ onFound }) => {
         />
       </label>
       {results && (
-        <Grid>
+        <div className={classes.grid}>
           {results.map((result) => (
-            <Button
+            <button
               type="button"
               key={result}
+              className={classes.button}
               onClick={() => onFound && onFound(result)}
               aria-label="gif"
             >
-              <Img src={result} alt="gif" />
-            </Button>
+              <img className={classes.image} src={result} alt="gif" />
+            </button>
           ))}
-        </Grid>
+        </div>
       )}
     </section>
   )

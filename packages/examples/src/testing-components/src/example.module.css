@@ -1,0 +1,15 @@
+.grid {
+  display: flex;
+  width: 600px;
+  flex-wrap: wrap;
+}
+
+.button {
+  width: 200px;
+  height: 200px;
+}
+
+.image {
+  max-width: 100%;
+  max-height: 100%;
+}

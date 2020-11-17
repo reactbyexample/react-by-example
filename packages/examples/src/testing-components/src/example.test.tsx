@@ -1,4 +1,5 @@
 import {
+  act,
   cleanup,
   fireEvent,
   render,
@@ -7,19 +8,10 @@ import {
 import React from 'react'
 import { GifFinder } from './example'
 import { TenorApi } from './tenor-api'
-import { promiseShim } from './testing/promise-shim'
-
-jest.mock('./tenor-api', () => ({
-  TenorApi: {
-    search: jest.fn(() => Promise.resolve(['gif1', 'gif2', 'gif3'])),
-  },
-}))
 
 describe('GifFinder', () => {
   let component: RenderResult
   let onFound: jest.Mock
-
-  promiseShim()
 
   beforeEach(() => {
     onFound = jest.fn()
@@ -36,18 +28,25 @@ describe('GifFinder', () => {
 
   describe('when searching', () => {
     let queryInput: HTMLElement
+    let searchSpy: jest.SpyInstance
 
-    beforeEach(() => {
+    beforeEach(async () => {
+      const searchPromise = Promise.resolve(['gif1', 'gif2', 'gif3'])
+      searchSpy = jest.spyOn(TenorApi, 'search').mockReturnValue(searchPromise)
       queryInput = component.getByLabelText('find a gif')
       fireEvent.input(queryInput, { target: { value: 'react' } })
+      await act(async () => {
+        await searchPromise
+      })
+    })
+
+    afterEach(() => {
+      searchSpy.mockRestore()
     })
 
     it('should start a search', () => {
-      // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(TenorApi.search).toHaveBeenCalledWith('react')
-
-      // eslint-disable-next-line @typescript-eslint/unbound-method
-      expect(TenorApi.search).toHaveBeenCalledTimes(1)
+      expect(searchSpy).toHaveBeenCalledWith('react')
+      expect(searchSpy).toHaveBeenCalledTimes(1)
     })
 
     it('should render the gifs', () => {
