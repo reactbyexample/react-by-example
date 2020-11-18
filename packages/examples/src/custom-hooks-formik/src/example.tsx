@@ -15,14 +15,15 @@ export interface FormContextType {
   setState: (newState: Record<string, string>) => void
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const FormContext = createContext<FormContextType>(null!)
 
-export const Debug: FC = () => {
+export const DebugForm: FC = () => {
   const form = useContext(FormContext)
   return <pre>{JSON.stringify(form.state, null, '  ')}</pre>
 }
 // #endregion
+
+//
 
 // #region form
 export interface FormProps {
@@ -48,6 +49,8 @@ export const Form: FC<FormProps> = ({ children, initialValues }) => {
 }
 // #endregion
 
+//
+
 // #region custom hook
 export interface UseForm<Element extends { value: string }> {
   value: string
@@ -71,6 +74,8 @@ export const useForm = <Element extends { value: string }>(
 }
 // #endregion
 
+//
+
 // #region form items using custom hook
 export interface InputProps extends InputHTMLAttributes<HTMLInputElement> {
   name: string
@@ -90,6 +95,8 @@ export const Select: FC<SelectProps> = ({ name, children, ...props }) => {
   )
 }
 // #endregion
+
+//
 
 export default (
   <Form initialValues={{ title: 'mr', first: 'Steve', last: 'Buscemi' }}>
@@ -117,6 +124,6 @@ export default (
       last name
       <Input name="last" />
     </label>
-    <Debug />
+    <DebugForm />
   </Form>
 )

@@ -1,0 +1,144 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`DebugForm should snapshot 1`] = `
+<div>
+  <form>
+    <pre>
+      {
+  "hello": "world"
+}
+    </pre>
+  </form>
+</div>
+`;
+
+exports[`Input should snapshot 1`] = `
+<div>
+  <form>
+    <input
+      value=""
+    />
+    <pre>
+      {
+  "input": ""
+}
+    </pre>
+  </form>
+</div>
+`;
+
+exports[`Select should snapshot 1`] = `
+<div>
+  <form>
+    <select>
+      <option>
+        red
+      </option>
+      <option>
+        green
+      </option>
+      <option>
+        blue
+      </option>
+    </select>
+    <pre>
+      {
+  "select": "red"
+}
+    </pre>
+  </form>
+</div>
+`;
+
+exports[`example should snapshot 1`] = `
+<div>
+  <form>
+    <label>
+      title
+      <select>
+        <option
+          value="mr"
+        >
+          Mr
+        </option>
+        <option
+          value="mrs"
+        >
+          Mrs
+        </option>
+        <option
+          value="ms"
+        >
+          Ms
+        </option>
+        <option
+          value="dr"
+        >
+          Dr
+        </option>
+        <option
+          value="lord"
+        >
+          Lord
+        </option>
+        <option
+          value="prof"
+        >
+          Prof
+        </option>
+        <option
+          value="esq"
+        >
+          Esq
+        </option>
+        <option
+          value="dame"
+        >
+          Dame
+        </option>
+        <option
+          value="na"
+        >
+          N/A
+        </option>
+      </select>
+    </label>
+    <br />
+    <label>
+      first name
+      <input
+        value="Steve"
+      />
+    </label>
+    <br />
+    <label>
+      last name
+      <input
+        value="Buscemi"
+      />
+    </label>
+    <pre>
+      {
+  "title": "mr",
+  "first": "Steve",
+  "last": "Buscemi"
+}
+    </pre>
+  </form>
+</div>
+`;
+
+exports[`useForm should snapshot 1`] = `
+<div>
+  <form>
+    <textarea>
+      initial
+    </textarea>
+    <pre>
+      {
+  "textarea": "initial"
+}
+    </pre>
+  </form>
+</div>
+`;
