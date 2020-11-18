@@ -7,14 +7,16 @@ import React, {
   useRef,
 } from 'react'
 
-interface Focusable {
+export interface Focusable {
   focus(): void
 }
 
-const FocusableInput: FC<{ focusable?: Ref<Focusable> }> = ({ focusable }) => {
+export const FocusableInput: FC<{ focusable?: Ref<Focusable> }> = ({
+  focusable,
+}) => {
   const inputRef = useRef<HTMLInputElement>(null)
   const focus = useCallback(() => {
-    if (inputRef.current) inputRef.current.focus()
+    inputRef.current?.focus()
   }, [])
   useImperativeHandle(focusable, () => ({ focus }), [focus])
 
@@ -28,16 +30,17 @@ const FocusableInput: FC<{ focusable?: Ref<Focusable> }> = ({ focusable }) => {
   )
 }
 
-const Error: FC<{ target: RefObject<Focusable> }> = ({ target, children }) => {
+export const Error: FC<{ target: RefObject<Focusable> }> = ({
+  target,
+  children,
+}) => {
+  const onClick = useCallback(() => {
+    target.current?.focus()
+  }, [target])
   return (
     <div>
       {children}
-      <button
-        type="button"
-        onClick={useCallback(() => target.current && target.current.focus(), [
-          target,
-        ])}
-      >
+      <button type="button" onClick={onClick}>
         focus field
       </button>
     </div>

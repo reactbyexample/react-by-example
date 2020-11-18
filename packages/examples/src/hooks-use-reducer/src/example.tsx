@@ -22,7 +22,7 @@ const reducer: Reducer<State, Action> = (state, action) => {
   }
 }
 
-const Counter: FC = () => {
+export const Counter: FC = () => {
   const [state, dispatch] = useReducer(reducer, { count: 0 })
   const decrement = useCallback(() => dispatch({ type: 'decrement' }), [])
   const increment = useCallback(() => dispatch({ type: 'increment' }), [])

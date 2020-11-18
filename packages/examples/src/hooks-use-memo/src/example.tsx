@@ -8,12 +8,12 @@ const fib = (n: number): number => {
   return fib(n - 1) + fib(n - 2)
 }
 
-const Fib: FC<{ n: number }> = ({ n }) => {
+export const Fib: FC<{ n: number }> = ({ n }) => {
   const f = useMemo(() => fib(n), [n])
 
   return (
     <pre>
-      {10}-th fibonacci number: {f}
+      {n}-th fibonacci number: {f}
     </pre>
   )
 }

@@ -1,0 +1,21 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Fib 10 should snapshot 1`] = `
+<div>
+  <pre>
+    10
+    -th fibonacci number: 
+    55
+  </pre>
+</div>
+`;
+
+exports[`Fib 20 should snapshot 1`] = `
+<div>
+  <pre>
+    20
+    -th fibonacci number: 
+    6765
+  </pre>
+</div>
+`;

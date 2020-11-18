@@ -1,0 +1,22 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`FocusableInput should snapshot 1`] = `
+<div>
+  <div>
+    <label>
+      focusable input
+      <input
+        placeholder="required"
+      />
+    </label>
+  </div>
+  <div>
+    this field is required
+    <button
+      type="button"
+    >
+      focus field
+    </button>
+  </div>
+</div>
+`;
