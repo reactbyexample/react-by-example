@@ -74,19 +74,23 @@ export const Users: FC = () => {
   )
 }
 
-export default (
-  <Switch>
-    <Route path="/users">
-      <Users />
-    </Route>
-    <Route path="/user/:userId">
-      <User />
-    </Route>
-    <Route path="/article/:articleId">
-      <Article />
-    </Route>
-    <Route path="/">
-      <Redirect to="/users" />
-    </Route>
-  </Switch>
-)
+export const Params: FC = () => {
+  return (
+    <Switch>
+      <Route path="/users">
+        <Users />
+      </Route>
+      <Route path="/user/:userId">
+        <User />
+      </Route>
+      <Route path="/article/:articleId">
+        <Article />
+      </Route>
+      <Route path="/">
+        <Redirect to="/users" />
+      </Route>
+    </Switch>
+  )
+}
+
+export default <Params />

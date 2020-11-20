@@ -1,0 +1,131 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Params when article not found should snapshot 1`] = `
+<div>
+  <div>
+    <h1>
+      Cannot find article
+    </h1>
+  </div>
+</div>
+`;
+
+exports[`Params when home should snapshot 1`] = `
+<div>
+  <div>
+    <h1>
+      Users
+    </h1>
+    <ul>
+      <li>
+        <a
+          href="/user/alice"
+        >
+          Alice
+        </a>
+      </li>
+      <li>
+        <a
+          href="/user/bob"
+        >
+          Bob
+        </a>
+      </li>
+      <li>
+        <a
+          href="/user/carol"
+        >
+          Carol
+        </a>
+      </li>
+    </ul>
+  </div>
+</div>
+`;
+
+exports[`Params when home when clicking a user should snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <h1>
+        Posts from 
+        Alice
+      </h1>
+      <ul>
+        <li>
+          <a
+            href="/article/1"
+          >
+            Alice's first article
+          </a>
+        </li>
+        <li>
+          <a
+            href="/article/3"
+          >
+            Alice's second article
+          </a>
+        </li>
+      </ul>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Params when home when clicking a user when clicking an article should snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <h1>
+        Alice's second article
+      </h1>
+      <p>
+        Pellentesque lorem ligula, molestie nec tincidunt vitae, convallis eget mauris.
+Mauris vitae nibh eleifend, pellentesque dolor sed, sollicitudin ipsum. Proin
+luctus ipsum mauris, nec dignissim nibh suscipit et. Fusce luctus, justo sed
+consectetur volutpat, arcu lectus molestie arcu, vel pulvinar urna eros eu sem.
+Aliquam at est egestas, interdum odio eu, rutrum nulla. Quisque ac nisi eros.
+Aliquam venenatis pulvinar ex, sed sagittis nibh viverra non. Lorem ipsum dolor
+sit amet, consectetur adipiscing elit. Donec ipsum sapien, viverra ac bibendum
+sit amet, varius vitae tortor.
+      </p>
+      <a
+        href="/user/alice"
+      >
+        <i>
+          by 
+          Alice
+        </i>
+      </a>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Params when no articles should snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <h1>
+        Posts from 
+        Carol
+      </h1>
+      <p>
+        Carol
+         has no articles
+      </p>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Params when user not found should snapshot 1`] = `
+<div>
+  <div>
+    <h1>
+      Cannot find user with id 
+      dave
+    </h1>
+  </div>
+</div>
+`;

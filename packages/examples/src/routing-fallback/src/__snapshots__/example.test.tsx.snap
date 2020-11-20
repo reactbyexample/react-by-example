@@ -1,0 +1,57 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Example when 404 should snapshot 1`] = `
+<article>
+  404 page
+</article>
+`;
+
+exports[`Example when about should snapshot 1`] = `
+<article>
+  about page
+</article>
+`;
+
+exports[`Example when home should snapshot 1`] = `
+<article>
+  home page
+</article>
+`;
+
+exports[`Example when home should snapshot nav 1`] = `
+Array [
+  <nav>
+    <a
+      aria-current="page"
+      class="activeLink"
+      href="/"
+    >
+      home
+    </a>
+     
+    <a
+      href="/pricing"
+    >
+      pricing
+    </a>
+     
+    <a
+      href="/about"
+    >
+      about
+    </a>
+     
+    <a
+      href="/this-page-does-not-exist"
+    >
+      broken link
+    </a>
+  </nav>,
+]
+`;
+
+exports[`Example when pricing should snapshot 1`] = `
+<article>
+  pricing page
+</article>
+`;

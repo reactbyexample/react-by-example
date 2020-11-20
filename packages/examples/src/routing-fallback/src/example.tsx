@@ -27,16 +27,22 @@ export const NavBar: FC = () => {
   )
 }
 
-export default (
-  <div>
-    <NavBar />
-    <Switch>
-      <Route path="/pricing">pricing</Route>
-      <Route path="/about">about</Route>
-      <Route path="/" exact>
-        home
-      </Route>
-      <Route>404</Route>
-    </Switch>
-  </div>
-)
+export const Example: FC = () => {
+  return (
+    <div>
+      <NavBar />
+      <article>
+        <Switch>
+          <Route path="/pricing">pricing page</Route>
+          <Route path="/about">about page</Route>
+          <Route path="/" exact>
+            home page
+          </Route>
+          <Route path="/">404 page</Route>
+        </Switch>
+      </article>
+    </div>
+  )
+}
+
+export default <Example />

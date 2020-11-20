@@ -1,0 +1,81 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Simple when 404 should snapshot 1`] = `
+<div>
+  <h1>
+    Home
+  </h1>
+  <ul>
+    <li>
+      <a
+        href="/lorem"
+      >
+        lorem
+      </a>
+    </li>
+    <li>
+      <a
+        href="/ipsum"
+      >
+        ipsum
+      </a>
+    </li>
+    <li>
+      <a
+        href="/dolor"
+      >
+        dolor
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Simple when dolor should snapshot 1`] = `
+<div>
+  dolor
+</div>
+`;
+
+exports[`Simple when home should snapshot 1`] = `
+<div>
+  <h1>
+    Home
+  </h1>
+  <ul>
+    <li>
+      <a
+        href="/lorem"
+      >
+        lorem
+      </a>
+    </li>
+    <li>
+      <a
+        href="/ipsum"
+      >
+        ipsum
+      </a>
+    </li>
+    <li>
+      <a
+        href="/dolor"
+      >
+        dolor
+      </a>
+    </li>
+  </ul>
+</div>
+`;
+
+exports[`Simple when ipsum should snapshot 1`] = `
+<div>
+  ipsum
+</div>
+`;
+
+exports[`Simple when lorem should snapshot 1`] = `
+<div>
+  lorem
+</div>
+`;
