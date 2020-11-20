@@ -1,0 +1,100 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Accordion should snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔼
+         
+        Hello
+      </button>
+    </div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔼
+         
+        World
+      </button>
+    </div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔼
+         
+        Accordion
+      </button>
+    </div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔼
+         
+        Example
+      </button>
+    </div>
+  </div>
+</div>
+`;
+
+exports[`Accordion when clicking item should snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔽
+         
+        Hello
+      </button>
+      <div>
+        <p>
+          hello content
+        </p>
+      </div>
+    </div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔼
+         
+        World
+      </button>
+    </div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔼
+         
+        Accordion
+      </button>
+    </div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        🔼
+         
+        Example
+      </button>
+    </div>
+  </div>
+</div>
+`;

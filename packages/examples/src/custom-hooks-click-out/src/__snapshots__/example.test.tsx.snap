@@ -1,0 +1,40 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Dropdown should snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <button
+      class="toggle"
+      type="button"
+    >
+      test
+       
+      🔼
+    </button>
+  </div>
+</div>
+`;
+
+exports[`Dropdown when opened should snapshot 1`] = `
+<div>
+  <div
+    class="container"
+  >
+    <button
+      class="toggle"
+      type="button"
+    >
+      test
+       
+      🔽
+    </button>
+    <div
+      class="content"
+    >
+      content
+    </div>
+  </div>
+</div>
+`;

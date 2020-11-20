@@ -25,9 +25,7 @@ export const useClickOut = <T extends HTMLElement>(
 
   useEffect(() => {
     const filteredHandler = (event: MouseEvent) => {
-      if (elementRef.current.contains(event.target as Node)) {
-        return
-      }
+      if (elementRef.current.contains(event.target as Node)) return
 
       handlerRef.current(event)
     }
@@ -42,6 +40,8 @@ export const useClickOut = <T extends HTMLElement>(
   return { ref: elementRef }
 }
 // #endregion
+
+//
 
 // #region using custom hook
 interface DropdownProps {
@@ -62,6 +62,8 @@ export const Dropdown: FC<DropdownProps> = ({ children, title }) => {
   )
 }
 // #endregion
+
+//
 
 export default (
   <div>

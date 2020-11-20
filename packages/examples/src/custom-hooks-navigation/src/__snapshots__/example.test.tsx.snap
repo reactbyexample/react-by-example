@@ -1,0 +1,43 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Tabs should snapshot 1`] = `
+<div>
+  <div>
+    <div>
+      <button
+        class="button"
+        type="button"
+      >
+        
+        Hello
+      </button>
+      <button
+        class="button"
+        type="button"
+      >
+        
+        World
+      </button>
+      <button
+        class="button"
+        type="button"
+      >
+        &gt; 
+        Tabs
+      </button>
+      <button
+        class="button"
+        type="button"
+      >
+        
+        Example
+      </button>
+    </div>
+    <div>
+      <aside>
+        tabs
+      </aside>
+    </div>
+  </div>
+</div>
+`;

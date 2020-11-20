@@ -17,7 +17,6 @@ export interface NavigationContextType {
   register: (el: HTMLElement) => void
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const NavigationContext = createContext<NavigationContextType>(null!)
 
 export const NavigationContextProvider: FC = ({ children }) => {
@@ -42,6 +41,8 @@ export const NavigationContextProvider: FC = ({ children }) => {
   )
 }
 // #endregion
+
+//
 
 // #region custom hook
 export interface UseNavigation<T extends HTMLElement> {

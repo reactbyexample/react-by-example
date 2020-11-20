@@ -39,7 +39,8 @@ export interface TabsProps {
 }
 
 export const Tabs: FC<TabsProps> = ({ defaultTabId, tabs }) => {
-  const [activeTabId, setActiveTabId] = useState(defaultTabId || tabs[0].id)
+  const [{ id: firstTabId }] = tabs
+  const [activeTabId, setActiveTabId] = useState(defaultTabId ?? firstTabId)
 
   const tabButtons = tabs.map((tab) => (
     <InternalTabButton
