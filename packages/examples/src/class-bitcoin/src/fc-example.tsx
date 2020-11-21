@@ -11,8 +11,9 @@ export const Bitcoin: FC = () => {
     let shouldUpdate = true
 
     setValue(null)
-    // eslint-disable-next-line @typescript-eslint/no-floating-promises
-    BitcoinAPI.getPrice(fiat).then((v) => shouldUpdate && setValue(v))
+    BitcoinAPI.getPrice(fiat)
+      .then((v) => shouldUpdate && setValue(v))
+      .catch(() => shouldUpdate && setValue(NaN))
 
     return () => {
       shouldUpdate = false

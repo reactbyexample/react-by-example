@@ -1,0 +1,6 @@
+{
+  "rules": {
+    "@typescript-eslint/no-floating-promises": "off",
+    "@typescript-eslint/no-empty-interface": "off"
+  }
+}

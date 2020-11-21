@@ -1,0 +1,66 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`Bitcoin should snapshot 1`] = `
+<div>
+  <div>
+    <button
+      type="button"
+    >
+      £
+    </button>
+    <button
+      type="button"
+    >
+      $
+    </button>
+    <br />
+    <span>
+      loading price...
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Bitcoin when price resolves should snapshot 1`] = `
+<div>
+  <div>
+    <button
+      type="button"
+    >
+      £
+    </button>
+    <button
+      type="button"
+    >
+      $
+    </button>
+    <br />
+    <span>
+      £
+      12345
+    </span>
+  </div>
+</div>
+`;
+
+exports[`Bitcoin when request rejects should snapshot 1`] = `
+<div>
+  <div>
+    <button
+      type="button"
+    >
+      £
+    </button>
+    <button
+      type="button"
+    >
+      $
+    </button>
+    <br />
+    <span>
+      £
+      NaN
+    </span>
+  </div>
+</div>
+`;

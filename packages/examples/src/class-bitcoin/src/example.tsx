@@ -1,8 +1,6 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import React, { Component, ReactNode } from 'react'
 import { BitcoinAPI } from './bitcoin-api'
 
-// eslint-disable-next-line @typescript-eslint/no-empty-interface
 export interface BitcoinProps {}
 
 interface BitcoinState {
@@ -34,17 +32,17 @@ export class Bitcoin extends Component<BitcoinProps, BitcoinState> {
     this.mounted = false
   }
 
-  setGbp = (): void => this.setState({ fiat: 'gbp' })
+  private setGbp = () => this.setState({ fiat: 'gbp' })
 
-  setUsd = (): void => this.setState({ fiat: 'usd' })
+  private setUsd = () => this.setState({ fiat: 'usd' })
 
-  getSymbol = (): string => ({ gbp: '£', usd: '$' }[this.state.fiat])
+  private getSymbol = () => ({ gbp: '£', usd: '$' }[this.state.fiat])
 
   private getPrice = async () => {
     this.setState({ value: null })
 
     const { fiat } = this.state
-    const value = await BitcoinAPI.getPrice(fiat)
+    const value = await BitcoinAPI.getPrice(fiat).catch(() => NaN)
 
     if (this.mounted) {
       this.setState({ fiat, value })
