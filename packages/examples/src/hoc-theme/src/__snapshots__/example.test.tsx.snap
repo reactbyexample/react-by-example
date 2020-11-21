@@ -1,0 +1,74 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`ThemedCard dark should snapshot 1`] = `
+<div>
+  <div
+    style="background-color: rgb(40, 42, 54);"
+  >
+    Lorem ipsum dolor sit amet.
+  </div>
+</div>
+`;
+
+exports[`ThemedCard light should snapshot 1`] = `
+<div>
+  <div
+    style="background-color: rgb(248, 248, 242);"
+  >
+    Lorem ipsum dolor sit amet.
+  </div>
+</div>
+`;
+
+exports[`ThemedParagraph dark should snapshot 1`] = `
+<div>
+  <p
+    style="color: rgb(248, 248, 242);"
+  >
+    Lorem ipsum dolor sit amet.
+  </p>
+</div>
+`;
+
+exports[`ThemedParagraph light should snapshot 1`] = `
+<div>
+  <p
+    style="color: rgb(40, 42, 54);"
+  >
+    Lorem ipsum dolor sit amet.
+  </p>
+</div>
+`;
+
+exports[`example should snapshot 1`] = `
+<div>
+  <div
+    style="background-color: rgb(40, 42, 54);"
+  >
+    <p
+      style="color: rgb(248, 248, 242);"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum sapiente ut pariatur. Aliquam suscipit consequuntur similique repellat praesentium eos odit. Ad ipsum voluptatibus natus dignissimos rerum. Laborum, molestias temporibus?
+    </p>
+    <p
+      style="color: rgb(248, 248, 242);"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum sapiente ut pariatur. Aliquam suscipit consequuntur similique repellat praesentium eos odit. Ad ipsum voluptatibus natus dignissimos rerum. Laborum, molestias temporibus?
+    </p>
+  </div>
+  <div
+    style="background-color: rgb(248, 248, 242);"
+  >
+    <p
+      style="color: rgb(40, 42, 54);"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum sapiente ut pariatur. Aliquam suscipit consequuntur similique repellat praesentium eos odit. Ad ipsum voluptatibus natus dignissimos rerum. Laborum, molestias temporibus?
+    </p>
+    <p
+      style="color: rgb(40, 42, 54);"
+    >
+      Lorem ipsum dolor sit amet consectetur adipisicing elit. Soluta ipsum sapiente ut pariatur. Aliquam suscipit consequuntur similique repellat praesentium eos odit. Ad ipsum voluptatibus natus dignissimos rerum. Laborum, molestias temporibus?
+    </p>
+  </div>
+</div>
+`;

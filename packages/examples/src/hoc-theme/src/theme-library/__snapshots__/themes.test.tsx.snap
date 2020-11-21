@@ -1,0 +1,27 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`themes dark should snapshot 1`] = `
+<div>
+  <pre>
+    {
+  "color": {
+    "background": "#282a36",
+    "foreground": "#f8f8f2"
+  }
+}
+  </pre>
+</div>
+`;
+
+exports[`themes light should snapshot 1`] = `
+<div>
+  <pre>
+    {
+  "color": {
+    "background": "#f8f8f2",
+    "foreground": "#282a36"
+  }
+}
+  </pre>
+</div>
+`;

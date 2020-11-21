@@ -1,0 +1,31 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`withTheme dark should inject theme prop 1`] = `
+Array [
+  Array [
+    Object {
+      "theme": Object {
+        "color": Object {
+          "background": "#282a36",
+          "foreground": "#f8f8f2",
+        },
+      },
+    },
+  ],
+]
+`;
+
+exports[`withTheme light should inject theme prop 1`] = `
+Array [
+  Array [
+    Object {
+      "theme": Object {
+        "color": Object {
+          "background": "#f8f8f2",
+          "foreground": "#282a36",
+        },
+      },
+    },
+  ],
+]
+`;

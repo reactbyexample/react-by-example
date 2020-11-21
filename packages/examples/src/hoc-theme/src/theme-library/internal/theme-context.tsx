@@ -7,5 +7,4 @@ export interface ThemeContextType {
   }
 }
 
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const ThemeContext = createContext<ThemeContextType>(null!)
