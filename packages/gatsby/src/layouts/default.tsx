@@ -21,7 +21,7 @@ const Grid = styled.div`
 
   @media (min-width: ${(p) => p.theme.breakpoints.xl}) {
     grid-template-areas: 'nav content void';
-    grid-template-columns: 1fr 75ch 1fr;
+    grid-template-columns: 1fr 85ch 1fr;
     padding: 1rem;
     max-width: 150ch;
     margin: 0 auto;

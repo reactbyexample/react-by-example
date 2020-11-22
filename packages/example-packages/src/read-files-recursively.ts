@@ -1,8 +1,9 @@
 import { Project } from '@app/inherit-files'
 import { promises } from 'fs'
-import { join, resolve } from 'path'
+import { posix, resolve } from 'path'
 
 const { readdir, stat, readFile } = promises
+const { join } = posix
 
 export const readFilesRecursively = async (path: string): Promise<Project> => {
   const result: Project = {}

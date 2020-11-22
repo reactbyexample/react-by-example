@@ -31,7 +31,7 @@ describe('wrap everything in a describe', () => {
       })
 
       it('should follow the structure of your code', () => {
-        // when you add new functionality it is easy to find where the tests need to go
+        // it should be easy to find where new tests need to go
         // ASSERT
       })
     })

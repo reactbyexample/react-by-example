@@ -17,7 +17,8 @@ export const createFactory = (root: Node): Create => {
       data: { imports },
     } = root as NodeWithImports
 
-    const importId = `${target}$default`
+    const normalizedTarget = target.replace(/\\/g, '/')
+    const importId = `${normalizedTarget}$default`
 
     const existing = imports[importId]
     if (existing) return existing
@@ -30,7 +31,7 @@ export const createFactory = (root: Node): Create => {
 
     children.unshift({
       type: 'import',
-      value: `import ${identifier} from '${target}'`,
+      value: `import ${identifier} from '${normalizedTarget}'`,
     })
 
     const result: ImportIdentifier = { identifier }
