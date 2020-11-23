@@ -1,6 +1,6 @@
 import React, { FC, useEffect, useState } from 'react'
 import classes from './example.module.css'
-import { TenorApi } from './tenor-api'
+import { TenorAPI } from './tenor-api'
 
 export interface GifFinderProps {
   onFound?(url: string): void
@@ -14,9 +14,8 @@ export const GifFinder: FC<GifFinderProps> = ({ onFound }) => {
     let shouldUpdate = true
 
     if (query) {
-      TenorApi.search(query).then((newResults) => {
-        if (!shouldUpdate) return
-        setResults(newResults)
+      TenorAPI.search(query).then((newResults) => {
+        if (shouldUpdate) setResults(newResults)
       })
     }
 

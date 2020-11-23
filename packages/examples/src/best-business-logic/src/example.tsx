@@ -1,4 +1,3 @@
-/* eslint-disable @typescript-eslint/no-floating-promises */
 import React, { FC, useEffect, useState } from 'react'
 
 // #region tangled business logic
@@ -21,7 +20,7 @@ export const WithBusiness: FC = () => {
  * describe('WithBusiness', () => {
  *   beforeEach(() => {
  *     // no no
- *     jest.spyOn(window, 'fetch').mockRejectedValue('')
+ *     jest.spyOn(window, 'fetch').mockRejectedValue(new Error())
  *   })
  * })
  * ```
@@ -29,17 +28,19 @@ export const WithBusiness: FC = () => {
 
 // #endregion
 
+//
+
 // #region separate business logic
-interface Resource {
+// #region my-api.ts
+export interface Resource {
   defined: 'interface'
 }
-class MyApiImpl {
-  // eslint-disable-next-line class-methods-use-this
+class MyAPIImpl {
   getResource(): Promise<Resource> {
     throw new Error('not implemented')
   }
 }
-const MyApi = new MyApiImpl()
+export const MyAPI = new MyAPIImpl()
 
 /**
  * @example tests
@@ -47,18 +48,20 @@ const MyApi = new MyApiImpl()
  * describe('MyApi', () => {
  *   beforeEach(() => {
  *     // the only place where this has to be done
- *     jest.spyOn(window, 'fetch').mockRejectedValue('')
+ *     jest.spyOn(window, 'fetch').mockRejectedValue(new Error())
  *   })
  * })
  * ```
  */
+// #endregion
 
-const useMyApiResource = (): [null | unknown, Resource | null] => {
+// #region use-my-resource.ts
+export const useMyAPIResource = (): [null | unknown, Resource | null] => {
   const [result, setResult] = useState<Resource | null>(null) // typed
   const [error, setError] = useState<null | unknown>(null)
   useEffect(() => {
     let shouldUpdate = true
-    MyApi.getResource()
+    MyAPI.getResource()
       .then((r) => shouldUpdate && setResult(r))
       .catch((e) => shouldUpdate && setError(e)) // unified error handling
     return () => {
@@ -68,16 +71,16 @@ const useMyApiResource = (): [null | unknown, Resource | null] => {
 
   return [error, result] // clear interface that forces error handling
 }
+// #endregion
 
+// #region my-resource.tsx
 export const WithoutBusiness: FC = () => {
-  const [error, resource] = useMyApiResource()
+  const [error, resource] = useMyAPIResource()
 
-  if (error) {
-    return <>oh no</>
-  }
-  if (resource) {
-    return <>here it is {resource.defined}</>
-  }
+  if (error) return <>oh no</>
+
+  if (resource) return <>here it is {resource.defined}</>
+
   return <>loading</>
 }
 
@@ -85,15 +88,16 @@ export const WithoutBusiness: FC = () => {
 /**
  * @example tests
  * ```
- * jest.mock('./useMyApiResource')
- * const useMyApiResourceMock = useMyApiResource as jest.MockedFunction<
- *   typeof useMyApiResource
+ * jest.mock('./use-my-api-resource')
+ * const useMyAPIResourceMock = useMyAPIResource as jest.MockedFunction<
+ *   typeof useMyAPIResource
  * >
  * describe('WithoutBusiness', () => {
  *   beforeEach(() => {
- *     useMyApiResourceMock.mockReturnValue([null, { defined: 'interface' }])
+ *     useMyAPIResourceMock.mockReturnValue([null, { defined: 'interface' }])
  *   })
  * })
  * ```
  */
+// #endregion
 // #endregion

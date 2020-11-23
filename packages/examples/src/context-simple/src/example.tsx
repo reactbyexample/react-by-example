@@ -14,6 +14,12 @@ const Box: FC<{ color: string; dashed?: boolean }> = ({
   </div>
 )
 
+const GreenDashedBox: FC = ({ children }) => (
+  <Box color="#50fa7b" dashed>
+    {children}
+  </Box>
+)
+
 const Context = createContext<string>('default')
 const ProvidesContext: FC<{ color: string }> = ({ color, children }) => (
   <Box color={color}>
@@ -36,7 +42,7 @@ export default (
       <RendersContext />
       {/* #ff5555 */}
 
-      <Box color="#50fa7b" dashed>
+      <GreenDashedBox>
         <p>value pierces component boundaries</p>
         <RendersContext />
         {/* #ff5555 */}
@@ -47,7 +53,7 @@ export default (
           <RendersContext />
           {/* #8be9fd */}
         </ProvidesContext>
-      </Box>
+      </GreenDashedBox>
     </ProvidesContext>
   </>
 )

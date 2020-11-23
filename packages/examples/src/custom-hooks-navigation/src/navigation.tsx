@@ -77,9 +77,8 @@ export const useNavigation = <T extends HTMLElement>(): UseNavigation<T> => {
 
       const nextIndexCandidate = navigationMap[event.key]
 
-      if (nextIndexCandidate == null) {
-        return
-      }
+      if (nextIndexCandidate == null) return
+
       event.preventDefault()
 
       const nextIndex = (length + nextIndexCandidate) % length

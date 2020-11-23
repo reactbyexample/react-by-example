@@ -9,7 +9,7 @@ interface TenorResult {
   }[]
 }
 
-class TenorApiImpl {
+class TenorAPIImpl {
   async search(query: string): Promise<string[]> {
     const response = await fetch(
       `${BASE}/search?q=${query}&contentfilter=high&limit=9&media_filter=minimal`,
@@ -20,4 +20,4 @@ class TenorApiImpl {
   }
 }
 
-export const TenorApi = new TenorApiImpl()
+export const TenorAPI = new TenorAPIImpl()

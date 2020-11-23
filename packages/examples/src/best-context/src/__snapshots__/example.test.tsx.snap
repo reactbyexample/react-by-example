@@ -1,0 +1,26 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`List should snapshot 1`] = `
+<div>
+  <ul>
+    <li>
+      hello
+    </li>
+    <li>
+      world
+    </li>
+    <li>
+      (
+      3
+      ) 
+      hello
+    </li>
+    <li>
+      (
+      4
+      ) 
+      world
+    </li>
+  </ul>
+</div>
+`;

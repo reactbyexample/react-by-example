@@ -23,8 +23,9 @@ export const WithGlobal: FC = () => {
 }
 // #endregion
 
+//
+
 // #region local
-// eslint-disable-next-line @typescript-eslint/no-non-null-assertion
 export const LocalContext = createContext<{ index: number }>(null!)
 
 export const List: FC<{ items: ReactNode[] }> = ({ items }) => {
@@ -39,7 +40,7 @@ export const List: FC<{ items: ReactNode[] }> = ({ items }) => {
   )
 }
 
-const ListItem: FC = ({ children }) => {
+export const NumberedItem: FC = ({ children }) => {
   const { index } = useContext(LocalContext)
   return (
     <li>
@@ -48,6 +49,15 @@ const ListItem: FC = ({ children }) => {
   )
 }
 
-const items = [<ListItem>hello</ListItem>, <ListItem>world</ListItem>]
+export const UnnumberedItem: FC = ({ children }) => {
+  return <li>{children}</li>
+}
+
+const items = [
+  <UnnumberedItem>hello</UnnumberedItem>,
+  <UnnumberedItem>world</UnnumberedItem>,
+  <NumberedItem>hello</NumberedItem>,
+  <NumberedItem>world</NumberedItem>,
+]
 export default <List items={items} />
 // #endregion

@@ -6,14 +6,14 @@ export const Bitcoin: FC = () => {
   const setGbp = useCallback(() => setFiat('gbp'), [])
   const setUsd = useCallback(() => setFiat('usd'), [])
 
-  const [value, setValue] = useState<number | null>(null)
+  const [price, setPrice] = useState<number | null>(null)
   useEffect(() => {
     let shouldUpdate = true
 
-    setValue(null)
+    setPrice(null)
     BitcoinAPI.getPrice(fiat)
-      .then((v) => shouldUpdate && setValue(v))
-      .catch(() => shouldUpdate && setValue(NaN))
+      .then((v) => shouldUpdate && setPrice(v))
+      .catch(() => shouldUpdate && setPrice(NaN))
 
     return () => {
       shouldUpdate = false
@@ -31,12 +31,12 @@ export const Bitcoin: FC = () => {
         $
       </button>
       <br />
-      {value == null ? (
+      {price == null ? (
         <span>loading price...</span>
       ) : (
         <span>
           {symbol}
-          {value}
+          {price}
         </span>
       )}
     </div>

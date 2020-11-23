@@ -25,9 +25,9 @@ export const useClickOut = <T extends HTMLElement>(
 
   useEffect(() => {
     const filteredHandler = (event: MouseEvent) => {
-      if (elementRef.current.contains(event.target as Node)) return
-
-      handlerRef.current(event)
+      const clickTarget = event.target as Node
+      const isTargetInsideElement = elementRef.current.contains(clickTarget)
+      if (!isTargetInsideElement) handlerRef.current(event)
     }
 
     document.addEventListener('click', filteredHandler)

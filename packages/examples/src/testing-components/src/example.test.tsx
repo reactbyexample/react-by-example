@@ -7,7 +7,7 @@ import {
 } from '@testing-library/react'
 import React from 'react'
 import { GifFinder } from './example'
-import { TenorApi } from './tenor-api'
+import { TenorAPI } from './tenor-api'
 
 describe('GifFinder', () => {
   let component: RenderResult
@@ -32,7 +32,7 @@ describe('GifFinder', () => {
 
     beforeEach(async () => {
       const searchPromise = Promise.resolve(['gif1', 'gif2', 'gif3'])
-      searchSpy = jest.spyOn(TenorApi, 'search').mockReturnValue(searchPromise)
+      searchSpy = jest.spyOn(TenorAPI, 'search').mockReturnValue(searchPromise)
       queryInput = component.getByLabelText('find a gif')
       fireEvent.input(queryInput, { target: { value: 'react' } })
       await act(async () => {

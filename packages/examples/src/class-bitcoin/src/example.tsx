@@ -4,18 +4,18 @@ import { BitcoinAPI } from './bitcoin-api'
 export interface BitcoinProps {}
 
 interface BitcoinState {
-  value: number | null
+  price: number | null
   fiat: 'gbp' | 'usd'
 }
 
 export class Bitcoin extends Component<BitcoinProps, BitcoinState> {
-  state = { value: null, fiat: 'gbp' } as const
+  state = { price: null, fiat: 'gbp' } as const
 
   mounted = false
 
   componentDidMount = (): void => {
     this.mounted = true
-    this.getPrice()
+    this.updatePrice()
   }
 
   componentDidUpdate = (
@@ -24,7 +24,7 @@ export class Bitcoin extends Component<BitcoinProps, BitcoinState> {
   ): void => {
     const { fiat } = this.state
     if (prevState.fiat !== fiat) {
-      this.getPrice()
+      this.updatePrice()
     }
   }
 
@@ -38,19 +38,17 @@ export class Bitcoin extends Component<BitcoinProps, BitcoinState> {
 
   private getSymbol = () => ({ gbp: '£', usd: '$' }[this.state.fiat])
 
-  private getPrice = async () => {
-    this.setState({ value: null })
+  private updatePrice = async () => {
+    this.setState({ price: null })
 
     const { fiat } = this.state
     const value = await BitcoinAPI.getPrice(fiat).catch(() => NaN)
 
-    if (this.mounted) {
-      this.setState({ fiat, value })
-    }
+    if (this.mounted) this.setState({ fiat, price: value })
   }
 
   render = (): ReactNode => {
-    const { value } = this.state
+    const { price } = this.state
 
     return (
       <div>
@@ -61,12 +59,12 @@ export class Bitcoin extends Component<BitcoinProps, BitcoinState> {
           $
         </button>
         <br />
-        {value == null ? (
+        {price == null ? (
           <span>loading price...</span>
         ) : (
           <span>
             {this.getSymbol()}
-            {value}
+            {price}
           </span>
         )}
       </div>
