@@ -31,13 +31,13 @@ const PrevNext = (
 
 export const Prev = PrevNext(-1, ({ title }) => (
   <>
-    <ArrowIcon rotate={-90} />
+    <ArrowIcon $rotate={-90} />
     {title}
   </>
 ))
 export const Next = PrevNext(+1, ({ title }) => (
   <>
     {title}
-    <ArrowIcon rotate={90} />
+    <ArrowIcon $rotate={90} />
   </>
 ))

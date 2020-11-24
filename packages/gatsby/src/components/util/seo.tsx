@@ -3,7 +3,7 @@ import { Helmet } from 'react-helmet'
 import { useSiteMetadata } from '../../graphql'
 
 export interface SEOProps {
-  title: string
+  title?: string
   description?: string
 }
 
@@ -11,12 +11,12 @@ export const SEO: FC<SEOProps> = ({ description, title }) => {
   const siteMetadata = useSiteMetadata()
 
   const finalDescription = description || siteMetadata.description
+  const finalTitle = [title, siteMetadata.title].filter(Boolean).join(' | ')
 
   return (
     <Helmet
       htmlAttributes={{ lang: siteMetadata.lang }}
-      title={title}
-      titleTemplate={`%s | ${siteMetadata.title}`}
+      title={finalTitle}
       meta={[
         {
           name: `description`,
@@ -24,7 +24,7 @@ export const SEO: FC<SEOProps> = ({ description, title }) => {
         },
         {
           property: `og:title`,
-          content: title,
+          content: finalTitle,
         },
         {
           property: `og:description`,
@@ -40,7 +40,7 @@ export const SEO: FC<SEOProps> = ({ description, title }) => {
         },
         {
           name: `twitter:title`,
-          content: title,
+          content: finalTitle,
         },
         {
           name: `twitter:description`,

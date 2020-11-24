@@ -87,7 +87,7 @@ export const Navigation: FC<ContainerProps> = (p) => {
         <TitleLink to="/">React by Example</TitleLink>
       </Title>
       <Expand title="menu" aria-label="menu" onClick={toggle}>
-        <MenuIcon size={3} />
+        <MenuIcon $size={3} />
       </Expand>
       <Links expanded={isExpanded}>
         {navigation.map((slug) => (
