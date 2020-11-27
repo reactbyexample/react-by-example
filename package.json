@@ -8,6 +8,7 @@
   "scripts": {
     "start": "pnpm --parallel start",
     "test": "pnpm --parallel test",
+    "build": "pnpm -r build",
     "pre-gatsby": "pnpm --filter \"@app/gatsby^...\"",
     "gatsby": "pnpm --filter \"@app/gatsby\"",
     "build-requirements": "pnpm run pre-gatsby -- run build",

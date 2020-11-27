@@ -1,0 +1,40 @@
+name: build
+on: push
+jobs:
+  build:
+    runs-on: ubuntu-20.04
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/setup-node@v1.4.4
+        with:
+          node-version: '14'
+      - run: npm i -g pnpm@5
+      - run: pnpm i
+      - run: pnpm run build-requirements
+      - run: pnpm test
+      - run: pnpm run gatsby -- build
+      - uses: actions/upload-artifact@v2.2.1
+        with:
+          name: gatsby-site
+          path: packages/gatsby/public
+
+  deploy:
+    runs-on: ubuntu-20.04
+    needs: build
+    if: github.ref == 'refs/heads/master'
+    steps:
+      - uses: actions/checkout@v2.3.4
+      - uses: actions/download-artifact@v2
+        with:
+          name: gatsby-site
+          path: gatsby-site
+      - uses: webfactory/ssh-agent@v0.4.1
+        with:
+          ssh-private-key: ${{ secrets.REACTBYEXAMPLE_GITHUB_IO_DEPLOY_KEY }}
+      - uses: JamesIves/github-pages-deploy-action@3.7.1
+        with:
+          REPOSITORY_NAME: reactbyexample/reactbyexample.github.io
+          BRANCH: master
+          FOLDER: gatsby-site
+          CLEAN: true
+          SSH: true
