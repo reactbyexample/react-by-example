@@ -38,3 +38,5 @@ jobs:
           FOLDER: gatsby-site
           CLEAN: true
           SSH: true
+          GIT_CONFIG_NAME: github-actions[bot]
+          GIT_CONFIG_EMAIL: github-actions[bot]@users.noreply.github.com
