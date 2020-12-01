@@ -3,6 +3,7 @@ import styled from 'styled-components'
 import {
   DefaultMDXProvider,
   DefaultThemeProvider,
+  Footer,
   Navigation,
   Next,
   Prev,
@@ -75,6 +76,7 @@ const DefaultLayout: FC = ({ children }) => {
               <StyledPrev />
               <StyledNext />
             </Paging>
+            <Footer />
           </Content>
         </Grid>
       </DefaultThemeProvider>

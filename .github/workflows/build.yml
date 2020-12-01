@@ -23,20 +23,15 @@ jobs:
     needs: build
     if: github.ref == 'refs/heads/master'
     steps:
-      - uses: actions/checkout@v2.3.4
       - uses: actions/download-artifact@v2
         with:
           name: gatsby-site
           path: gatsby-site
-      - uses: webfactory/ssh-agent@v0.4.1
+      - uses: peaceiris/actions-gh-pages@v3.7.3
         with:
-          ssh-private-key: ${{ secrets.REACTBYEXAMPLE_GITHUB_IO_DEPLOY_KEY }}
-      - uses: JamesIves/github-pages-deploy-action@3.7.1
-        with:
-          REPOSITORY_NAME: reactbyexample/reactbyexample.github.io
-          BRANCH: master
-          FOLDER: gatsby-site
-          CLEAN: true
-          SSH: true
-          GIT_CONFIG_NAME: github-actions[bot]
-          GIT_CONFIG_EMAIL: github-actions[bot]@users.noreply.github.com
+          deploy_key: ${{ secrets.REACTBYEXAMPLE_GITHUB_IO_DEPLOY_KEY }}
+          external_repository: reactbyexample/reactbyexample.github.io
+          publish_branch: master
+          publish_dir: gatsby-site
+          user_name: github-actions[bot]
+          user_email: github-actions[bot]@users.noreply.github.com
