@@ -43,10 +43,10 @@ export const Footer: FC = () => {
       </Link>
       <Separator />
       <Link href="https://github.com/reactbyexample/react-by-example">
-        github
+        GitHub
       </Link>
       <Separator />
-      <Link href="https://paypal.me/barnabas">
+      <Link href="https://monzo.me/barnabasforgo/3">
         buy me a <Beer />
       </Link>
     </Container>
